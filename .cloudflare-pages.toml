@@ -1,0 +1,18 @@
+# Cloudflare Pages Configuration
+
+# Build settings
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20.19.2"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Install command
+[build.install]
+  command = "npm install --legacy-peer-deps"
+
+# Note: For Cloudflare Pages with Next.js, you need to use @cloudflare/next-on-pages
+# However, Vercel is recommended for Next.js deployments
+# See: https://developers.cloudflare.com/pages/framework-guides/deploy-a-nextjs-site/
