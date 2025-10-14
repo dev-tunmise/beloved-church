@@ -1,4 +1,6 @@
 import Footer from "@/app/_components/footer";
+import Navigation from "@/app/_components/navigation";
+import WhatsAppButton from "@/app/_components/whatsapp-button";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -10,8 +12,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: "Beloved New Beginning Ministries - Royal Grace & Purity",
+  description: "Welcome to Beloved New Beginning Ministries. Experience God's love, watch sermons, read our blog, and explore our natural herbs collection.",
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -28,27 +30,27 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
+          href="/images/beloved-logo.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon/favicon-32x32.png"
+          href="/images/beloved-logo.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon/favicon-16x16.png"
+          href="/images/beloved-logo.png"
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link
           rel="mask-icon"
-          href="/favicon/safari-pinned-tab.svg"
+          href="/images/beloved-logo.png"
           color="#000000"
         />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="/images/beloved-logo.png" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="msapplication-config"
@@ -61,7 +63,9 @@ export default function RootLayout({
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
         <ThemeSwitcher />
+        <Navigation />
         <div className="min-h-screen">{children}</div>
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

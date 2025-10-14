@@ -20,6 +20,11 @@ const config: Config = {
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
+        'royal-purple': '#2D1B4E',
+        'gold': '#C9A961',
+        'light-purple': '#4A2D6F',
+        'dark-purple': '#1A0F2E',
+        'accent-gold': '#E8D4A0',
       },
       spacing: {
         28: "7rem",
