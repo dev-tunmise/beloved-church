@@ -1,8 +1,12 @@
 import Container from "@/app/_components/container";
 import Link from "next/link";
 import { BookIcon, VideoIcon, EditIcon, LeafIcon, HeartIcon, GiftIcon, ArrowRightIcon, UsersIcon } from "@/app/_components/icons";
+import { getAllPosts } from "@/lib/api";
+import { PostPreview } from "@/app/_components/post-preview";
 
 export default function Index() {
+  const allPosts = getAllPosts();
+  const recentPosts = allPosts.slice(0, 3);
   return (
     <main className="bg-white">
       {/* Hero Section */}
@@ -227,86 +231,98 @@ export default function Index() {
         </Container>
       </section>
 
-      {/* Natural Herbs Section */}
+      {/* TGDI Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <Container>
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <div className="inline-block mb-4">
-              <span className="text-gold font-semibold text-sm uppercase tracking-wider">Wellness</span>
+              <span className="text-gold font-semibold text-sm uppercase tracking-wider">Anointed Products</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-              Natural Herbs
+              TDGI Enterprise Products
             </h2>
             <p className="text-gray-600 text-lg">
-              Premium herbal products for your health and wellness journey
+              Blessed and anointed products for healing, favour, breakthrough, and divine connections
             </p>
           </div>
           
           <div className="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
-            {/* Herb Product 1 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 bg-gradient-to-br from-green-50 to-green-100">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <LeafIcon size={64} className="text-green-600 opacity-30" />
-                </div>
+            {/* TGDI Product 1 */}
+            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="relative h-56 overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                  style={{
+                    backgroundImage: "url('/images/favour-soap.jpg')"
+                  }}
+                />
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Immune Booster Tea
+                  Favour Soap
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Natural blend to strengthen your immune system
+                  For attracting divine favour and open doors
                 </p>
               </div>
             </div>
 
-            {/* Herb Product 2 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 bg-gradient-to-br from-amber-50 to-amber-100">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <LeafIcon size={64} className="text-amber-600 opacity-30" />
-                </div>
+            {/* TGDI Product 2 */}
+            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="relative h-56 overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                  style={{
+                    backgroundImage: "url('/images/connection-soap.jpg')"
+                  }}
+                />
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Vitality Tonic
+                  Connection Soap
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Herbal formula for energy and vitality
+                  For destiny helpers and divine relationships
                 </p>
               </div>
             </div>
 
-            {/* Herb Product 3 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 bg-gradient-to-br from-purple-50 to-purple-100">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <LeafIcon size={64} className="text-purple-600 opacity-30" />
-                </div>
+            {/* TGDI Product 3 */}
+            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="relative h-56 overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                  style={{
+                    backgroundImage: "url('/images/breakthrough-soap.jpg')"
+                  }}
+                />
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Calm & Balance
+                  Breakthrough Soap
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Soothing herbs for peace and relaxation
+                  For destroying spiritual barriers and unlocking success
                 </p>
               </div>
             </div>
 
-            {/* Herb Product 4 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 bg-gradient-to-br from-blue-50 to-blue-100">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <LeafIcon size={64} className="text-blue-600 opacity-30" />
-                </div>
+            {/* TGDI Product 4 */}
+            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="relative h-56 overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                  style={{
+                    backgroundImage: "url('/images/glory-oil.jpg')"
+                  }}
+                />
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Detox Blend
+                  Glory Oil
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Cleansing formula for natural detoxification
+                  For healing, deliverance, and divine touch
                 </p>
               </div>
             </div>
@@ -314,10 +330,10 @@ export default function Index() {
 
           <div className="text-center">
             <Link
-              href="/shop"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 shadow-lg"
+              href="/tdgi"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-royal-purple to-dark-purple text-white px-8 py-4 rounded-lg font-semibold hover:from-dark-purple hover:to-royal-purple transition-all duration-300 shadow-lg"
             >
-              Explore Products
+              View All Products
               <ArrowRightIcon size={18} />
             </Link>
           </div>
@@ -363,19 +379,15 @@ export default function Index() {
                 <div className="space-y-4">
                   <div className="border-t border-white/10 pt-4">
                     <p className="text-gray-400 text-sm mb-1">Bank Name</p>
-                    <p className="font-semibold text-lg">First National Bank</p>
+                    <p className="font-semibold text-lg">Union Bank</p>
                   </div>
                   <div className="border-t border-white/10 pt-4">
                     <p className="text-gray-400 text-sm mb-1">Account Name</p>
-                    <p className="font-semibold text-lg">Beloved New Beginning Ministries</p>
+                    <p className="font-semibold text-lg">BELOVED New Beginning Ministries</p>
                   </div>
                   <div className="border-t border-white/10 pt-4">
                     <p className="text-gray-400 text-sm mb-1">Account Number</p>
-                    <p className="font-semibold text-lg">1234567890</p>
-                  </div>
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="text-gray-400 text-sm mb-1">Routing Number</p>
-                    <p className="font-semibold text-lg">987654321</p>
+                    <p className="font-semibold text-lg">0236577830</p>
                   </div>
                 </div>
               </div>
@@ -399,84 +411,28 @@ export default function Index() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Blog Card 1 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div 
-                className="h-48 bg-cover bg-center"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600')"
-                }}
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+            {recentPosts.map((post) => (
+              <PostPreview
+                key={post.slug}
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                author={post.author}
+                slug={post.slug}
+                excerpt={post.excerpt}
               />
-              <div className="p-6">
-                <div className="text-xs text-gold font-semibold mb-2 uppercase tracking-wider">Faith & Life</div>
-                <h3 className="text-xl font-bold text-dark-purple mb-3 leading-tight">
-                  5 Ways to Deepen Your Prayer Life
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Practical steps to cultivate a more meaningful and powerful prayer experience with God.
-                </p>
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-royal-purple font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Read More
-                  <ArrowRightIcon size={16} />
-                </Link>
-              </div>
-            </div>
+            ))}
+          </div>
 
-            {/* Blog Card 2 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div 
-                className="h-48 bg-cover bg-center"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1519834785169-98be25ec3f84?q=80&w=600')"
-                }}
-              />
-              <div className="p-6">
-                <div className="text-xs text-gold font-semibold mb-2 uppercase tracking-wider">Community</div>
-                <h3 className="text-xl font-bold text-dark-purple mb-3 leading-tight">
-                  Building Authentic Relationships
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Discover the importance of genuine fellowship and community in your spiritual journey.
-                </p>
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-royal-purple font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Read More
-                  <ArrowRightIcon size={16} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Blog Card 3 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div 
-                className="h-48 bg-cover bg-center"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=600')"
-                }}
-              />
-              <div className="p-6">
-                <div className="text-xs text-gold font-semibold mb-2 uppercase tracking-wider">Growth</div>
-                <h3 className="text-xl font-bold text-dark-purple mb-3 leading-tight">
-                  Understanding God's Grace
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Explore the depths of God's unmerited favor and how it transforms every area of your life.
-                </p>
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-royal-purple font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Read More
-                  <ArrowRightIcon size={16} />
-                </Link>
-              </div>
-            </div>
+          <div className="text-center">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 bg-royal-purple text-white px-8 py-4 rounded-lg font-semibold hover:bg-dark-purple transition-all duration-300 shadow-lg"
+            >
+              View All Articles
+              <ArrowRightIcon size={18} />
+            </Link>
           </div>
         </Container>
       </section>

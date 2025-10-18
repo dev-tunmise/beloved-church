@@ -1,7 +1,7 @@
 'use client';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+1234567890'; // Replace with church phone number
+  const phoneNumber = '+2347069609892'; // Church phone number
   const message = 'Hello, I would like to know more about Beloved New Beginning Ministries';
 
   const handleClick = () => {

@@ -10,7 +10,7 @@ export function Footer() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* About Section */}
             <div>
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center space-x-3 mb-">
                 <div className="relative w-20 h-20 pl-0">
                   <Image
                     src="/images/beloved-logo.png"
@@ -21,59 +21,10 @@ export function Footer() {
                 </div>
                 {/* <span className="text-xl font-bold">Beloved New Beginning Ministries</span> */}
               </div>
-              <p className="text-gray-200 text-sm">
+              <p className="text-gray-200 text-sm mb-4">
                 Walking in Royal Grace and Purity. Spreading God's love to all nations.
               </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-bold text-lg mb-4 text-gold">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/about" className="text-gray-200 hover:text-gold transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/sermons" className="text-gray-200 hover:text-gold transition-colors">
-                    Sermons
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-gray-200 hover:text-gold transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/giving" className="text-gray-200 hover:text-gold transition-colors">
-                    Give
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h3 className="font-bold text-lg mb-4 text-gold">Contact</h3>
-              <ul className="space-y-2 text-sm text-gray-200">
-                <li>123 Church Street</li>
-                <li>City, State 12345</li>
-                <li>Phone: +1 (555) 123-4567</li>
-                <li>Email: info@belovedchurch.org</li>
-              </ul>
-            </div>
-
-            {/* Service Times & Social */}
-            <div>
-              <h3 className="font-bold text-lg mb-4 text-gold">Service Times</h3>
-              <ul className="space-y-2 text-sm text-gray-200">
-                <li>Sunday: 10:00 AM</li>
-                <li>Wednesday: 7:00 PM</li>
-                <li>Friday: 6:00 PM</li>
-              </ul>
-              <div className="mt-4">
-                <h4 className="font-semibold mb-2">Follow Us</h4>
+              <div>
                 <div className="flex gap-2">
                   <a
                     href="https://facebook.com"
@@ -82,7 +33,7 @@ export function Footer() {
                     className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-colors text-white hover:text-dark-purple"
                     aria-label="Facebook"
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="18" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
                   </a>
@@ -122,6 +73,54 @@ export function Footer() {
                 </div>
               </div>
             </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-bold text-lg mb-4 text-gold">Quick Links</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/about" className="text-gray-200 hover:text-gold transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sermons" className="text-gray-200 hover:text-gold transition-colors">
+                    Sermons
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-gray-200 hover:text-gold transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/giving" className="text-gray-200 hover:text-gold transition-colors">
+                    Give
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h3 className="font-bold text-lg mb-4 text-gold">Contact</h3>
+              <ul className="space-y-2 text-sm text-gray-200">
+                <li>6 Ibrahim Alade Street</li>
+                <li>Erunwen, Ikorodu, Lagos</li>
+                <li>Phone: 07069609892</li>
+                <li>Email: toyinjato8@gmail.com</li>
+              </ul>
+            </div>
+
+            {/* Service Times */}
+            <div>
+              <h3 className="font-bold text-lg mb-4 text-gold">Service Times</h3>
+              <ul className="space-y-2 text-sm text-gray-200">
+                <li>Sunday: 8:00 AM - 10:00 AM</li>
+                <li>Thursday: 5:00 PM - 7:00 PM</li>
+                <li>Last Friday: 12:00 AM - 2:00 AM (Vigil)</li>
+              </ul>
+            </div>
           </div>
 
           {/* Bottom Bar */}
@@ -130,7 +129,7 @@ export function Footer() {
               © {new Date().getFullYear()} Beloved New Beginning Ministries. All rights reserved.
             </p>
             <p className="mt-2">
-              Developed by <a href="https://websetly.com" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 font-semibold transition-colors">Websetly</a>
+              Developed by <a href="https://websetly.com" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-200 transition-colors">Websetly</a>
             </p>
           </div>
         </div>

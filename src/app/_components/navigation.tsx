@@ -10,13 +10,13 @@ const Navigation = () => {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/sermons', label: 'Sermons' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/shop', label: 'Herbs' },
-    { href: '/giving', label: 'Giving' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: 'HOME' },
+    { href: '/about', label: 'ABOUT' },
+    { href: '/sermons', label: 'SERMONS' },
+    { href: '/blog', label: 'BLOG' },
+    { href: '/tdgi', label: 'TDGI' },
+    { href: '/giving', label: 'GIVING' },
+    { href: '/contact', label: 'CONTACT' },
   ];
 
   const isActive = (path: string) => pathname === path;

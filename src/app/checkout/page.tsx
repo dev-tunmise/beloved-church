@@ -236,7 +236,7 @@ export default function CheckoutPage() {
                 </div>
 
                 <Link
-                  href="/shop"
+                  href="/tdgi"
                   className="block text-center text-royal-purple hover:text-gold transition-colors"
                 >
                   ← Continue Shopping
