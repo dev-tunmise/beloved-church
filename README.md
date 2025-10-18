@@ -1,6 +1,6 @@
-# Beloved Church Website
+# Beloved New Beginning Ministries - Church Website
 
-A modern, full-featured church website built with Next.js 15, featuring blog posts, sermons, online giving, contact forms, and more.
+A modern, full-featured church website built with Next.js 15, featuring blog posts, sermons, online giving, contact forms, and anointed products.
 
 ## ✨ Features
 
