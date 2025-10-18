@@ -27,7 +27,7 @@ export function Footer() {
               <div>
                 <div className="flex gap-2">
                   <a
-                    href="https://facebook.com"
+                    href="https://web.facebook.com/marstoyin.jato"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-colors text-white hover:text-dark-purple"

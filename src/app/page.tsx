@@ -1,10 +1,18 @@
 import Container from "@/app/_components/container";
 import Link from "next/link";
+import Image from "next/image";
 import { BookIcon, VideoIcon, EditIcon, LeafIcon, HeartIcon, GiftIcon, ArrowRightIcon, UsersIcon } from "@/app/_components/icons";
 import { getAllPosts } from "@/lib/api";
 import { PostPreview } from "@/app/_components/post-preview";
+import dynamic from "next/dynamic";
 
-export default function Index() {
+// Dynamically import heavy components to reduce initial bundle size
+const TDGIProductsSection = dynamic(
+  () => import("@/app/_components/tdgi-products-section").then(mod => ({ default: mod.TDGIProductsSection })),
+  { ssr: true }
+);
+
+export default async function Index() {
   const allPosts = getAllPosts();
   const recentPosts = allPosts.slice(0, 3);
   return (
@@ -13,13 +21,17 @@ export default function Index() {
       <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center text-white overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-dark-purple/95 via-royal-purple/90 to-dark-purple/95">
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-            style={{
-              backgroundImage: "url('/images/hero-image.jpg')",
-              backgroundPosition: "center 40%"
-            }}
-          />
+          <div className="absolute inset-0 opacity-30">
+            <Image
+              src="/images/hero-image.jpg"
+              alt="Hero Background"
+              fill
+              priority
+              quality={75}
+              sizes="100vw"
+              className="object-cover object-[center_40%]"
+            />
+          </div>
         </div>
         
         {/* Content */}
@@ -57,11 +69,14 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
               <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: "url('/images/prophetess-toyin.jpg')"
-                  }}
+                <Image
+                  src="/images/prophetess-toyin.jpg"
+                  alt="Prophetess Toyin Jato"
+                  fill
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -119,11 +134,14 @@ export default function Index() {
             </div>
             <div>
               <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: "url('/images/who-we-are.jpg')"
-                  }}
+                <Image
+                  src="/images/who-we-are.jpg"
+                  alt="Who We Are"
+                  fill
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -232,113 +250,7 @@ export default function Index() {
       </section>
 
       {/* TGDI Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <Container>
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <div className="inline-block mb-4">
-              <span className="text-gold font-semibold text-sm uppercase tracking-wider">Anointed Products</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-              TDGI Enterprise Products
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Blessed and anointed products for healing, favour, breakthrough, and divine connections
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
-            {/* TGDI Product 1 */}
-            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                  style={{
-                    backgroundImage: "url('/images/favour-soap.jpg')"
-                  }}
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Favour Soap
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  For attracting divine favour and open doors
-                </p>
-              </div>
-            </div>
-
-            {/* TGDI Product 2 */}
-            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                  style={{
-                    backgroundImage: "url('/images/connection-soap.jpg')"
-                  }}
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Connection Soap
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  For destiny helpers and divine relationships
-                </p>
-              </div>
-            </div>
-
-            {/* TGDI Product 3 */}
-            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                  style={{
-                    backgroundImage: "url('/images/breakthrough-soap.jpg')"
-                  }}
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Breakthrough Soap
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  For destroying spiritual barriers and unlocking success
-                </p>
-              </div>
-            </div>
-
-            {/* TGDI Product 4 */}
-            <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-56 overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                  style={{
-                    backgroundImage: "url('/images/glory-oil.jpg')"
-                  }}
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-dark-purple mb-2">
-                  Glory Oil
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  For healing, deliverance, and divine touch
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/tdgi"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-royal-purple to-dark-purple text-white px-8 py-4 rounded-lg font-semibold hover:from-dark-purple hover:to-royal-purple transition-all duration-300 shadow-lg"
-            >
-              View All Products
-              <ArrowRightIcon size={18} />
-            </Link>
-          </div>
-        </Container>
-      </section>
+      <TDGIProductsSection />
 
       {/* Giving Section */}
       <section className="py-20 bg-white">
