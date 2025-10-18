@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Output configuration for static export
-  output: 'export',
-  
-  // Disable image optimization for static export
+  // Image optimization configuration for Vercel
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -24,6 +21,26 @@ const nextConfig = {
 
   // Strict mode for better development experience
   reactStrictMode: true,
+
+  // Disable development indicators and overlay
+  devIndicators: {
+    buildActivity: false,
+    buildActivityPosition: 'bottom-right',
+  },
+
+  // Disable error overlay completely
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+
+  // Disable webpack dev middleware overlay
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.devtool = false;
+    }
+    return config;
+  },
 
   // Environment variables that should be available on the client side
   env: {
