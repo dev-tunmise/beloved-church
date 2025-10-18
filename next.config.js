@@ -1,19 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Output configuration
-  output: 'standalone',
+  // Output configuration for static export
+  output: 'export',
   
-  // Image optimization
+  // Disable image optimization for static export
   images: {
-    domains: ['img.youtube.com', 'i.ytimg.com'],
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.youtube.com',
+        hostname: 'img.youtube.com',
       },
       {
         protocol: 'https',
-        hostname: '**.ytimg.com',
+        hostname: 'i.ytimg.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i3.ytimg.com',
       },
     ],
   },
@@ -31,32 +35,8 @@ const nextConfig = {
     NEXT_PUBLIC_WHATSAPP_NUMBER: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
   },
 
-  // Headers for security
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          },
-        ],
-      },
-    ];
-  },
+  // Note: headers() is not supported with static export
+  // Configure headers in Cloudflare Pages settings instead
 };
 
 module.exports = nextConfig;

@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cf-build": "npm install --legacy-peer-deps && npm run build"
   },
   "dependencies": {
     "@stripe/stripe-js": "^8.0.0",
@@ -12,8 +13,8 @@
     "gray-matter": "^4.0.3",
     "next": "15.0.2",
     "next-intl": "^4.3.12",
-    "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-player": "^3.3.3",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
@@ -21,11 +22,15 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.8",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2"
+  },
+  "overrides": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
   }
 }
