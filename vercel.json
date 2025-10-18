@@ -1,18 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
   "installCommand": "npm install --legacy-peer-deps",
-  "regions": ["iad1"],
-  "env": {
-    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "@stripe-publishable-key",
-    "STRIPE_SECRET_KEY": "@stripe-secret-key",
-    "NEXT_PUBLIC_SITE_URL": "@site-url",
-    "NEXT_PUBLIC_SITE_NAME": "Beloved Church",
-    "NEXT_PUBLIC_CHURCH_EMAIL": "@church-email",
-    "NEXT_PUBLIC_CHURCH_PHONE": "@church-phone",
-    "NEXT_PUBLIC_WHATSAPP_NUMBER": "@whatsapp-number"
-  },
   "headers": [
     {
       "source": "/api/(.*)",
