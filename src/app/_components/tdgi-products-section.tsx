@@ -5,9 +5,192 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRightIcon } from "@/app/_components/icons";
 import WhatsAppButton from "@/app/_components/whatsapp-button";
+import { useState } from "react";
+import { usePaystackProduct } from "@/hooks/usePaystackProduct";
+
+// Product type definition
+interface Product {
+  id: number;
+  name: string;
+  purpose: string;
+  image: string;
+  price: number;
+}
+
+// Products data (showing 4 products on homepage)
+const products: Product[] = [
+  {
+    id: 1,
+    name: "Favour Soap",
+    purpose: "For attracting divine favour and open doors",
+    image: "/images/favor-soap.png",
+    price: 5000
+  },
+  {
+    id: 2,
+    name: "Mercy Soap",
+    purpose: "For receiving God's mercy and compassion",
+    image: "/images/mercy-soap.png",
+    price: 5000
+  },
+  {
+    id: 3,
+    name: "Breakthrough Soap",
+    purpose: "For destroying spiritual barriers and unlocking success",
+    image: "/images/breakthrough-soap.png",
+    price: 5000
+  },
+  {
+    id: 4,
+    name: "Fruitfulness Soap",
+    purpose: "For productivity, abundance, and bearing lasting fruit",
+    image: "/images/fruitfulness-soap.png",
+    price: 5000
+  }
+];
+
+// Product purchase modal component
+function ProductPurchaseModal({ 
+  product, 
+  onClose, 
+  onPurchase 
+}: { 
+  product: Product; 
+  onClose: () => void; 
+  onPurchase: (email: string, name: string, phone: string) => void;
+}) {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email');
+      return;
+    }
+    onPurchase(email, name, phone);
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-white rounded-2xl max-w-md w-full p-8 relative" onClick={(e) => e.stopPropagation()}>
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <h3 className="text-2xl font-bold text-dark-purple mb-4">{product.name}</h3>
+        <div className="mb-6">
+          <p className="text-3xl font-bold text-gold">₦{product.price.toLocaleString()}</p>
+          <p className="text-gray-600 mt-2">{product.purpose}</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="email" className="block text-sm font-semibold text-dark-purple mb-2">
+              Email Address <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="name" className="block text-sm font-semibold text-dark-purple mb-2">
+              Full Name (Optional)
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="phone" className="block text-sm font-semibold text-dark-purple mb-2">
+              Phone Number (Optional)
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+234 XXX XXX XXXX"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white py-4 rounded-lg font-bold hover:shadow-xl transition-all duration-300"
+          >
+            Proceed to Payment
+          </button>
+        </form>
+
+        <p className="text-xs text-gray-500 text-center mt-4">
+          After payment, you'll be redirected to WhatsApp to complete your order
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export function TDGIProductsSection() {
-  const handleOrder = (productName: string) => {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const { processPaymentWithWhatsApp, isConfigured } = usePaystackProduct();
+
+  const handleProductClick = (product: Product) => {
+    if (!isConfigured) {
+      alert('Payment system is not configured. Please contact us via WhatsApp to place your order.');
+      const message = encodeURIComponent(`Hello, I would like to order: ${product.name} - ₦${product.price.toLocaleString()}`);
+      window.open(`https://wa.me/2347069609892?text=${message}`, '_blank');
+      return;
+    }
+    setSelectedProduct(product);
+  };
+
+  const handlePurchase = (email: string, name: string, phone: string) => {
+    if (!selectedProduct) return;
+
+    setIsProcessing(true);
+    setSelectedProduct(null);
+
+    const [firstName, ...lastNameParts] = name.split(' ');
+    const lastName = lastNameParts.join(' ');
+
+    processPaymentWithWhatsApp({
+      productName: selectedProduct.name,
+      productId: selectedProduct.id,
+      price: selectedProduct.price,
+      email,
+      firstName: firstName || undefined,
+      lastName: lastName || undefined,
+      phone: phone || undefined,
+      category: "Soaps",
+    });
+
+    // Reset processing state after a delay
+    setTimeout(() => setIsProcessing(false), 3000);
+  };
+
+  const handleWhatsAppOrder = (productName: string) => {
     const message = encodeURIComponent(`Hello, I would like to order: ${productName}`);
     window.open(`https://wa.me/2347069609892?text=${message}`, '_blank');
   };
@@ -30,16 +213,18 @@ export function TDGIProductsSection() {
         <div className="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
           {/* TGDI Product 1 */}
           <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden">
-              <Image
-                src="/images/favour-soap.jpg"
-                alt="Favour Soap"
-                fill
-                loading="lazy"
-                quality={75}
-                sizes="(max-width: 768px) 100vw, 25vw"
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+            <div className="relative h-56 overflow-hidden bg-white p-6">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/favor-soap.png"
+                  alt="Favour Soap"
+                  fill
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
             <div className="p-5">
               <h3 className="text-lg font-bold text-dark-purple mb-2">
@@ -62,26 +247,28 @@ export function TDGIProductsSection() {
 
           {/* TGDI Product 2 */}
           <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden">
-              <Image
-                src="/images/connection-soap.jpg"
-                alt="Connection Soap"
-                fill
-                loading="lazy"
-                quality={75}
-                sizes="(max-width: 768px) 100vw, 25vw"
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+            <div className="relative h-56 overflow-hidden bg-white p-6">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/mercy-soap.png"
+                  alt="Mercy Soap"
+                  fill
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
             <div className="p-5">
               <h3 className="text-lg font-bold text-dark-purple mb-2">
-                Connection Soap
+                Mercy Soap
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                For destiny helpers and divine relationships
+                For receiving God's mercy and compassion
               </p>
               <button
-                onClick={() => handleOrder('Connection Soap')}
+                onClick={() => handleOrder('Mercy Soap')}
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -94,16 +281,18 @@ export function TDGIProductsSection() {
 
           {/* TGDI Product 3 */}
           <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden">
-              <Image
-                src="/images/breakthrough-soap.jpg"
-                alt="Breakthrough Soap"
-                fill
-                loading="lazy"
-                quality={75}
-                sizes="(max-width: 768px) 100vw, 25vw"
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+            <div className="relative h-56 overflow-hidden bg-white p-6">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/breakthrough-soap.png"
+                  alt="Breakthrough Soap"
+                  fill
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
             <div className="p-5">
               <h3 className="text-lg font-bold text-dark-purple mb-2">
@@ -126,26 +315,28 @@ export function TDGIProductsSection() {
 
           {/* TGDI Product 4 */}
           <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden">
-              <Image
-                src="/images/glory-oil.jpg"
-                alt="Glory Oil"
-                fill
-                loading="lazy"
-                quality={75}
-                sizes="(max-width: 768px) 100vw, 25vw"
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+            <div className="relative h-56 overflow-hidden bg-white p-6">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/fruitfulness-soap.png"
+                  alt="Fruitfulness Soap"
+                  fill
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
             <div className="p-5">
               <h3 className="text-lg font-bold text-dark-purple mb-2">
-                Glory Oil
+                Fruitfulness Soap
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                For healing, deliverance, and divine touch
+                For productivity, abundance, and bearing lasting fruit
               </p>
               <button
-                onClick={() => handleOrder('Glory Oil')}
+                onClick={() => handleOrder('Fruitfulness Soap')}
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

@@ -8,57 +8,57 @@ import { VideoIcon, CalendarIcon, ClockIcon, PlayIcon } from "@/app/_components/
 const sermons = [
   {
     id: 1,
-    title: "Walking in Faith",
+    title: "God's Promise Against Delay - October 19, 2025",
     date: "2024-10-06",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+    videoId: "iDMNslFItEc", // Replace with actual YouTube video ID
     description: "A powerful message on trusting God in difficult times.",
     category: "sermon",
-    thumbnail: "https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=800"
+    thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
     id: 2,
     title: "Prophetic Moment: New Season",
     date: "2024-09-29",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "iDMNslFItEc",
     description: "God is doing something new in this season.",
     category: "prophetic",
-    thumbnail: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=800"
+    thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
     id: 3,
     title: "Testimony: Healed from Cancer",
     date: "2024-09-22",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "iDMNslFItEc",
     description: "Sister Mary shares her miraculous healing testimony.",
     category: "testimony",
-    thumbnail: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=800"
+    thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
     id: 4,
     title: "The Power of Prayer",
     date: "2024-09-15",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "iDMNslFItEc",
     description: "Understanding the transformative power of prayer in our lives.",
     category: "sermon",
-    thumbnail: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800"
+    thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
     id: 5,
     title: "Breaking Generational Curses",
     date: "2024-09-08",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "iDMNslFItEc",
     description: "Freedom from ancestral bondage through Christ.",
     category: "prophetic",
-    thumbnail: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800"
+    thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
     id: 6,
     title: "God's Provision Testimony",
     date: "2024-09-01",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "iDMNslFItEc",
     description: "How God miraculously provided in times of need.",
     category: "testimony",
-    thumbnail: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800"
+    thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
 ];
 
@@ -252,17 +252,17 @@ export default function SermonsPage() {
             {filteredSermons.map((sermon) => (
               <div key={sermon.id} className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 <div 
-                  className="relative aspect-video bg-gradient-to-br from-royal-purple to-dark-purple cursor-pointer overflow-hidden"
+                  className="relative aspect-video cursor-pointer overflow-hidden bg-gray-100"
                   onClick={() => setSelectedVideo(sermon.videoId)}
                 >
                   <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-90 transition-opacity duration-300"
+                    className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
                     style={{
                       backgroundImage: `url('${sermon.thumbnail}')`
                     }}
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-white/40 transition-all duration-300">
+                    <div className="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-white/40 transition-all duration-300 shadow-lg">
                       <PlayIcon size={28} className="text-white ml-1" />
                     </div>
                   </div>
@@ -319,9 +319,11 @@ export default function SermonsPage() {
             <div className="aspect-video">
               <iframe
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+                src={`https://www.youtube-nocookie.com/embed/${selectedVideo}?autoplay=1&rel=0`}
                 title="Video Player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
             </div>

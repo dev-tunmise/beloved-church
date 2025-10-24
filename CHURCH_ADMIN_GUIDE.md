@@ -58,12 +58,12 @@ cd beloved-church
 
 2. Install dependencies:
 ```bash
-npm install --legacy-peer-deps
+pnpm install
 ```
 
 3. Run the development server:
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -71,8 +71,8 @@ npm run dev
 ### Building for Production
 
 ```bash
-npm run build
-npm start
+pnpm run build
+pnpm start
 ```
 
 ## 📝 How to Update Content
@@ -143,7 +143,7 @@ colors: {
 1. Sign up for a payment processor account (Stripe recommended)
 2. Install Stripe:
 ```bash
-npm install @stripe/stripe-js stripe
+pnpm add @stripe/stripe-js stripe
 ```
 
 3. Add your Stripe keys to `.env.local`:
@@ -186,7 +186,7 @@ To add language translation:
 
 1. Install next-intl (already in package.json):
 ```bash
-npm install next-intl --legacy-peer-deps
+pnpm add next-intl
 ```
 
 2. Create language files in `messages/` folder:
@@ -239,7 +239,7 @@ Main dependencies:
 
 ### Common Issues
 
-1. **Build errors**: Run `npm install --legacy-peer-deps`
+1. **Build errors**: Run `pnpm install`
 2. **Styling not working**: Ensure Tailwind is properly configured
 3. **Images not loading**: Check file paths in `public/` folder
 

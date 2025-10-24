@@ -4,6 +4,8 @@ import Container from "@/app/_components/container";
 import { useState } from "react";
 import Link from "next/link";
 import { LeafIcon, CheckIcon, StarIcon, HeartIcon } from "@/app/_components/icons";
+import { usePaystackProduct } from "@/hooks/usePaystackProduct";
+import { PaystackProductButton } from "@/app/_components/paystack-button";
 
 // WhatsApp Icon component
 const WhatsAppIcon: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 24 }) => (
@@ -34,8 +36,9 @@ const products = [
     purpose: "For attracting divine favour and open doors",
     scripture: "Psalm 5:12",
     scriptureText: "For surely, O LORD, you bless the righteous; you surround them with your favor as with a shield.",
-    image: "/images/favour-soap.jpg",
-    category: "Soaps"
+    image: "/images/favor-soap.png",
+    category: "Soaps",
+    price: 5000 // Add price in Naira
   },
   {
     id: 2,
@@ -43,8 +46,9 @@ const products = [
     purpose: "For destiny helpers and divine relationships",
     scripture: "Psalm 20",
     scriptureText: "May the LORD answer you when you are in distress; may the name of the God of Jacob protect you.",
-    image: "/images/connection-soap.jpg",
-    category: "Soaps"
+    image: "/images/connection-soap.png",
+    category: "Soaps",
+    price: 5000
   },
   {
     id: 3,
@@ -52,8 +56,9 @@ const products = [
     purpose: "For destroying spiritual barriers and unlocking success",
     scripture: "Isaiah 45:2-3",
     scriptureText: "I will go before you and will level the mountains; I will break down gates of bronze and cut through bars of iron.",
-    image: "/images/breakthrough-soap.jpg",
-    category: "Soaps"
+    image: "/images/breakthrough-soap.png",
+    category: "Soaps",
+    price: 5000
   },
   {
     id: 4,
@@ -61,8 +66,9 @@ const products = [
     purpose: "For receiving God's mercy and compassion",
     scripture: "Lamentations 3:22-23",
     scriptureText: "Because of the LORD's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
-    image: "/images/mercy-soap.jpg",
-    category: "Soaps"
+    image: "/images/mercy-soap.png",
+    category: "Soaps",
+    price: 5000
   },
   {
     id: 5,
@@ -70,8 +76,9 @@ const products = [
     purpose: "For healing, deliverance, and divine touch",
     scripture: "James 5:14",
     scriptureText: "Is anyone among you sick? Let them call the elders of the church to pray over them and anoint them with oil in the name of the Lord.",
-    image: "/images/glory-oil.jpg",
-    category: "Oils & Liquids"
+    image: "/images/glory-oil.png",
+    category: "Oils & Liquids",
+    price: 8000
   },
   {
     id: 6,
@@ -79,17 +86,247 @@ const products = [
     purpose: "For relief, strength, and divine restoration",
     scripture: "Jeremiah 8:22",
     scriptureText: "Is there no balm in Gilead? Is there no physician there? Why then is there no healing for the wound of my people?",
-    image: "/images/healing-balm.jpg",
-    category: "Balms"
+    image: "/images/destiny-helper-balm.png",
+    category: "Balms",
+    price: 6000
+  },
+  {
+    id: 7,
+    name: "Deliverance Soap",
+    purpose: "For freedom from bondage and spiritual chains",
+    scripture: "Luke 4:18",
+    scriptureText: "He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free.",
+    image: "/images/deliverance-soap.png",
+    category: "Soaps",
+    price: 5000
+  },
+  {
+    id: 8,
+    name: "Divine Settlement Soap",
+    purpose: "For settling long-standing issues and divine intervention",
+    scripture: "Isaiah 43:19",
+    scriptureText: "See, I am doing a new thing! Now it springs up; do you not perceive it? I am making a way in the wilderness and streams in the wasteland.",
+    image: "/images/divine-settlement-soap.png",
+    category: "Soaps",
+    price: 5000
+  },
+  {
+    id: 9,
+    name: "Fruitfulness Soap",
+    purpose: "For productivity, abundance, and bearing lasting fruit",
+    scripture: "Genesis 1:28",
+    scriptureText: "God blessed them and said to them, 'Be fruitful and increase in number; fill the earth and subdue it.'",
+    image: "/images/fruitfulness-soap.png",
+    category: "Soaps",
+    price: 5000
+  },
+  {
+    id: 10,
+    name: "Peace and Calm Soap",
+    purpose: "For inner peace, calmness, and divine rest",
+    scripture: "John 14:27",
+    scriptureText: "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+    image: "/images/peace-and-calm-soap.png",
+    category: "Soaps",
+    price: 5000
+  },
+  {
+    id: 11,
+    name: "Love and Married Favour Soap",
+    purpose: "For attracting love, marital blessings, and relationship favour",
+    scripture: "Proverbs 18:22",
+    scriptureText: "He who finds a wife finds what is good and receives favor from the LORD.",
+    image: "/images/love-and-married-favour-soap.png",
+    category: "Soaps",
+    price: 5000
+  },
+  {
+    id: 12,
+    name: "Morning Glory Oil",
+    purpose: "For fresh beginnings, divine glory, and morning breakthroughs",
+    scripture: "Lamentations 3:22-23",
+    scriptureText: "Because of the LORD's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
+    image: "/images/morning-glory-oil.png",
+    category: "Oils & Liquids",
+    price: 8000
+  },
+  {
+    id: 13,
+    name: "Spirit of Excellence Oil",
+    purpose: "For supernatural excellence and outstanding performance",
+    scripture: "Daniel 6:3",
+    scriptureText: "Now Daniel so distinguished himself among the administrators and the satraps by his exceptional qualities that the king planned to set him over the whole kingdom.",
+    image: "/images/spirit-of-excellence-oil.png",
+    category: "Oils & Liquids",
+    price: 8000
+  },
+  {
+    id: 14,
+    name: "Break Every Chain Balm",
+    purpose: "For breaking limitations and spiritual chains",
+    scripture: "Isaiah 58:6",
+    scriptureText: "Is not this the kind of fasting I have chosen: to loose the chains of injustice and untie the cords of the yoke, to set the oppressed free and break every yoke?",
+    image: "/images/break-every-chain-balm.png",
+    category: "Balms",
+    price: 6000
+  },
+  {
+    id: 15,
+    name: "Crown of Glory Balm",
+    purpose: "For honor, dignity, and divine glory manifestation",
+    scripture: "Isaiah 61:3",
+    scriptureText: "To bestow on them a crown of beauty instead of ashes, the oil of joy instead of mourning, and a garment of praise instead of a spirit of despair.",
+    image: "/images/crown-of-glory-balm.png",
+    category: "Balms",
+    price: 6000
   },
 ];
 
+// Product purchase modal component
+function ProductPurchaseModal({ 
+  product, 
+  onClose, 
+  onPurchase 
+}: { 
+  product: typeof products[0]; 
+  onClose: () => void; 
+  onPurchase: (email: string, name: string, phone: string) => void;
+}) {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email');
+      return;
+    }
+    onPurchase(email, name, phone);
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-white rounded-2xl max-w-md w-full p-8 relative" onClick={(e) => e.stopPropagation()}>
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <h3 className="text-2xl font-bold text-dark-purple mb-4">{product.name}</h3>
+        <div className="mb-6">
+          <p className="text-3xl font-bold text-gold">₦{product.price.toLocaleString()}</p>
+          <p className="text-gray-600 mt-2">{product.purpose}</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="email" className="block text-sm font-semibold text-dark-purple mb-2">
+              Email Address <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="name" className="block text-sm font-semibold text-dark-purple mb-2">
+              Full Name (Optional)
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="phone" className="block text-sm font-semibold text-dark-purple mb-2">
+              Phone Number (Optional)
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+234 XXX XXX XXXX"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white py-4 rounded-lg font-bold hover:shadow-xl transition-all duration-300"
+          >
+            Proceed to Payment
+          </button>
+        </form>
+
+        <p className="text-xs text-gray-500 text-center mt-4">
+          After payment, you'll be redirected to WhatsApp to complete your order
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function TDGIPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const { processPaymentWithWhatsApp, redirectToWhatsApp, isConfigured } = usePaystackProduct();
 
   const filteredProducts = selectedCategory === "all" 
     ? products 
     : products.filter(product => product.category === selectedCategory);
+
+  const handleProductClick = (product: typeof products[0]) => {
+    if (!isConfigured) {
+      alert('Payment system is not configured. Please contact us via WhatsApp to place your order.');
+      const message = encodeURIComponent(`Hello, I would like to order: ${product.name} - ₦${product.price.toLocaleString()}`);
+      window.open(`https://wa.me/2347069609892?text=${message}`, '_blank');
+      return;
+    }
+    setSelectedProduct(product);
+  };
+
+  const handlePurchase = (email: string, name: string, phone: string) => {
+    if (!selectedProduct) return;
+
+    setIsProcessing(true);
+    setSelectedProduct(null);
+
+    const [firstName, ...lastNameParts] = name.split(' ');
+    const lastName = lastNameParts.join(' ');
+
+    processPaymentWithWhatsApp({
+      productName: selectedProduct.name,
+      productId: selectedProduct.id,
+      price: selectedProduct.price,
+      email,
+      firstName: firstName || undefined,
+      lastName: lastName || undefined,
+      phone: phone || undefined,
+      category: selectedProduct.category,
+    });
+
+    // Reset processing state after a delay
+    setTimeout(() => setIsProcessing(false), 3000);
+  };
 
   const handleWhatsAppOrder = (productName: string) => {
     const message = encodeURIComponent(`Hello, I would like to order: ${productName}`);
@@ -415,14 +652,15 @@ export default function TDGIPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {filteredProducts.map((product) => (
               <div key={product.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gold">
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-royal-purple/10 to-gold/10">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
-                    style={{
-                      backgroundImage: `url('${product.image}')`
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-black/50 transition-all duration-300"></div>
+                <div className="relative aspect-square overflow-hidden bg-white p-6">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <div 
+                      className="absolute inset-0 bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                      style={{
+                        backgroundImage: `url('${product.image}')`
+                      }}
+                    />
+                  </div>
                   <div className="absolute top-4 right-4">
                     <span className="bg-gold text-dark-purple px-4 py-2 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider">
                       Blessed
@@ -436,21 +674,31 @@ export default function TDGIPage() {
                       {product.category}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-dark-purple mb-4 group-hover:text-royal-purple transition-colors">
+                  <h3 className="text-2xl font-bold text-dark-purple mb-2 group-hover:text-royal-purple transition-colors">
                     {product.name}
                   </h3>
+                  <div className="mb-4">
+                    <p className="text-3xl font-bold text-gold">₦{product.price.toLocaleString()}</p>
+                  </div>
                   <div className="mb-6">
                     <p className="text-gray-700 leading-relaxed text-sm">
                       {product.purpose}
                     </p>
                   </div>
                   
+                  <PaystackProductButton
+                    productName={product.name}
+                    onPaymentClick={() => handleProductClick(product)}
+                    loading={isProcessing}
+                    disabled={isProcessing}
+                  />
+                  
                   <button
                     onClick={() => handleWhatsAppOrder(product.name)}
-                    className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3.5 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800"
+                    className="w-full mt-3 bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
                   >
-                    <WhatsAppIcon size={20} />
-                    Order Now
+                    <WhatsAppIcon size={18} />
+                    Order via WhatsApp
                   </button>
                 </div>
               </div>
@@ -459,66 +707,9 @@ export default function TDGIPage() {
         </Container>
       </section>
 
-      {/* How to Order Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pb-20">
         <Container>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-                How to <span className="text-gold">Order</span>
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Multiple convenient ways to place your order
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white rounded-xl p-8 shadow-lg text-center border-2 border-gray-100 hover:border-green-500 transition-all duration-300">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <WhatsAppIcon size={36} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-dark-purple mb-3">WhatsApp Orders</h3>
-                <p className="text-gray-600 mb-4">Fast and easy ordering via WhatsApp</p>
-                <a 
-                  href="https://wa.me/2347069609892"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-green-600 font-bold hover:text-green-700 transition-colors"
-                >
-                  +234 706 960 9892
-                </a>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg text-center border-2 border-gray-100 hover:border-royal-purple transition-all duration-300">
-                <div className="w-20 h-20 bg-gradient-to-br from-royal-purple to-dark-purple rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-dark-purple mb-3">Online Payments</h3>
-                <p className="text-gray-600 mb-4">Secure payments via trusted platforms</p>
-                <div className="space-y-2">
-                  <p className="text-royal-purple font-semibold">Paystack</p>
-                  <p className="text-royal-purple font-semibold">Flutterwave</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg text-center border-2 border-gray-100 hover:border-gold transition-all duration-300">
-                <div className="w-20 h-20 bg-gradient-to-br from-gold to-accent-gold rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <EmailIcon size={36} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-dark-purple mb-3">Email Orders</h3>
-                <p className="text-gray-600 mb-4">Send your order details via email</p>
-                <a 
-                  href="mailto:toyinjato@gmail.com"
-                  className="inline-block text-gold font-bold hover:text-accent-gold transition-colors break-all"
-                >
-                  toyinjato@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-royal-purple to-dark-purple text-white rounded-2xl p-8 md:p-12 text-center">
+          <div className="bg-gradient-to-r from-royal-purple to-dark-purple text-white rounded-2xl p-8 md:p-12 text-center">
               <h3 className="text-3xl font-bold mb-4">Ready to Order?</h3>
               <p className="text-xl text-gray-100 mb-8">
                 Click the "Order on WhatsApp" button on any product or contact us directly
@@ -542,9 +733,17 @@ export default function TDGIPage() {
                 </a>
               </div>
             </div>
-          </div>
         </Container>
       </section>
+
+      {/* Product Purchase Modal */}
+      {selectedProduct && (
+        <ProductPurchaseModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onPurchase={handlePurchase}
+        />
+      )}
     </main>
   );
 }

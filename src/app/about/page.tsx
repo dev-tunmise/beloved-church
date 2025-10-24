@@ -71,14 +71,15 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left - Image */}
               <div className="relative">
-                <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="/images/beloved-full-logo.jpg"
-                    alt="Beloved New Beginning Ministries"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-dark-purple/30 to-transparent"></div>
+                <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-white p-8">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src="/images/beloved-full-logo.jpg"
+                      alt="Beloved New Beginning Ministries"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 {/* Decorative element */}
                 <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-gold/10 rounded-2xl -z-10"></div>
@@ -462,6 +463,127 @@ export default function AboutPage() {
                   backgroundImage: "url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1000')"
                 }}
               />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Church Gallery */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <div className="inline-block mb-4">
+              <span className="text-gold font-semibold text-sm uppercase tracking-wider">Our Community</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
+              Church Gallery
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Glimpses of our vibrant community in worship, fellowship, and service
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* Gallery Image 1 */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=800"
+                  alt="Sunday Worship Service"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-bold text-lg mb-1">Sunday Worship</h3>
+                  <p className="text-sm text-gray-200">Experiencing God's presence together</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 2 */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?q=80&w=800"
+                  alt="Prayer Meeting"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-bold text-lg mb-1">Prayer Meetings</h3>
+                  <p className="text-sm text-gray-200">Interceding with one heart and spirit</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 3 */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800"
+                  alt="Youth Fellowship"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-bold text-lg mb-1">Youth Fellowship</h3>
+                  <p className="text-sm text-gray-200">Raising the next generation for Christ</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 4 */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=800"
+                  alt="Community Outreach"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-bold text-lg mb-1">Community Outreach</h3>
+                  <p className="text-sm text-gray-200">Serving our community with love</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 5 */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=800"
+                  alt="Bible Study"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-bold text-lg mb-1">Bible Study</h3>
+                  <p className="text-sm text-gray-200">Growing deeper in God's Word</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 6 */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=800"
+                  alt="Worship Team"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-bold text-lg mb-1">Worship Team</h3>
+                  <p className="text-sm text-gray-200">Leading us into God's presence</p>
+                </div>
+              </div>
             </div>
           </div>
         </Container>

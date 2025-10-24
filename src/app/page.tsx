@@ -5,6 +5,7 @@ import { BookIcon, VideoIcon, EditIcon, LeafIcon, HeartIcon, GiftIcon, ArrowRigh
 import { getAllPosts } from "@/lib/api";
 import { PostPreview } from "@/app/_components/post-preview";
 import dynamic from "next/dynamic";
+import SermonCards from "@/app/_components/sermon-cards";
 
 // Dynamically import heavy components to reduce initial bundle size
 const TDGIProductsSection = dynamic(
@@ -98,7 +99,7 @@ export default async function Index() {
                   <HeartIcon size={28} className="text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-dark-purple text-lg">Prophetess Toyin Jato</p>
+                  <p className="font-bold text-dark-purple text-lg">(Evang.) Prophetess Oluwatoyin Jato</p>
                   <p className="text-gray-500 text-sm">Senior Prophetess</p>
                 </div>
               </div>
@@ -164,88 +165,7 @@ export default async function Index() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Sermon Card 1 */}
-            <div className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-48 bg-gradient-to-br from-royal-purple to-dark-purple overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <VideoIcon size={32} className="text-white" />
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-gold font-semibold mb-2 uppercase tracking-wider">October 6, 2025</div>
-                <h3 className="text-xl font-bold text-dark-purple mb-3 leading-tight">
-                  Walking in Purpose and Destiny
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Discover God's unique plan for your life and learn how to walk confidently in your divine purpose.
-                </p>
-                <Link
-                  href="/sermons"
-                  className="inline-flex items-center gap-2 text-royal-purple font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Watch Now
-                  <ArrowRightIcon size={16} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Sermon Card 2 */}
-            <div className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-48 bg-gradient-to-br from-gold to-accent-gold overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <VideoIcon size={32} className="text-white" />
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-gold font-semibold mb-2 uppercase tracking-wider">September 29, 2025</div>
-                <h3 className="text-xl font-bold text-dark-purple mb-3 leading-tight">
-                  The Power of Faith in Action
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Understanding how faith moves mountains and transforms impossible situations into divine opportunities.
-                </p>
-                <Link
-                  href="/sermons"
-                  className="inline-flex items-center gap-2 text-royal-purple font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Watch Now
-                  <ArrowRightIcon size={16} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Sermon Card 3 */}
-            <div className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="relative h-48 bg-gradient-to-br from-light-purple to-royal-purple overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <VideoIcon size={32} className="text-white" />
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-gold font-semibold mb-2 uppercase tracking-wider">September 22, 2025</div>
-                <h3 className="text-xl font-bold text-dark-purple mb-3 leading-tight">
-                  Living a Life of Worship
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Explore what it means to worship God not just in song, but through every aspect of your daily life.
-                </p>
-                <Link
-                  href="/sermons"
-                  className="inline-flex items-center gap-2 text-royal-purple font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Watch Now
-                  <ArrowRightIcon size={16} />
-                </Link>
-              </div>
-            </div>
-          </div>
+          <SermonCards />
         </Container>
       </section>
 

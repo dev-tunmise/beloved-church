@@ -136,7 +136,7 @@ Press `Ctrl + C` in the terminal
 
 ### To start it again:
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## 📝 Next Steps
@@ -197,7 +197,7 @@ npm run dev
 
 When ready to launch:
 ```bash
-npm run build
+pnpm run build
 ```
 
 **Deployment Options:**
@@ -271,10 +271,10 @@ All page layouts can be customized in their respective files in `src/app/`
 ## 🆘 Common Issues & Solutions
 
 ### Issue: "Module not found"
-**Solution:** Run `npm install --legacy-peer-deps`
+**Solution:** Run `pnpm install`
 
 ### Issue: Styles not showing
-**Solution:** Restart dev server (`Ctrl+C`, then `npm run dev`)
+**Solution:** Restart dev server (`Ctrl+C`, then `pnpm run dev`)
 
 ### Issue: Videos not playing
 **Solution:** Check YouTube video ID is correct and video is public
@@ -364,13 +364,13 @@ This website has been built with love and prayer for Beloved Church. May it serv
 npm install --legacy-peer-deps
 
 # Start development server
-npm run dev
+pnpm run dev
 
 # Build for production
-npm run build
+pnpm run build
 
 # Start production server
-npm start
+pnpm start
 ```
 
 **Current Status:** ✅ Development server is running at http://localhost:3000

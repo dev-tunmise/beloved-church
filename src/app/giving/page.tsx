@@ -3,18 +3,76 @@
 import Container from "@/app/_components/container";
 import { useState } from "react";
 import { GiftIcon, HeartIcon, GlobeIcon, ChurchIcon, CheckIcon } from "@/app/_components/icons";
+import { usePaystackDonation } from "@/hooks/usePaystackDonation";
+import { PaystackDonationButton } from "@/app/_components/paystack-button";
 
 export default function GivingPage() {
   const [amount, setAmount] = useState<string>("");
-  const [givingType, setGivingType] = useState<string>("tithe");
-  const [frequency, setFrequency] = useState<string>("one-time");
+  const [givingType, setGivingType] = useState<'tithe' | 'offering' | 'missions' | 'building'>("tithe");
+  const [frequency, setFrequency] = useState<'one-time' | 'monthly'>("one-time");
+  const [email, setEmail] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [isProcessing, setIsProcessing] = useState<boolean>(false);
 
-  const predefinedAmounts = [3000, 5000, 10000, 20000, 50000, 100000];
+  const { initializePayment, redirectToSuccess, isConfigured } = usePaystackDonation();
+
+  const predefinedAmounts = [10000, 20000, 50000, 100000, 300000, 500000];
+
+  const handlePaystackPayment = () => {
+    // Validate inputs
+    if (!amount || parseFloat(amount) <= 0) {
+      alert('Please enter a valid amount');
+      return;
+    }
+
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    if (!isConfigured) {
+      alert('Payment system is not configured. Please contact the administrator.');
+      return;
+    }
+
+    setIsProcessing(true);
+
+    // Payment success handler
+    const handleSuccess = (response: any) => {
+      console.log('Payment successful:', response);
+      setIsProcessing(false);
+      
+      // Redirect to success page
+      redirectToSuccess(response.reference, givingType, parseFloat(amount));
+    };
+
+    // Payment close handler
+    const handleClose = () => {
+      console.log('Payment modal closed');
+      setIsProcessing(false);
+    };
+
+    // Initialize Paystack payment
+    initializePayment(
+      {
+        amount: parseFloat(amount),
+        email,
+        firstName: firstName || undefined,
+        lastName: lastName || undefined,
+        phone: phone || undefined,
+        givingType,
+        frequency,
+      },
+      handleSuccess,
+      handleClose
+    );
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would integrate with your payment processor (Stripe, PayPal, etc.)
-    alert(`Thank you for your ${givingType} of ₦${amount}!`);
+    handlePaystackPayment();
   };
 
   return (
@@ -178,6 +236,68 @@ export default function GivingPage() {
               </div>
 
               <form onSubmit={handleSubmit}>
+                {/* Email Field */}
+                <div className="mb-8">
+                  <label htmlFor="email" className="block text-gray-700 font-bold mb-3 text-lg">
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none text-lg"
+                    required
+                  />
+                  <p className="text-sm text-gray-500 mt-2">Receipt will be sent to this email</p>
+                </div>
+
+                {/* Optional: Name Fields */}
+                <div className="mb-8 grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-gray-700 font-semibold mb-2">
+                      First Name (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="First name"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-gray-700 font-semibold mb-2">
+                      Last Name (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Last name"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Optional: Phone Field */}
+                <div className="mb-8">
+                  <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
+                    Phone Number (Optional)
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="+234 XXX XXX XXXX"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none"
+                  />
+                </div>
+
                 {/* Giving Type */}
                 <div className="mb-8">
                   <label className="block text-gray-700 font-bold mb-4 text-lg">
@@ -310,14 +430,13 @@ export default function GivingPage() {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={!amount || parseFloat(amount) <= 0}
-                  className="w-full bg-gradient-to-r from-gold to-accent-gold text-white py-5 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                >
-                  <GiftIcon size={24} />
-                  Proceed to Secure Payment
-                </button>
+                <PaystackDonationButton
+                  amount={parseFloat(amount) || 0}
+                  givingType={givingType}
+                  onPaymentClick={handlePaystackPayment}
+                  disabled={!amount || parseFloat(amount) <= 0 || !email || isProcessing}
+                  loading={isProcessing}
+                />
               </form>
 
               <div className="mt-6 text-center">
@@ -325,9 +444,9 @@ export default function GivingPage() {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
                   </svg>
-                  <p className="font-semibold">Secure SSL Encrypted Payment</p>
+                  <p className="font-semibold">Secure Paystack Payment Gateway</p>
                 </div>
-                <p className="text-sm text-gray-600">All transactions are encrypted and secure</p>
+                <p className="text-sm text-gray-600">Powered by Paystack - All transactions are encrypted and secure</p>
               </div>
             </div>
           </div>

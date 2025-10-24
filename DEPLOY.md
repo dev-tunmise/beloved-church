@@ -139,7 +139,7 @@ Before going live with real payments:
 **Solution:** 
 1. Check Vercel build logs
 2. Ensure all environment variables are set
-3. Run `npm run build` locally first
+3. Run `pnpm run build` locally first
 
 ### Environment Variables Not Working
 **Problem:** Stripe keys or site URL undefined  

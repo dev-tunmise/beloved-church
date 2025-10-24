@@ -17,6 +17,7 @@ A modern, full-featured church website built with Next.js 15, featuring blog pos
 
 ### Prerequisites
 - Node.js 18+ installed
+- pnpm package manager
 - Stripe account (for payments)
 - Git
 
@@ -28,7 +29,7 @@ git clone https://github.com/dev-tunmise/beloved-church.git
 cd beloved-church
 
 # Install dependencies
-npm install
+pnpm install
 
 # Copy environment variables
 copy .env.example .env.local
@@ -37,7 +38,7 @@ copy .env.example .env.local
 # Get Stripe keys from: https://dashboard.stripe.com/test/apikeys
 
 # Run development server
-npm run dev
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
