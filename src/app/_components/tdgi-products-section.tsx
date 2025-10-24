@@ -234,7 +234,7 @@ export function TDGIProductsSection() {
                 For attracting divine favour and open doors
               </p>
               <button
-                onClick={() => handleOrder('Favour Soap')}
+                onClick={() => handleWhatsAppOrder('Favour Soap')}
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -268,7 +268,7 @@ export function TDGIProductsSection() {
                 For receiving God's mercy and compassion
               </p>
               <button
-                onClick={() => handleOrder('Mercy Soap')}
+                onClick={() => handleWhatsAppOrder('Mercy Soap')}
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -302,7 +302,7 @@ export function TDGIProductsSection() {
                 For destroying spiritual barriers and unlocking success
               </p>
               <button
-                onClick={() => handleOrder('Breakthrough Soap')}
+                onClick={() => handleWhatsAppOrder('Breakthrough Soap')}
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -336,7 +336,7 @@ export function TDGIProductsSection() {
                 For productivity, abundance, and bearing lasting fruit
               </p>
               <button
-                onClick={() => handleOrder('Fruitfulness Soap')}
+                onClick={() => handleWhatsAppOrder('Fruitfulness Soap')}
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

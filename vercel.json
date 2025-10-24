@@ -1,6 +1,7 @@
 {
   "framework": "nextjs",
-  "installCommand": "npm install --legacy-peer-deps",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build",
   "headers": [
     {
       "source": "/api/(.*)",
