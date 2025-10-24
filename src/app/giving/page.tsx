@@ -6,6 +6,7 @@ import { GiftIcon, HeartIcon, GlobeIcon, ChurchIcon, CheckIcon } from "@/app/_co
 import { usePaystackDonation } from "@/hooks/usePaystackDonation";
 import { PaystackDonationButton } from "@/app/_components/paystack-button";
 
+// Giving page with Paystack integration - Updated Oct 2025
 export default function GivingPage() {
   const [amount, setAmount] = useState<string>("");
   const [givingType, setGivingType] = useState<'tithe' | 'offering' | 'missions' | 'building'>("tithe");
