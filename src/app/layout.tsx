@@ -1,4 +1,4 @@
-import Footer from "@/app/_components/footer";
+import { Footer } from "@/app/_components/footer";
 import Navigation from "@/app/_components/navigation";
 import WhatsAppButton from "@/app/_components/whatsapp-button";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
@@ -6,6 +6,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
 import { ThemeSwitcher } from "./_components/theme-switcher";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
+import { cookies } from 'next/headers';
+import { locales, type Locale } from '@/i18n';
 
 import "./globals.css";
 
@@ -30,13 +34,30 @@ export const viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Get locale from cookie or default to 'en'
+  let locale = 'en';
+  
+  try {
+    const cookieStore = await cookies();
+    const localeCookie = cookieStore.get('NEXT_LOCALE');
+    if (localeCookie && locales.includes(localeCookie.value as Locale)) {
+      locale = localeCookie.value;
+    }
+  } catch (error) {
+    // If cookies can't be read, use default 'en'
+    console.log('Using default locale');
+  }
+  
+  // Load messages for the selected locale
+  const messages = (await import(`../../messages/${locale}.json`)).default;
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <link
           rel="apple-touch-icon"
@@ -73,10 +94,12 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <Navigation />
-        <div className="min-h-screen">{children}</div>
-        <WhatsAppButton />
-        <Footer />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Navigation />
+          <div className="min-h-screen">{children}</div>
+          <WhatsAppButton />
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

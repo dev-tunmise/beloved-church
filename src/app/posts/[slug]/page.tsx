@@ -7,10 +7,12 @@ import Container from "@/app/_components/container";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
 import Link from "next/link";
+import { getTranslations } from 'next-intl/server';
 
 export default async function Post(props: Params) {
   const params = await props.params;
   const post = getPostBySlug(params.slug);
+  const t = await getTranslations('postDetail');
 
   if (!post) {
     return notFound();
@@ -30,7 +32,7 @@ export default async function Post(props: Params) {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Blog
+            {t('backToBlog')}
           </Link>
         </Container>
       </section>
@@ -51,16 +53,16 @@ export default async function Post(props: Params) {
           <section className="py-16 bg-gradient-to-r from-dark-purple via-royal-purple to-dark-purple rounded-2xl text-white">
             <div className="max-w-4xl mx-auto text-center px-6">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Enjoyed This Article?
+                {t('enjoyedArticle')}
               </h2>
               <p className="text-xl text-gray-100 mb-8">
-                Explore more inspiring content from our blog
+                {t('exploreMore')}
               </p>
               <Link
                 href="/blog"
                 className="inline-flex items-center justify-center gap-3 bg-gold text-dark-purple px-8 py-4 rounded-lg font-semibold hover:bg-accent-gold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                View All Posts
+                {t('viewAllPosts')}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

@@ -3,8 +3,10 @@
 import Container from "@/app/_components/container";
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 export default function CheckoutPage() {
+  const t = useTranslations('checkout');
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -34,19 +36,19 @@ export default function CheckoutPage() {
       <Container>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-royal-purple mb-8 text-center">
-            Checkout
+            {t('title')}
           </h1>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Checkout Form */}
             <div className="bg-white rounded-lg p-8">
               <h2 className="text-2xl font-bold text-royal-purple mb-6">
-                Shipping Information
+                {t('shippingInformation')}
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
-                    Full Name *
+                    {t('fullName')} *
                   </label>
                   <input
                     type="text"
@@ -60,7 +62,7 @@ export default function CheckoutPage() {
 
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
-                    Email *
+                    {t('email')} *
                   </label>
                   <input
                     type="email"
@@ -74,7 +76,7 @@ export default function CheckoutPage() {
 
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
-                    Phone *
+                    {t('phone')} *
                   </label>
                   <input
                     type="tel"
@@ -88,7 +90,7 @@ export default function CheckoutPage() {
 
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
-                    Address *
+                    {t('address')} *
                   </label>
                   <input
                     type="text"
@@ -103,7 +105,7 @@ export default function CheckoutPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
-                      City *
+                      {t('city')} *
                     </label>
                     <input
                       type="text"
@@ -116,7 +118,7 @@ export default function CheckoutPage() {
                   </div>
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
-                      State *
+                      {t('state')} *
                     </label>
                     <input
                       type="text"
@@ -132,7 +134,7 @@ export default function CheckoutPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
-                      Zip Code *
+                      {t('zipCode')} *
                     </label>
                     <input
                       type="text"
@@ -145,7 +147,7 @@ export default function CheckoutPage() {
                   </div>
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
-                      Country *
+                      {t('country')} *
                     </label>
                     <select
                       name="country"
@@ -154,22 +156,23 @@ export default function CheckoutPage() {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-royal-purple focus:outline-none"
                     >
-                      <option value="">Select Country</option>
-                      <option value="US">United States</option>
-                      <option value="CA">Canada</option>
-                      <option value="UK">United Kingdom</option>
-                      <option value="AU">Australia</option>
+                      <option value="">{t('country')}</option>
+                      <option value="US">{t('countries.us')}</option>
+                      <option value="CA">{t('countries.ca')}</option>
+                      <option value="UK">{t('countries.uk')}</option>
+                      <option value="AU">{t('countries.au')}</option>
+                      <option value="NG">{t('countries.ng')}</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="pt-4">
                   <h3 className="text-xl font-bold text-royal-purple mb-4">
-                    Payment Information
+                    {t('paymentInformation')}
                   </h3>
                   <div className="bg-gray-50 p-6 rounded-lg">
                     <p className="text-center text-gray-600 mb-4">
-                      Secure payment powered by Stripe
+                      {t('paymentSecure')}
                     </p>
                     {/* Stripe Elements would go here */}
                     <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
@@ -185,7 +188,7 @@ export default function CheckoutPage() {
                   type="submit"
                   className="w-full bg-gold text-white py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors mt-6"
                 >
-                  Complete Purchase
+                  {t('proceedPayment')}
                 </button>
               </form>
             </div>
@@ -194,7 +197,7 @@ export default function CheckoutPage() {
             <div>
               <div className="bg-white rounded-lg p-8 sticky top-4">
                 <h2 className="text-2xl font-bold text-royal-purple mb-6">
-                  Order Summary
+                  {t('orderSummary')}
                 </h2>
                 
                 {/* Sample items - replace with actual cart data */}
@@ -202,7 +205,7 @@ export default function CheckoutPage() {
                   <div className="flex justify-between items-center pb-4 border-b">
                     <div>
                       <p className="font-semibold">Herbal Healing Tea</p>
-                      <p className="text-sm text-gray-600">Qty: 1</p>
+                      <p className="text-sm text-gray-600">{t('quantity')}: 1</p>
                     </div>
                     <p className="font-bold">$24.99</p>
                   </div>
@@ -210,11 +213,11 @@ export default function CheckoutPage() {
 
                 <div className="space-y-2 mb-6">
                   <div className="flex justify-between text-gray-600">
-                    <span>Subtotal</span>
+                    <span>{t('subtotal')}</span>
                     <span>$24.99</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
-                    <span>Shipping</span>
+                    <span>{t('shipping')}</span>
                     <span className="text-green-600 font-semibold">FREE</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
@@ -223,7 +226,7 @@ export default function CheckoutPage() {
                   </div>
                   <div className="border-t pt-2 mt-2">
                     <div className="flex justify-between text-xl font-bold text-royal-purple">
-                      <span>Total</span>
+                      <span>{t('total')}</span>
                       <span>$26.99</span>
                     </div>
                   </div>

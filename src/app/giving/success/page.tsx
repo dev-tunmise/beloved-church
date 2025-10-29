@@ -5,8 +5,10 @@ import { useSearchParams } from 'next/navigation';
 import Container from "@/app/_components/container";
 import Link from "next/link";
 import { CheckIcon } from "@/app/_components/icons";
+import { useTranslations } from 'next-intl';
 
 export default function GivingSuccessPage() {
+  const t = useTranslations('givingSuccess');
   const searchParams = useSearchParams();
   const [paymentDetails, setPaymentDetails] = useState({
     reference: '',
@@ -61,11 +63,13 @@ export default function GivingSuccessPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-slide-up">
-              Thank You for Your <span className="text-gold">Generosity!</span>
+              {t.rich('hero.title', {
+                styled: (chunks) => <span className="text-gold">{chunks}</span>
+              })}
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto mb-8 animate-slide-up-delay">
-              Your payment has been received successfully
+              {t('hero.subtitle')}
             </p>
             
             {/* Decorative element */}
@@ -84,13 +88,13 @@ export default function GivingSuccessPage() {
               <div className="text-center mb-10">
                 <div className="inline-flex items-center justify-center gap-2 bg-green-100 text-green-800 px-6 py-3 rounded-full font-bold mb-6">
                   <CheckIcon size={24} className="text-green-600" />
-                  <span>Payment Successful</span>
+                  <span>{t('paymentConfirmation.statusSuccess')}</span>
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold text-dark-purple mb-4">
-                  Payment Confirmation
+                  {t('paymentConfirmation.title')}
                 </h2>
-                <p className="text-gray-600">Your transaction details</p>
+                <p className="text-gray-600">{t('paymentConfirmation.receiptSent')}</p>
               </div>
 
               {/* Payment Details Card */}
@@ -98,19 +102,19 @@ export default function GivingSuccessPage() {
                 <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-200">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <p className="text-sm text-gray-500 mb-2 font-semibold uppercase tracking-wide">Transaction Reference</p>
+                      <p className="text-sm text-gray-500 mb-2 font-semibold uppercase tracking-wide">{t('paymentConfirmation.reference')}</p>
                       <p className="text-lg font-bold text-royal-purple break-all">{paymentDetails.reference || 'N/A'}</p>
                     </div>
                     
                     <div>
-                      <p className="text-sm text-gray-500 mb-2 font-semibold uppercase tracking-wide">Giving Type</p>
+                      <p className="text-sm text-gray-500 mb-2 font-semibold uppercase tracking-wide">{t('paymentConfirmation.method')}</p>
                       <p className="text-lg font-bold text-dark-purple">{formatGivingType(paymentDetails.type)}</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-gold/10 to-accent-gold/10 rounded-xl p-6 border-2 border-gold/30">
-                  <p className="text-sm text-gray-600 mb-2 font-semibold uppercase tracking-wide text-center">Amount Paid</p>
+                  <p className="text-sm text-gray-600 mb-2 font-semibold uppercase tracking-wide text-center">{t('paymentConfirmation.amount')}</p>
                   <p className="text-4xl font-bold text-gold text-center">₦{formatAmount(paymentDetails.amount)}</p>
                 </div>
               </div>
@@ -125,7 +129,7 @@ export default function GivingSuccessPage() {
 
               {/* What's Next */}
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-dark-purple text-center">What Happens Next?</h3>
+                <h3 className="text-2xl font-bold text-dark-purple text-center">{t('whatsNext.title')}</h3>
                 
                 <div className="space-y-4">
                   <div className="flex gap-4 items-start">
@@ -133,8 +137,8 @@ export default function GivingSuccessPage() {
                       <span className="text-gold font-bold">1</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-dark-purple mb-1">Email Confirmation</h4>
-                      <p className="text-gray-600 text-sm">You'll receive a payment receipt via email shortly</p>
+                      <h4 className="font-bold text-dark-purple mb-1">{t('whatsNext.step1.title')}</h4>
+                      <p className="text-gray-600 text-sm">{t('whatsNext.step1.description')}</p>
                     </div>
                   </div>
 
@@ -143,8 +147,8 @@ export default function GivingSuccessPage() {
                       <span className="text-gold font-bold">2</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-dark-purple mb-1">Prayer & Blessing</h4>
-                      <p className="text-gray-600 text-sm">Your gift will be acknowledged in prayer by our pastoral team</p>
+                      <h4 className="font-bold text-dark-purple mb-1">{t('whatsNext.step2.title')}</h4>
+                      <p className="text-gray-600 text-sm">{t('whatsNext.step2.description')}</p>
                     </div>
                   </div>
 
@@ -153,8 +157,8 @@ export default function GivingSuccessPage() {
                       <span className="text-gold font-bold">3</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-dark-purple mb-1">Kingdom Impact</h4>
-                      <p className="text-gray-600 text-sm">Your generosity helps us spread the Gospel and support our community</p>
+                      <h4 className="font-bold text-dark-purple mb-1">{t('whatsNext.step3.title')}</h4>
+                      <p className="text-gray-600 text-sm">{t('whatsNext.step3.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -169,33 +173,30 @@ export default function GivingSuccessPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-purple mb-6">
-              Continue Your Journey With Us
+              {t('cta.title')}
             </h2>
-            <p className="text-xl text-gray-600 mb-10">
-              Explore more ways to connect and grow in faith
-            </p>
             
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link
-                href="/"
-                className="bg-gradient-to-br from-royal-purple to-dark-purple text-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300"
-              >
-                <svg className="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-                <h3 className="font-bold text-xl mb-2">Home</h3>
-                <p className="text-gray-200 text-sm">Return to homepage</p>
-              </Link>
-
+            <div className="grid md:grid-cols-3 gap-6 mt-10">
               <Link
                 href="/sermons"
-                className="bg-gradient-to-br from-gold to-accent-gold text-dark-purple p-8 rounded-xl hover:shadow-2xl transition-all duration-300"
+                className="bg-gradient-to-br from-royal-purple to-dark-purple text-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300"
               >
                 <svg className="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                <h3 className="font-bold text-xl mb-2">Watch Sermons</h3>
-                <p className="text-white text-sm">View latest messages</p>
+                <h3 className="font-bold text-xl mb-2">{t('cta.card1.title')}</h3>
+                <p className="text-gray-200 text-sm">{t('cta.card1.description')}</p>
+              </Link>
+
+              <Link
+                href="/blog"
+                className="bg-gradient-to-br from-gold to-accent-gold text-dark-purple p-8 rounded-xl hover:shadow-2xl transition-all duration-300"
+              >
+                <svg className="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <h3 className="font-bold text-xl mb-2">{t('cta.card2.title')}</h3>
+                <p className="text-white text-sm">{t('cta.card2.description')}</p>
               </Link>
 
               <Link
@@ -205,8 +206,8 @@ export default function GivingSuccessPage() {
                 <svg className="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <h3 className="font-bold text-xl mb-2">Contact Us</h3>
-                <p className="text-gray-200 text-sm">Get in touch</p>
+                <h3 className="font-bold text-xl mb-2">{t('cta.card3.title')}</h3>
+                <p className="text-gray-200 text-sm">{t('cta.card3.description')}</p>
               </Link>
             </div>
           </div>

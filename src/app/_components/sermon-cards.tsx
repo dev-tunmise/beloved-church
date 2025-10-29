@@ -10,14 +10,14 @@ export default function SermonCards() {
   const sermons = [
     {
       id: "iDMNslFItEc",
-      title: "Walking in Purpose and Destiny",
+      title: "God's Promise Against Delay - October 19, 2025",
       date: "October 6, 2025",
       description: "Discover God's unique plan for your life and learn how to walk confidently in your divine purpose."
     },
     {
-      id: "iDMNslFItEc",
-      title: "The Power of Faith in Action",
-      date: "September 29, 2025",
+      id: "wQfwgbzE5_A",
+      title: "Faith That Moves Mountains - October 26, 2025",
+      date: "September 28, 2025",
       description: "Understanding how faith moves mountains and transforms impossible situations into divine opportunities."
     },
     {

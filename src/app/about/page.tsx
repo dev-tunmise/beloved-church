@@ -1,5 +1,8 @@
+'use client';
+
 import Container from "@/app/_components/container";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 import { 
   PrayerIcon, 
   BookIcon, 
@@ -12,6 +15,8 @@ import {
 } from "@/app/_components/icons";
 
 export default function AboutPage() {
+  const t = useTranslations('about');
+  
   return (
     <main className="bg-white">
       {/* Hero Section */}
@@ -38,15 +43,15 @@ export default function AboutPage() {
             <div className="inline-block mb-6 animate-fade-in">
               <div className="flex items-center gap-3 justify-center">
                 <div className="h-px w-8 bg-gold"></div>
-                <span className="text-gold font-semibold text-sm uppercase tracking-wider">Our Story</span>
+                <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('hero.badge')}</span>
                 <div className="h-px w-8 bg-gold"></div>
               </div>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up">
-              About <span className="text-gold">Beloved New Beginning</span>
+              About <span className="text-gold">{t('hero.beloved')}</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto animate-slide-up-delay">
-              A community of believers walking in Royal Grace and Purity
+              {t('hero.subtitle')}
             </p>
             
             {/* Decorative element */}
@@ -89,25 +94,20 @@ export default function AboutPage() {
               {/* Right - Text */}
               <div>
                 <div className="inline-block mb-4">
-                  <span className="text-gold font-semibold text-sm uppercase tracking-wider">Who We Are</span>
+                  <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('aboutBnbm.badge')}</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-6 leading-tight">
-                  About <span className="text-gold">Beloved New Beginning Ministries</span>
+                  About <span className="text-gold">{t('aboutBnbm.beloved')}</span>
                 </h2>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                   <p>
-                    <strong className="text-royal-purple">Beloved New Beginning Ministries (BNBM)</strong> is a Spirit-filled, 
-                    Christ-centered ministry dedicated to spreading the gospel of Jesus Christ and transforming lives 
-                    through the power of God's Word.
+                    <strong className="text-royal-purple">{t('aboutBnbm.beloved')}</strong> {t('aboutBnbm.intro')}
                   </p>
                   <p>
-                    Founded under the prophetic leadership of <strong className="text-dark-purple">Prophetess Toyin Jato</strong>, 
-                    our ministry is a beacon of hope, healing, and restoration for believers seeking to walk in their divine 
-                    purpose and experience God's supernatural breakthrough.
+                    Founded under the prophetic leadership of <strong className="text-dark-purple">{t('aboutBnbm.prophetess')}</strong>, our ministry is a beacon of hope, healing, and restoration for believers seeking to walk in their divine purpose and experience God's supernatural breakthrough.
                   </p>
                   <p>
-                    We are committed to raising a generation of believers who walk in <strong className="text-gold">Royal Grace and Purity</strong>, 
-                    equipped with the knowledge of God's Word and empowered by the Holy Spirit to fulfill their God-given destiny.
+                    We are committed to raising a generation of believers who walk in <strong className="text-gold">{t('aboutBnbm.royalGrace')}</strong>, equipped with the knowledge of God's Word and empowered by the Holy Spirit to fulfill their God-given destiny.
                   </p>
                 </div>
 
@@ -129,11 +129,9 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-gold/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <GlobeIcon size={32} className="text-gold" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gold">Our Vision</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gold">{t('vision.title')}</h2>
                 <p className="text-lg leading-relaxed text-gray-100">
-                  To be a beacon of God's love, spreading the gospel of Jesus Christ to all nations,
-                  and raising a generation of believers who walk in righteousness, power, and divine purpose.
-                  We envision a church where every member is equipped to fulfill their God-given destiny.
+                  {t('vision.description')}
                 </p>
               </div>
             </div>
@@ -145,11 +143,9 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <ChurchIcon size={32} className="text-dark-purple" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('mission.title')}</h2>
                 <p className="text-lg leading-relaxed">
-                  To worship God in spirit and in truth, disciple believers to spiritual maturity,
-                  evangelize the lost, and serve our community with compassion and excellence.
-                  We are committed to transforming lives through the power of God's Word and the Holy Spirit.
+                  {t('mission.description')}
                 </p>
               </div>
             </div>
@@ -169,31 +165,23 @@ export default function AboutPage() {
               {/* Left - Text */}
               <div className="lg:pr-8">
                 <div className="inline-block mb-4">
-                  <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">Our Leader</span>
+                  <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('prophetess.badge')}</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-6 leading-tight">
-                  Prophetess <span className="text-gold">Toyin Jato</span>
+                  Prophetess <span className="text-gold">{t('prophetess.styled')}</span>
                 </h2>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                   <p>
-                    <strong className="text-royal-purple">Prophetess Toyin Jato</strong> is a woman of God with a powerful 
-                    prophetic calling and an unwavering passion for souls. She is the founder and Senior Prophetess of 
-                    <strong className="text-dark-purple"> Beloved New Beginning Ministries</strong>.
+                    <strong className="text-royal-purple">{t('prophetess.strong')}</strong> is a woman of God with a powerful prophetic calling and an unwavering passion for souls. She is the founder and Senior Prophetess of <strong className="text-dark-purple">{t('prophetess.ministry')}</strong>.
                   </p>
                   <p>
-                    With a heart ablaze for God's presence and a deep burden for the lost, she operates in the prophetic 
-                    with remarkable accuracy, bringing forth timely words of direction, comfort, and breakthrough to believers 
-                    across nations.
+                    {t('prophetess.paragraph2')}
                   </p>
                   <p>
-                    Her ministry is characterized by powerful worship, supernatural healings, deliverance from demonic 
-                    oppression, and life-changing testimonies. Through her leadership, countless individuals have experienced 
-                    divine restoration, financial breakthroughs, marital restoration, and freedom from generational curses.
+                    {t('prophetess.paragraph3')}
                   </p>
                   <p>
-                    Prophetess Toyin also founded <strong className="text-gold">TDGI Enterprise</strong> and 
-                    <strong className="text-royal-purple"> Toyin Jato Foundation International</strong>, extending her 
-                    ministry's impact through faith-based products and humanitarian outreach programs.
+                    Prophetess Toyin also founded <strong className="text-gold">{t('prophetess.tdgi')}</strong> and <strong className="text-royal-purple">{t('prophetess.foundation')}</strong>, extending her ministry's impact through faith-based products and humanitarian outreach programs.
                   </p>
                 </div>
 
@@ -207,7 +195,7 @@ export default function AboutPage() {
                   <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                     <img
                       src="/images/prophetess-toyin.jpg"
-                      alt="Prophetess Toyin Jato"
+                      alt={t('prophetess.styled')}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -216,10 +204,9 @@ export default function AboutPage() {
                     {/* Floating Quote Card */}
                     <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
                       <p className="text-royal-purple font-semibold italic text-sm leading-relaxed">
-                        "I am called to raise a generation that walks in Royal Grace and Purity, 
-                        empowered by the Holy Spirit to fulfill their divine destiny."
+                        {t('prophetess.quote')}
                       </p>
-                      <p className="text-gold font-bold mt-2 text-sm">- Prophetess Toyin Jato</p>
+                      <p className="text-gold font-bold mt-2 text-sm">{t('prophetess.quoteAuthor')}</p>
                     </div>
                   </div>
                   
@@ -238,13 +225,13 @@ export default function AboutPage() {
         <Container>
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <div className="inline-block mb-4">
-              <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">What We Stand For</span>
+              <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('values.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-              Our Core Values
+              {t('values.title')}
             </h2>
             <p className="text-gray-600 text-lg">
-              These principles guide everything we do as a church community
+              {t('values.subtitle')}
             </p>
           </div>
           
@@ -254,9 +241,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-gradient-to-br from-royal-purple to-dark-purple rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <PrayerIcon size={28} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-3">Prayer</h3>
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">{t('values.prayer.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                We believe in the power of prayer and seek God's guidance in all we do. Prayer is the foundation of our ministry.
+                {t('values.prayer.description')}
               </p>
             </div>
             
@@ -265,9 +252,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-gradient-to-br from-gold to-accent-gold rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <BookIcon size={28} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-3">The Word</h3>
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">{t('values.word.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                The Bible is our foundation and guide for life and ministry. We stand firmly on God's unchanging Word.
+                {t('values.word.description')}
               </p>
             </div>
             
@@ -276,9 +263,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-gradient-to-br from-royal-purple to-dark-purple rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <HeartIcon size={28} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-3">Love</h3>
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">{t('values.love.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                We demonstrate God's love through our actions and service to others, showing Christ's compassion to all.
+                {t('values.love.description')}
               </p>
             </div>
             
@@ -287,9 +274,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-gradient-to-br from-gold to-accent-gold rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <StarIcon size={28} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-3">Excellence</h3>
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">{t('values.excellence.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                We strive for excellence in everything, honoring God with our best and highest standards.
+                {t('values.excellence.description')}
               </p>
             </div>
             
@@ -298,9 +285,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-gradient-to-br from-royal-purple to-dark-purple rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <UsersIcon size={28} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-3">Community</h3>
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">{t('values.community.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                We foster authentic relationships and support one another in love, creating a family atmosphere.
+                {t('values.community.description')}
               </p>
             </div>
             
@@ -309,160 +296,10 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-gradient-to-br from-gold to-accent-gold rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <GlobeIcon size={28} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-3">Mission</h3>
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">{t('values.mission.title')}</h3>
               <p className="text-gray-600 leading-relaxed">
-                We are passionate about reaching the world with the Gospel of Christ and making disciples of all nations.
+                {t('values.mission.description')}
               </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Leadership */}
-      <section className="py-20 bg-white">
-        <Container>
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <div className="inline-block mb-4">
-              <span className="text-gold font-semibold text-sm uppercase tracking-wider">Meet Our Team</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-              Our Leadership
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Dedicated servants committed to leading with integrity and compassion
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Prophetess */}
-            <div className="group">
-              <div className="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
-                <div className="aspect-square bg-gradient-to-br from-royal-purple to-dark-purple">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      backgroundImage: "url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400')"
-                    }}
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-1">Prophetess Toyin Jato</h3>
-              <p className="text-gold font-semibold mb-3">Senior Prophetess & Founder</p>
-              <p className="text-gray-600 leading-relaxed">
-                Leading with prophetic vision and passion, guiding the church with wisdom and love.
-              </p>
-            </div>
-            
-            {/* Pastor/Leader 2 */}
-            <div className="group">
-              <div className="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
-                <div className="aspect-square bg-gradient-to-br from-gold to-accent-gold">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      backgroundImage: "url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400')"
-                    }}
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-1">Pastor Emmanuel</h3>
-              <p className="text-gold font-semibold mb-3">Associate Pastor</p>
-              <p className="text-gray-600 leading-relaxed">
-                Dedicated to discipleship and spiritual growth, nurturing believers in their faith journey.
-              </p>
-            </div>
-            
-            {/* Leader 3 */}
-            <div className="group">
-              <div className="relative overflow-hidden rounded-2xl mb-6 shadow-xl">
-                <div className="aspect-square bg-gradient-to-br from-royal-purple to-dark-purple">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      backgroundImage: "url('https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400')"
-                    }}
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-dark-purple mb-1">Minister Grace</h3>
-              <p className="text-gold font-semibold mb-3">Worship Leader</p>
-              <p className="text-gray-600 leading-relaxed">
-                Leading worship with passion and excellence, ushering in God's presence through praise.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* What We Believe */}
-      <section className="py-20 bg-gray-50">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div>
-              <div className="inline-block mb-4">
-                <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">Our Faith</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-6 leading-tight">
-                What We Believe
-              </h2>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center mt-1">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-dark-purple mb-2">The Holy Trinity</h3>
-                    <p className="text-gray-600">One God existing in three persons: Father, Son, and Holy Spirit.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center mt-1">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-dark-purple mb-2">The Bible</h3>
-                    <p className="text-gray-600">The inspired, infallible Word of God and our ultimate authority.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center mt-1">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-dark-purple mb-2">Salvation Through Christ</h3>
-                    <p className="text-gray-600">Salvation is by grace through faith in Jesus Christ alone.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center mt-1">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-dark-purple mb-2">The Power of the Holy Spirit</h3>
-                    <p className="text-gray-600">We believe in the baptism and gifts of the Holy Spirit for believers today.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1000')"
-                }}
-              />
             </div>
           </div>
         </Container>
@@ -473,116 +310,122 @@ export default function AboutPage() {
         <Container>
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <div className="inline-block mb-4">
-              <span className="text-gold font-semibold text-sm uppercase tracking-wider">Our Community</span>
+              <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('gallery.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-              Church Gallery
+              {t('gallery.title')}
             </h2>
             <p className="text-gray-600 text-lg">
-              Glimpses of our vibrant community in worship, fellowship, and service
+              {t('gallery.subtitle')}
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {/* Gallery Image 1 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[4/3]">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Gallery Image 1 - Prophetess Oluwatoyin */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=800"
-                  alt="Sunday Worship Service"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="/images/prophetess-oluwatoyin.jpg"
+                  alt={t('gallery.item1.title')}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bold text-lg mb-1">Sunday Worship</h3>
-                  <p className="text-sm text-gray-200">Experiencing God's presence together</p>
-                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="font-bold text-xl text-dark-purple mb-2">{t('gallery.item1.title')}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {t('gallery.item1.description')}
+                </p>
               </div>
             </div>
 
-            {/* Gallery Image 2 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[4/3]">
+            {/* Gallery Image 2 - Prophetess and Husband */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?q=80&w=800"
-                  alt="Prayer Meeting"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="/images/proophetess-and-husband.jpg"
+                  alt={t('gallery.item2.title')}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bold text-lg mb-1">Prayer Meetings</h3>
-                  <p className="text-sm text-gray-200">Interceding with one heart and spirit</p>
-                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="font-bold text-xl text-dark-purple mb-2">{t('gallery.item2.title')}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {t('gallery.item2.description')}
+                </p>
               </div>
             </div>
 
-            {/* Gallery Image 3 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[4/3]">
+            {/* Gallery Image 3 - Prophetess and Members */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800"
-                  alt="Youth Fellowship"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="/images/prophetess-and-members.jpg"
+                  alt={t('gallery.item3.title')}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bold text-lg mb-1">Youth Fellowship</h3>
-                  <p className="text-sm text-gray-200">Raising the next generation for Christ</p>
-                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="font-bold text-xl text-dark-purple mb-2">{t('gallery.item3.title')}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {t('gallery.item3.description')}
+                </p>
               </div>
             </div>
 
-            {/* Gallery Image 4 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[4/3]">
+            {/* Gallery Image 4 - Prophetess and Excellent Men */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=800"
-                  alt="Community Outreach"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="/images/prophetess-and-excellent-men.jpg"
+                  alt={t('gallery.item4.title')}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bold text-lg mb-1">Community Outreach</h3>
-                  <p className="text-sm text-gray-200">Serving our community with love</p>
-                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="font-bold text-xl text-dark-purple mb-2">{t('gallery.item4.title')}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {t('gallery.item4.description')}
+                </p>
               </div>
             </div>
 
-            {/* Gallery Image 5 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[4/3]">
+            {/* Gallery Image 5 - Prophetess and Good Women */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=800"
-                  alt="Bible Study"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="/images/prophetess-and-good-women.jpg"
+                  alt={t('gallery.item5.title')}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bold text-lg mb-1">Bible Study</h3>
-                  <p className="text-sm text-gray-200">Growing deeper in God's Word</p>
-                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="font-bold text-xl text-dark-purple mb-2">{t('gallery.item5.title')}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {t('gallery.item5.description')}
+                </p>
               </div>
             </div>
 
-            {/* Gallery Image 6 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-[4/3]">
+            {/* Gallery Image 6 - Prophetess and Women */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=800"
-                  alt="Worship Team"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="/images/prophetess-and-women.jpg"
+                  alt={t('gallery.item6.title')}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/80 via-dark-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-bold text-lg mb-1">Worship Team</h3>
-                  <p className="text-sm text-gray-200">Leading us into God's presence</p>
-                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="font-bold text-xl text-dark-purple mb-2">{t('gallery.item6.title')}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {t('gallery.item6.description')}
+                </p>
               </div>
             </div>
           </div>
@@ -594,25 +437,24 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Join Our <span className="text-gold">Church Family</span>
+              Join Our <span className="text-gold">{t('cta.styled')}</span>
             </h2>
             <p className="text-xl text-gray-100 mb-10 leading-relaxed">
-              Whether you're new to faith or looking for a church home, we'd love to welcome you.
-              Experience authentic worship, solid biblical teaching, and a community that cares.
+              {t('cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-dark-purple px-8 py-4 rounded-lg font-semibold hover:bg-accent-gold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Contact Us
+                {t('cta.contactUs')}
                 <ArrowRightIcon size={18} />
               </Link>
               <Link
                 href="/sermons"
                 className="inline-flex items-center justify-center gap-2 bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-purple transition-all duration-300"
               >
-                Watch Sermons
+                {t('cta.watchSermons')}
                 <ArrowRightIcon size={18} />
               </Link>
             </div>

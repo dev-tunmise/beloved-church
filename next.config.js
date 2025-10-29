@@ -63,4 +63,6 @@ const nextConfig = {
   // Configure headers in Cloudflare Pages settings instead
 };
 
-module.exports = nextConfig;
+const withNextIntl = require('next-intl/plugin')('./src/i18n.ts');
+
+module.exports = withNextIntl(nextConfig);

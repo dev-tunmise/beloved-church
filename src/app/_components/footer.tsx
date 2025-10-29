@@ -1,8 +1,14 @@
+'use client';
+
 import Container from "@/app/_components/container";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
+  const t = useTranslations('footer');
+  const tNav = useTranslations('nav');
+  
   return (
     <footer className="bg-dark-purple text-white">
       <Container>
@@ -19,10 +25,9 @@ export function Footer() {
                     className="object-contain"
                   />
                 </div>
-                {/* <span className="text-xl font-bold">Beloved New Beginning Ministries</span> */}
               </div>
               <p className="text-gray-200 text-sm mb-4">
-                Walking in Royal Grace and Purity. Spreading God's love to all nations.
+                {t('aboutText')}
               </p>
               <div>
                 <div className="flex gap-3">
@@ -65,26 +70,26 @@ export function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-bold text-lg mb-4 text-gold">Quick Links</h3>
+              <h3 className="font-bold text-lg mb-4 text-gold">{t('quickLinks')}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/about" className="text-gray-200 hover:text-gold transition-colors">
-                    About Us
+                    {tNav('about')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/sermons" className="text-gray-200 hover:text-gold transition-colors">
-                    Sermons
+                    {tNav('sermons')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/blog" className="text-gray-200 hover:text-gold transition-colors">
-                    Blog
+                    {tNav('blog')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/giving" className="text-gray-200 hover:text-gold transition-colors">
-                    Give
+                    {tNav('giving')}
                   </Link>
                 </li>
               </ul>
@@ -92,7 +97,7 @@ export function Footer() {
 
             {/* Contact Info */}
             <div>
-              <h3 className="font-bold text-lg mb-4 text-gold">Contact</h3>
+              <h3 className="font-bold text-lg mb-4 text-gold">{tNav('contact')}</h3>
               <ul className="space-y-2 text-sm text-gray-200">
                 <li>6 Ibrahim Alade Street</li>
                 <li>Erunwen, Ikorodu, Lagos</li>
@@ -115,7 +120,7 @@ export function Footer() {
           {/* Bottom Bar */}
           <div className="border-t border-white/20 pt-6 text-center text-sm text-gray-300">
             <p>
-              © {new Date().getFullYear()} Beloved New Beginning Ministries. All rights reserved.
+              {t('copyright', { year: new Date().getFullYear() })}
             </p>
             <p className="mt-2">
               Developed by <a href="https://websetly.com" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-200 transition-colors">Websetly</a>
@@ -126,5 +131,3 @@ export function Footer() {
     </footer>
   );
 }
-
-export default Footer;

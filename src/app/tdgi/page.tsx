@@ -3,6 +3,7 @@
 import Container from "@/app/_components/container";
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 import { LeafIcon, CheckIcon, StarIcon, HeartIcon } from "@/app/_components/icons";
 import { usePaystackProduct } from "@/hooks/usePaystackProduct";
 import { PaystackProductButton } from "@/app/_components/paystack-button";
@@ -38,7 +39,7 @@ const products = [
     scriptureText: "For surely, O LORD, you bless the righteous; you surround them with your favor as with a shield.",
     image: "/images/favor-soap.png",
     category: "Soaps",
-    price: 5000 // Add price in Naira
+    price: 63500 // Add price in Naira
   },
   {
     id: 2,
@@ -48,7 +49,7 @@ const products = [
     scriptureText: "May the LORD answer you when you are in distress; may the name of the God of Jacob protect you.",
     image: "/images/connection-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 72300
   },
   {
     id: 3,
@@ -58,7 +59,7 @@ const products = [
     scriptureText: "I will go before you and will level the mountains; I will break down gates of bronze and cut through bars of iron.",
     image: "/images/breakthrough-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 48100
   },
   {
     id: 4,
@@ -68,7 +69,7 @@ const products = [
     scriptureText: "Because of the LORD's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
     image: "/images/mercy-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 93200
   },
   {
     id: 5,
@@ -78,7 +79,7 @@ const products = [
     scriptureText: "Is anyone among you sick? Let them call the elders of the church to pray over them and anoint them with oil in the name of the Lord.",
     image: "/images/glory-oil.png",
     category: "Oils & Liquids",
-    price: 8000
+    price: 32500
   },
   {
     id: 6,
@@ -88,7 +89,7 @@ const products = [
     scriptureText: "Is there no balm in Gilead? Is there no physician there? Why then is there no healing for the wound of my people?",
     image: "/images/destiny-helper-balm.png",
     category: "Balms",
-    price: 6000
+    price: 42300
   },
   {
     id: 7,
@@ -98,7 +99,7 @@ const products = [
     scriptureText: "He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free.",
     image: "/images/deliverance-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 52400
   },
   {
     id: 8,
@@ -108,7 +109,7 @@ const products = [
     scriptureText: "See, I am doing a new thing! Now it springs up; do you not perceive it? I am making a way in the wilderness and streams in the wasteland.",
     image: "/images/divine-settlement-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 61200
   },
   {
     id: 9,
@@ -118,7 +119,7 @@ const products = [
     scriptureText: "God blessed them and said to them, 'Be fruitful and increase in number; fill the earth and subdue it.'",
     image: "/images/fruitfulness-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 72300
   },
   {
     id: 10,
@@ -128,7 +129,7 @@ const products = [
     scriptureText: "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
     image: "/images/peace-and-calm-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 69400
   },
   {
     id: 11,
@@ -138,7 +139,7 @@ const products = [
     scriptureText: "He who finds a wife finds what is good and receives favor from the LORD.",
     image: "/images/love-and-married-favour-soap.png",
     category: "Soaps",
-    price: 5000
+    price: 72500
   },
   {
     id: 12,
@@ -148,7 +149,7 @@ const products = [
     scriptureText: "Because of the LORD's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
     image: "/images/morning-glory-oil.png",
     category: "Oils & Liquids",
-    price: 8000
+    price: 33300
   },
   {
     id: 13,
@@ -158,7 +159,7 @@ const products = [
     scriptureText: "Now Daniel so distinguished himself among the administrators and the satraps by his exceptional qualities that the king planned to set him over the whole kingdom.",
     image: "/images/spirit-of-excellence-oil.png",
     category: "Oils & Liquids",
-    price: 8000
+    price: 78400
   },
   {
     id: 14,
@@ -168,7 +169,7 @@ const products = [
     scriptureText: "Is not this the kind of fasting I have chosen: to loose the chains of injustice and untie the cords of the yoke, to set the oppressed free and break every yoke?",
     image: "/images/break-every-chain-balm.png",
     category: "Balms",
-    price: 6000
+    price: 42500
   },
   {
     id: 15,
@@ -178,7 +179,17 @@ const products = [
     scriptureText: "To bestow on them a crown of beauty instead of ashes, the oil of joy instead of mourning, and a garment of praise instead of a spirit of despair.",
     image: "/images/crown-of-glory-balm.png",
     category: "Balms",
-    price: 6000
+    price: 38300
+  },
+  {
+    id: 16,
+    name: "Ulcer Herbal Product",
+    purpose: "For natural healing and relief from ulcer symptoms",
+    scripture: "3 John 1:2",
+    scriptureText: "Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers.",
+    image: "/images/ulcer-herbal-product.png",
+    category: "Herbal Products",
+    price: 82400
   },
 ];
 
@@ -192,6 +203,7 @@ function ProductPurchaseModal({
   onClose: () => void; 
   onPurchase: (email: string, name: string, phone: string) => void;
 }) {
+  const t = useTranslations('tdgi.modal');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -199,7 +211,7 @@ function ProductPurchaseModal({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !email.includes('@')) {
-      alert('Please enter a valid email');
+      alert(t('validEmailError'));
       return;
     }
     onPurchase(email, name, phone);
@@ -226,14 +238,14 @@ function ProductPurchaseModal({
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-semibold text-dark-purple mb-2">
-              Email Address <span className="text-red-500">*</span>
+              {t('emailLabel')} <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
+              placeholder={t('emailPlaceholder')}
               className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
               required
             />
@@ -241,28 +253,28 @@ function ProductPurchaseModal({
 
           <div>
             <label htmlFor="name" className="block text-sm font-semibold text-dark-purple mb-2">
-              Full Name (Optional)
+              {t('nameLabel')}
             </label>
             <input
               type="text"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Your name"
+              placeholder={t('namePlaceholder')}
               className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
             />
           </div>
 
           <div>
             <label htmlFor="phone" className="block text-sm font-semibold text-dark-purple mb-2">
-              Phone Number (Optional)
+              {t('phoneLabel')}
             </label>
             <input
               type="tel"
               id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="+234 XXX XXX XXXX"
+              placeholder={t('phonePlaceholder')}
               className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:outline-none"
             />
           </div>
@@ -271,12 +283,12 @@ function ProductPurchaseModal({
             type="submit"
             className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white py-4 rounded-lg font-bold hover:shadow-xl transition-all duration-300"
           >
-            Proceed to Payment
+            {t('proceedPayment')}
           </button>
         </form>
 
         <p className="text-xs text-gray-500 text-center mt-4">
-          After payment, you'll be redirected to WhatsApp to complete your order
+          {t('footerNote')}
         </p>
       </div>
     </div>
@@ -284,6 +296,7 @@ function ProductPurchaseModal({
 }
 
 export default function TDGIPage() {
+  const t = useTranslations('tdgi');
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -295,13 +308,13 @@ export default function TDGIPage() {
     : products.filter(product => product.category === selectedCategory);
 
   const handleProductClick = (product: typeof products[0]) => {
-    if (!isConfigured) {
-      alert('Payment system is not configured. Please contact us via WhatsApp to place your order.');
-      const message = encodeURIComponent(`Hello, I would like to order: ${product.name} - ₦${product.price.toLocaleString()}`);
-      window.open(`https://wa.me/2347069609892?text=${message}`, '_blank');
-      return;
-    }
-    setSelectedProduct(product);
+    // Redirect to checkout page with product details
+    const productQuery = encodeURIComponent(JSON.stringify({
+      name: product.name,
+      price: product.price,
+      category: product.category
+    }));
+    window.location.href = `/checkout?product=${productQuery}`;
   };
 
   const handlePurchase = (email: string, name: string, phone: string) => {
@@ -359,15 +372,17 @@ export default function TDGIPage() {
             <div className="inline-block mb-6 animate-fade-in">
               <div className="flex items-center gap-3 justify-center">
                 <div className="h-px w-8 bg-gold"></div>
-                <span className="text-gold font-semibold text-sm uppercase tracking-wider">Anointed Products</span>
+                <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('hero.badge')}</span>
                 <div className="h-px w-8 bg-gold"></div>
               </div>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up">
-              Faith-Based <span className="text-gold">Products</span>
+              {t.rich('hero.title', {
+                products: (chunks) => <span className="text-gold">{chunks}</span>
+              })}
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto animate-slide-up-delay">
-              Blessed, anointed tools for healing, favour, and breakthrough
+              {t('hero.subtitle')}
             </p>
             
             {/* Decorative element */}
@@ -386,193 +401,156 @@ export default function TDGIPage() {
       </section>
 
       {/* About TDGI Enterprise Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white via-gray-50/30 to-white overflow-hidden">
         <Container>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block mb-4">
-                <span className="text-gold font-semibold text-sm uppercase tracking-wider">Our Story</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-6">
-                About <span className="text-gold">TDGI Enterprise</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                The official product arm of Prophetess Toyin Jato's ministry, bringing faith-based solutions to believers worldwide
-              </p>
-            </div>
 
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              {/* Left Column - Story */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-royal-purple/5 to-gold/5 rounded-2xl p-8 border border-gold/20">
-                  <h3 className="text-2xl font-bold text-dark-purple mb-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center">
-                      <BookIcon size={20} className="text-gold" />
+
+            {/* Who We Are - Image Right, Content Left */}
+            <div className="mb-24">
+              <div className="grid mx-auto lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Content */}
+                <div className="space-y-6">
+                  <div className="inline-block">
+                    <div className="flex items-center">
+                      
+                      <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('aboutUs.badge')}</span>
                     </div>
-                    Who We Are
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    <strong className="text-royal-purple">TDGI Enterprise (RC:3603675)</strong> is the registered product division of 
-                    <strong className="text-dark-purple"> Beloved New Beginning Ministries</strong>, operating in partnership with 
-                    <strong className="text-royal-purple"> Toyin Jato Foundation International</strong>.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    Under the spiritual leadership of <strong className="text-gold">Prophetess Toyin Jato</strong>, 
-                    we produce divinely inspired, faith-based products that serve as spiritual tools for healing, 
-                    breakthrough, favor, and divine connection.
-                  </p>
-                </div>
-
-                <div className="bg-gradient-to-br from-royal-purple/5 to-gold/5 rounded-2xl p-8 border border-gold/20">
-                  <h3 className="text-2xl font-bold text-dark-purple mb-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-royal-purple/20 flex items-center justify-center">
-                      <HeartIcon size={20} className="text-royal-purple" />
-                    </div>
-                    Our Mission
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    To provide anointed, scripture-based products that empower believers to activate their faith, 
-                    receive divine healing, attract supernatural favor, and experience breakthrough in every area of life. 
-                    Each product is prayerfully created and blessed to serve as a point of contact for miracles.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column - What Makes Us Different */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-dark-purple to-royal-purple rounded-2xl p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-6">What Makes TDGI Different</h3>
+                  </div>
                   
-                  <div className="space-y-5">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center">
-                        <StarIcon size={24} className="text-gold" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gold mb-1">Prayerfully Blessed</h4>
-                        <p className="text-gray-200 text-sm">Every product goes through intense prayer and spiritual consecration before reaching you</p>
-                      </div>
-                    </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-dark-purple leading-tight">
+                    {t.rich('aboutUs.title', {
+                      are: (chunks) => <span className="text-gold">{chunks}</span>
+                    })}
+                  </h3>
+                  
+                  <div className="space-y-4 text-lg leading-relaxed text-gray-700">
+                    <p>
+                      {t.rich('aboutUs.paragraph1', {
+                        tdgi: (chunks) => <span className="font-bold bg-gradient-to-r from-royal-purple to-dark-purple bg-clip-text text-transparent">{chunks}</span>,
+                        bnbm: (chunks) => <span className="font-semibold text-dark-purple">{chunks}</span>,
+                        tjfi: (chunks) => <span className="font-semibold text-royal-purple">{chunks}</span>
+                      })}
+                    </p>
+                    <p>
+                      {t.rich('aboutUs.paragraph2', {
+                        prophetess: (chunks) => <span className="font-bold text-gold">{chunks}</span>
+                      })}
+                    </p>
+                  </div>
 
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center">
-                        <BookIcon size={24} className="text-gold" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gold mb-1">Scripture-Rooted</h4>
-                        <p className="text-gray-200 text-sm">Each product is anchored in specific Bible verses and divine promises from God's Word</p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center">
-                        <CheckIcon size={24} className="text-gold" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gold mb-1">Faith Activation</h4>
-                        <p className="text-gray-200 text-sm">Designed as contact points to activate your faith and release God's power in your life</p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center">
-                        <LeafIcon size={24} className="text-gold" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gold mb-1">Quality & Purity</h4>
-                        <p className="text-gray-200 text-sm">Made with high-quality, natural ingredients combined with spiritual anointing</p>
-                      </div>
-                    </div>
+                  <div className="pt-4">
+                    <p className="text-royal-purple font-semibold text-base italic inline-block bg-royal-purple/5 px-6 py-4 rounded-xl">
+                      "{t('aboutUs.quote')}"
+                    </p>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-gold/10 to-accent-gold/10 rounded-2xl p-8 border-2 border-gold/30">
-                  <h3 className="text-xl font-bold text-dark-purple mb-3">Our Commitment</h3>
-                  <p className="text-gray-700 leading-relaxed text-sm mb-4">
-                    We are committed to maintaining the highest standards of spiritual integrity and product quality. 
-                    Every item is produced with excellence, blessed with prayer, and sent forth with faith for your breakthrough.
-                  </p>
-                  <p className="text-royal-purple font-semibold text-sm italic">
-                    "These products are not just commodities—they are spiritual tools consecrated for your victory."
-                  </p>
+                {/* Image */}
+                <div className="relative lg:order-last">
+                  <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-royal-purple/20 rounded-2xl blur-2xl"></div>
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069"
+                      alt="Faith-based products and spiritual tools"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/20 to-transparent"></div>
+                  </div>
+                  
+                  
                 </div>
               </div>
             </div>
 
-            {/* Registration Info Banner */}
-            <div className="bg-gradient-to-r from-royal-purple to-dark-purple rounded-2xl p-8 text-center text-white">
-              <div className="max-w-3xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                  Registered & Officially Recognized
-                </h3>
-                <p className="text-gray-200 text-lg mb-2">
-                  <strong className="text-gold">TDGI Enterprise</strong> is officially registered with the Corporate Affairs Commission
-                </p>
-                <p className="text-gold font-bold text-xl">
-                  RC: 3603675
-                </p>
-                <div className="mt-6 pt-6 border-t border-white/20">
-                  <p className="text-gray-300 text-sm">
-                    A legitimate business entity operating under <strong>Beloved New Beginning Ministries</strong> in partnership with <strong>Toyin Jato Foundation International</strong>
-                  </p>
+            {/* Our Mission - Image Left, Content Right */}
+            <div className="mb-24">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Image */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-royal-purple/20 to-dark-purple/20 rounded-2xl blur-2xl"></div>
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070"
+                      alt="People in worship and prayer"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-royal-purple/30 to-transparent"></div>
+                  </div>
+                  {/* Floating element */}
+                  
                 </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
 
-      {/* Mission Statement */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <Container>
-          <div className="max-w-5xl mx-auto">
-            {/* TDGI Enterprise Introduction */}
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-dark-purple mb-4">
-                Product Philosophy
-              </h2>
-              <p className="text-xl text-gray-600 mb-6">
-                Faith-based tools for your spiritual journey
-              </p>
-              
-              <div className="bg-gradient-to-br from-royal-purple/10 to-gold/10 rounded-2xl p-8 md:p-10 border-2 border-gold/30 max-w-4xl mx-auto">
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Each TDGI product is <strong className="text-royal-purple">divinely inspired</strong>, 
-                  <strong className="text-dark-purple"> prayerfully produced</strong>, and dedicated to the spiritual and physical well-being of believers worldwide.
-                </p>
-                <div className="pt-6 border-t border-gold/30">
-                  <p className="text-base md:text-lg text-gray-700 italic">
-                    Every product is blessed, anointed, and serves as a <strong className="text-gold">faith point</strong> for healing, favour, 
-                    connection, and breakthroughs in your life.
+                {/* Content */}
+                <div className="space-y-6 lg:order-last">
+                  <div className="inline-block">
+                    <div className="flex items-center">
+                      
+                      <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('mission.badge')}</span>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-3xl md:text-4xl font-bold text-dark-purple leading-tight">
+                    {t.rich('mission.title', {
+                      mission: (chunks) => <span className="text-royal-purple">{chunks}</span>
+                    })}
+                  </h3>
+                  
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    {t('mission.paragraph1')}
                   </p>
+
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    {t('mission.paragraph2')}
+                  </p>
+
+                  {/* Mini features */}
+                  
                 </div>
               </div>
             </div>
 
-            {/* Three Pillars */}
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-royal-purple to-dark-purple rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <StarIcon size={28} className="text-white" />
+            {/* Registration Info - Modern Badge Style */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-royal-purple/5 via-dark-purple/5 to-royal-purple/5 rounded-2xl"></div>
+              <div className="relative bg-white border border-gray-100 rounded-2xl p-10 md:p-12 text-center shadow-sm overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-royal-purple/5 rounded-full blur-3xl"></div>
+                
+                <div className="relative z-10 max-w-3xl mx-auto">
+                  <div className="inline-block mb-5">
+                    <div className="flex items-center gap-2 bg-green-50 text-green-700 rounded-full px-5 py-2.5">
+                      <CheckIcon size={18} className="text-green-600" />
+                      <span className="text-sm font-semibold uppercase tracking-wider">{t('registration.badge')}</span>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-dark-purple leading-tight">
+                    {t('registration.title')}
+                  </h3>
+                  
+                  <p className="text-gray-600 text-base md:text-lg mb-5">
+                    {t.rich('registration.description', {
+                      tdgi: (chunks) => <span className="font-bold text-dark-purple">{chunks}</span>
+                    })}
+                  </p>
+                  
+                  <div className="inline-block bg-gradient-to-r from-royal-purple/10 to-dark-purple/10 rounded-xl px-8 py-4 mb-8">
+                    <p className="text-royal-purple font-bold text-2xl md:text-3xl tracking-wider">
+                      {t('registration.rcNumber')}
+                    </p>
+                  </div>
+                  
+                  <div className="pt-6 border-t border-gray-100 max-w-2xl mx-auto">
+                    <p className="text-gray-600 text-base leading-relaxed">
+                      {t.rich('registration.footer', {
+                        bnbm: (chunks) => <span className="font-semibold text-dark-purple">{chunks}</span>,
+                        tjfi: (chunks) => <span className="font-semibold text-royal-purple">{chunks}</span>
+                      })}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-dark-purple mb-2">Blessed & Anointed</h3>
-                <p className="text-gray-600">Every product is prayerfully blessed</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-gold to-accent-gold rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <BookIcon size={28} className="text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-dark-purple mb-2">Scripture Based</h3>
-                <p className="text-gray-600">Rooted in God's Word and promises</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-royal-purple to-dark-purple rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <CheckIcon size={28} className="text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-dark-purple mb-2">Faith Points</h3>
-                <p className="text-gray-600">Tools for healing and breakthrough</p>
               </div>
             </div>
           </div>
@@ -584,13 +562,15 @@ export default function TDGIPage() {
         <Container>
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <div className="inline-block mb-4">
-              <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">Anointed Products</span>
+              <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('products.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-              Our <span className="text-gold">Faith-Based Products</span>
+              {t.rich('products.title', {
+                faithBased: (chunks) => <span className="text-gold">{chunks}</span>
+              })}
             </h2>
             <p className="text-gray-600 text-lg">
-              Divinely inspired, prayerfully produced faith tools for your spiritual journey
+              {t('products.subtitle')}
             </p>
           </div>
           
@@ -604,7 +584,7 @@ export default function TDGIPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              All Products
+              {t('products.categories.all')}
             </button>
             <button
               onClick={() => setSelectedCategory("Soaps")}
@@ -614,7 +594,7 @@ export default function TDGIPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              Anointed Soaps
+              {t('products.categories.soaps')}
             </button>
             <button
               onClick={() => setSelectedCategory("Oils & Liquids")}
@@ -624,7 +604,7 @@ export default function TDGIPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              Oils & Waters
+              {t('products.categories.oils')}
             </button>
             <button
               onClick={() => setSelectedCategory("Balms")}
@@ -634,7 +614,7 @@ export default function TDGIPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              Healing Balms
+              {t('products.categories.balms')}
             </button>
             <button
               onClick={() => setSelectedCategory("Perfumes")}
@@ -644,7 +624,7 @@ export default function TDGIPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              Glory Perfumes
+              {t('products.categories.perfumes')}
             </button>
           </div>
 
@@ -663,7 +643,7 @@ export default function TDGIPage() {
                   </div>
                   <div className="absolute top-4 right-4">
                     <span className="bg-gold text-dark-purple px-4 py-2 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider">
-                      Blessed
+                      {t('products.blessed')}
                     </span>
                   </div>
                 </div>
@@ -698,7 +678,7 @@ export default function TDGIPage() {
                     className="w-full mt-3 bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
                   >
                     <WhatsAppIcon size={18} />
-                    Order via WhatsApp
+                    {t('products.orderWhatsApp')}
                   </button>
                 </div>
               </div>
@@ -707,32 +687,37 @@ export default function TDGIPage() {
         </Container>
       </section>
 
-      <section className="pb-20">
+      {/* Enhanced Call to Action Section */}
+      <section className="py-20 bg-gradient-to-r from-royal-purple to-dark-purple text-white">
         <Container>
-          <div className="bg-gradient-to-r from-royal-purple to-dark-purple text-white rounded-2xl p-8 md:p-12 text-center">
-              <h3 className="text-3xl font-bold mb-4">Ready to Order?</h3>
-              <p className="text-xl text-gray-100 mb-8">
-                Click the "Order on WhatsApp" button on any product or contact us directly
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href="https://wa.me/2347069609892"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <WhatsAppIcon size={24} />
-                  WhatsApp Us Now
-                </a>
-                <a
-                  href="mailto:toyinjato@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-accent-gold text-dark-purple px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <EmailIcon size={24} />
-                  Email Us
-                </a>
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              {t.rich('cta.title', {
+                right: (chunks) => <span className="text-gold">{chunks}</span>
+              })}
+            </h2>
+            <p className="text-xl text-gray-100 mb-10 leading-relaxed">
+              {t('cta.subtitle')}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="https://wa.me/2347069609892"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <WhatsAppIcon size={24} />
+                {t('cta.whatsapp')}
+              </a>
+              <a
+                href="mailto:toyinjato@gmail.com"
+                className="inline-flex items-center justify-center gap-2 bg-gold text-dark-purple px-8 py-4 rounded-lg font-semibold hover:bg-accent-gold transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <EmailIcon size={24} />
+                {t('cta.email')}
+              </a>
             </div>
+          </div>
         </Container>
       </section>
 

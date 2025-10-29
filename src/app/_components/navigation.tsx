@@ -4,19 +4,23 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { LanguageSwitcher } from './language-switcher';
+import { useTranslations, useLocale } from 'next-intl';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations('nav');
+  const locale = useLocale();
 
   const navLinks = [
-    { href: '/', label: 'HOME' },
-    { href: '/about', label: 'ABOUT' },
-    { href: '/sermons', label: 'SERMONS' },
-    { href: '/blog', label: 'BLOG' },
-    { href: '/tdgi', label: 'TDGI' },
-    { href: '/giving', label: 'GIVING' },
-    { href: '/contact', label: 'CONTACT' },
+    { href: '/', label: t('home') },
+    { href: '/about', label: t('about') },
+    { href: '/sermons', label: t('sermons') },
+    { href: '/blog', label: t('blog') },
+    { href: '/tdgi', label: t('tdgi') },
+    { href: '/giving', label: t('giving') },
+    { href: '/contact', label: t('contact') },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -44,7 +48,7 @@ const Navigation = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 font-medium transition-all duration-200 text-gray-300 hover:text-white group"
+                className="px-4 py-2 font-medium transition-all duration-200 text-gray-300 hover:text-white group uppercase"
               >
                 <span
                   className={`transition-all duration-200 ${
@@ -57,6 +61,9 @@ const Navigation = () => {
                 </span>
               </Link>
             ))}
+            <div className="ml-3 pl-3 border-l border-white/20">
+              <LanguageSwitcher />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,7 +104,7 @@ const Navigation = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block py-3 px-4 rounded-lg font-medium transition-all duration-200 ${
+                className={`block py-3 px-4 rounded-lg font-medium transition-all duration-200 uppercase ${
                   isActive(link.href)
                     ? 'bg-gold text-dark-purple shadow-lg'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -107,6 +114,12 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+            <div className="px-4 pt-3 border-t border-white/20 mt-2">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400 uppercase tracking-wide">Language</span>
+                <LanguageSwitcher />
+              </div>
+            </div>
           </div>
         )}
       </div>

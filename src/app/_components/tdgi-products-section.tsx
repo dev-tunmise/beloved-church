@@ -2,11 +2,18 @@
 
 import Container from "@/app/_components/container";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRightIcon } from "@/app/_components/icons";
 import WhatsAppButton from "@/app/_components/whatsapp-button";
 import { useState } from "react";
 import { usePaystackProduct } from "@/hooks/usePaystackProduct";
+import { PaystackProductButton } from "@/app/_components/paystack-button";
+
+// WhatsApp Icon component
+const WhatsAppIcon: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+);
 
 // Product type definition
 interface Product {
@@ -15,37 +22,34 @@ interface Product {
   purpose: string;
   image: string;
   price: number;
+  category: string;
 }
 
-// Products data (showing 4 products on homepage)
+// Products data (showing 3 products on homepage)
 const products: Product[] = [
   {
     id: 1,
     name: "Favour Soap",
     purpose: "For attracting divine favour and open doors",
     image: "/images/favor-soap.png",
-    price: 5000
+    price: 63500,
+    category: "Soaps"
   },
   {
-    id: 2,
+    id: 4,
     name: "Mercy Soap",
     purpose: "For receiving God's mercy and compassion",
     image: "/images/mercy-soap.png",
-    price: 5000
+    price: 93200,
+    category: "Soaps"
   },
   {
     id: 3,
     name: "Breakthrough Soap",
     purpose: "For destroying spiritual barriers and unlocking success",
     image: "/images/breakthrough-soap.png",
-    price: 5000
-  },
-  {
-    id: 4,
-    name: "Fruitfulness Soap",
-    purpose: "For productivity, abundance, and bearing lasting fruit",
-    image: "/images/fruitfulness-soap.png",
-    price: 5000
+    price: 48100,
+    category: "Soaps"
   }
 ];
 
@@ -157,13 +161,13 @@ export function TDGIProductsSection() {
   const { processPaymentWithWhatsApp, isConfigured } = usePaystackProduct();
 
   const handleProductClick = (product: Product) => {
-    if (!isConfigured) {
-      alert('Payment system is not configured. Please contact us via WhatsApp to place your order.');
-      const message = encodeURIComponent(`Hello, I would like to order: ${product.name} - ₦${product.price.toLocaleString()}`);
-      window.open(`https://wa.me/2347069609892?text=${message}`, '_blank');
-      return;
-    }
-    setSelectedProduct(product);
+    // Redirect to checkout page with product details
+    const productQuery = encodeURIComponent(JSON.stringify({
+      name: product.name,
+      price: product.price,
+      category: product.category
+    }));
+    window.location.href = `/checkout?product=${productQuery}`;
   };
 
   const handlePurchase = (email: string, name: string, phone: string) => {
@@ -183,15 +187,15 @@ export function TDGIProductsSection() {
       firstName: firstName || undefined,
       lastName: lastName || undefined,
       phone: phone || undefined,
-      category: "Soaps",
+      category: selectedProduct.category,
     });
 
     // Reset processing state after a delay
     setTimeout(() => setIsProcessing(false), 3000);
   };
 
-  const handleWhatsAppOrder = (productName: string) => {
-    const message = encodeURIComponent(`Hello, I would like to order: ${productName}`);
+  const handleWhatsAppOrder = (product: Product) => {
+    const message = encodeURIComponent(`Hello, I would like to order: ${product.name} - ₦${product.price.toLocaleString()}`);
     window.open(`https://wa.me/2347069609892?text=${message}`, '_blank');
   };
 
@@ -210,142 +214,60 @@ export function TDGIProductsSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
-          {/* TGDI Product 1 */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden bg-white p-6">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/favor-soap.png"
-                  alt="Favour Soap"
-                  fill
-                  loading="lazy"
-                  quality={75}
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-contain group-hover:scale-105 transition-transform duration-500"
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+          {products.map((product) => (
+            <div key={product.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gold">
+              <div className="relative aspect-square overflow-hidden bg-white p-6">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <div 
+                    className="absolute inset-0 bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                    style={{
+                      backgroundImage: `url('${product.image}')`
+                    }}
+                  />
+                </div>
+                <div className="absolute top-4 right-4">
+                  <span className="bg-gold text-dark-purple px-4 py-2 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider">
+                    Blessed
+                  </span>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="mb-3">
+                  <span className="text-royal-purple text-xs font-bold uppercase tracking-wider">
+                    {product.category}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-dark-purple mb-2 group-hover:text-royal-purple transition-colors">
+                  {product.name}
+                </h3>
+                <div className="mb-4">
+                  <p className="text-3xl font-bold text-gold">₦{product.price.toLocaleString()}</p>
+                </div>
+                <div className="mb-6">
+                  <p className="text-gray-700 leading-relaxed text-sm">
+                    {product.purpose}
+                  </p>
+                </div>
+                
+                <PaystackProductButton
+                  productName={product.name}
+                  onPaymentClick={() => handleProductClick(product)}
+                  loading={isProcessing}
+                  disabled={isProcessing}
                 />
+                
+                <button
+                  onClick={() => handleWhatsAppOrder(product)}
+                  className="w-full mt-3 bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
+                >
+                  <WhatsAppIcon size={18} />
+                  Order via WhatsApp
+                </button>
               </div>
             </div>
-            <div className="p-5">
-              <h3 className="text-lg font-bold text-dark-purple mb-2">
-                Favour Soap
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                For attracting divine favour and open doors
-              </p>
-              <button
-                onClick={() => handleWhatsAppOrder('Favour Soap')}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                Order Now
-              </button>
-            </div>
-          </div>
-
-          {/* TGDI Product 2 */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden bg-white p-6">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/mercy-soap.png"
-                  alt="Mercy Soap"
-                  fill
-                  loading="lazy"
-                  quality={75}
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-contain group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="p-5">
-              <h3 className="text-lg font-bold text-dark-purple mb-2">
-                Mercy Soap
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                For receiving God's mercy and compassion
-              </p>
-              <button
-                onClick={() => handleWhatsAppOrder('Mercy Soap')}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                Order Now
-              </button>
-            </div>
-          </div>
-
-          {/* TGDI Product 3 */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden bg-white p-6">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/breakthrough-soap.png"
-                  alt="Breakthrough Soap"
-                  fill
-                  loading="lazy"
-                  quality={75}
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-contain group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="p-5">
-              <h3 className="text-lg font-bold text-dark-purple mb-2">
-                Breakthrough Soap
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                For destroying spiritual barriers and unlocking success
-              </p>
-              <button
-                onClick={() => handleWhatsAppOrder('Breakthrough Soap')}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                Order Now
-              </button>
-            </div>
-          </div>
-
-          {/* TGDI Product 4 */}
-          <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="relative h-56 overflow-hidden bg-white p-6">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/fruitfulness-soap.png"
-                  alt="Fruitfulness Soap"
-                  fill
-                  loading="lazy"
-                  quality={75}
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-contain group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="p-5">
-              <h3 className="text-lg font-bold text-dark-purple mb-2">
-                Fruitfulness Soap
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                For productivity, abundance, and bearing lasting fruit
-              </p>
-              <button
-                onClick={() => handleWhatsAppOrder('Fruitfulness Soap')}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 text-sm"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                Order Now
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="text-center">
@@ -361,6 +283,15 @@ export function TDGIProductsSection() {
         {/* WhatsApp Button for Product Orders */}
         <WhatsAppButton />
       </Container>
+
+      {/* Product Purchase Modal */}
+      {selectedProduct && (
+        <ProductPurchaseModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onPurchase={handlePurchase}
+        />
+      )}
     </section>
   );
 }

@@ -1,7 +1,9 @@
 'use client';
 
 import Container from "@/app/_components/container";
+import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 import { VideoIcon, CalendarIcon, ClockIcon, PlayIcon } from "@/app/_components/icons";
 
 // Sample sermon data - replace with actual data from CMS or API
@@ -10,13 +12,22 @@ const sermons = [
     id: 1,
     title: "God's Promise Against Delay - October 19, 2025",
     date: "2024-10-06",
-    videoId: "iDMNslFItEc", // Replace with actual YouTube video ID
+    videoId: "iDMNslFItEc",
     description: "A powerful message on trusting God in difficult times.",
     category: "sermon",
     thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
     id: 2,
+    title: "Faith That Moves Mountains - October 26, 2025",
+    date: "2025-10-28",
+    videoId: "wQfwgbzE5_A",
+    description: "A powerful message from our latest service.",
+    category: "sermon",
+    thumbnail: "https://i.ytimg.com/vi/wQfwgbzE5_A/hqdefault.jpg"
+  },
+  {
+    id: 3,
     title: "Prophetic Moment: New Season",
     date: "2024-09-29",
     videoId: "iDMNslFItEc",
@@ -25,7 +36,7 @@ const sermons = [
     thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
-    id: 3,
+    id: 4,
     title: "Testimony: Healed from Cancer",
     date: "2024-09-22",
     videoId: "iDMNslFItEc",
@@ -34,7 +45,7 @@ const sermons = [
     thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
-    id: 4,
+    id: 5,
     title: "The Power of Prayer",
     date: "2024-09-15",
     videoId: "iDMNslFItEc",
@@ -43,7 +54,7 @@ const sermons = [
     thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
-    id: 5,
+    id: 6,
     title: "Breaking Generational Curses",
     date: "2024-09-08",
     videoId: "iDMNslFItEc",
@@ -52,7 +63,7 @@ const sermons = [
     thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
   },
   {
-    id: 6,
+    id: 7,
     title: "God's Provision Testimony",
     date: "2024-09-01",
     videoId: "iDMNslFItEc",
@@ -63,6 +74,7 @@ const sermons = [
 ];
 
 export default function SermonsPage() {
+  const t = useTranslations('sermons');
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
@@ -96,7 +108,7 @@ export default function SermonsPage() {
             <div className="inline-block mb-6 animate-fade-in">
               <div className="flex items-center gap-3 justify-center">
                 <div className="h-px w-8 bg-gold"></div>
-                <span className="text-gold font-semibold text-sm uppercase tracking-wider">Watch & Learn</span>
+                <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('hero.badge')}</span>
                 <div className="h-px w-8 bg-gold"></div>
               </div>
             </div>
@@ -104,7 +116,7 @@ export default function SermonsPage() {
               Sermons & <span className="text-gold">Messages</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto animate-slide-up-delay">
-              Watch our live services, past sermons, prophetic moments, and testimonies
+              {t('hero.subtitle')}
             </p>
             
             {/* Decorative element */}
@@ -134,45 +146,52 @@ export default function SermonsPage() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-4 w-4 bg-red-600"></span>
                     </span>
-                    Live Worship Service
+                    {t('live.title')}
                   </h2>
-                  <p className="text-gray-200">Join us every Sunday at 10:00 AM (GMT)</p>
+                  <p className="text-gray-200">{t('live.schedule')}</p>
                 </div>
                 <div className="flex items-center gap-2 bg-red-600 px-6 py-3 rounded-full font-semibold">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
                   </span>
-                  LIVE NOW
+                  {t('live.badge')}
                 </div>
               </div>
             </div>
-            <div className="bg-black aspect-video rounded-b-2xl overflow-hidden shadow-2xl">
-              {/* YouTube Live Embed - Replace with your channel's live stream embed */}
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID"
-                title="Live Stream"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+            <div className="bg-black aspect-video rounded-b-2xl overflow-hidden shadow-2xl flex items-center justify-center">
+              {/* YouTube Live Embed - Shows message when not live */}
+              <div className="text-center px-8 py-12">
+                <div className="mb-6">
+                  <svg className="w-20 h-20 mx-auto text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">{t('live.notLive')}</h3>
+                <p className="text-gray-400 text-lg mb-6">
+                  {t('live.timing')}
+                </p>
+                <p className="text-gray-500">
+                  {t('live.checkBack')}
+                </p>
+              </div>
             </div>
             <div className="mt-8 text-center">
               <p className="text-gray-600 mb-6 text-lg">
-                Experience powerful worship, anointed preaching, and the presence of God
+                {t('live.experience')}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="https://www.youtube.com/@yourchannel"
+                  href="https://www.youtube.com/@Belovednewbeginningministries"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 shadow-lg"
                 >
                   <VideoIcon size={22} />
-                  Subscribe on YouTube
+                  {t('live.youtube')}
                 </a>
                 <a
-                  href="https://www.facebook.com/yourpage"
+                  href="https://web.facebook.com/marstoyin.jato"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg"
@@ -180,7 +199,7 @@ export default function SermonsPage() {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                   </svg>
-                  Follow on Facebook
+                  {t('live.facebook')}
                 </a>
               </div>
             </div>
@@ -193,13 +212,13 @@ export default function SermonsPage() {
         <Container>
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <div className="inline-block mb-4">
-              <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">Message Archive</span>
+              <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('pastMessages.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-              Past Messages
+              {t('pastMessages.title')}
             </h2>
             <p className="text-gray-600 text-lg">
-              Browse our collection of sermons, prophetic words, and powerful testimonies
+              {t('pastMessages.subtitle')}
             </p>
           </div>
 
@@ -213,7 +232,7 @@ export default function SermonsPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              All Messages
+              {t('categories.all')}
             </button>
             <button
               onClick={() => setSelectedCategory("sermon")}
@@ -223,7 +242,7 @@ export default function SermonsPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              Sermons
+              {t('categories.sermons')}
             </button>
             <button
               onClick={() => setSelectedCategory("prophetic")}
@@ -233,7 +252,7 @@ export default function SermonsPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              Prophetic Moments
+              {t('categories.prophetic')}
             </button>
             <button
               onClick={() => setSelectedCategory("testimony")}
@@ -243,7 +262,7 @@ export default function SermonsPage() {
                   : "bg-white text-dark-purple border-2 border-gray-200 hover:border-royal-purple"
               }`}
             >
-              Testimonies
+              {t('categories.testimonies')}
             </button>
           </div>
 
@@ -331,11 +350,44 @@ export default function SermonsPage() {
               onClick={() => setSelectedVideo(null)}
               className="w-full bg-royal-purple text-white py-3 font-semibold hover:bg-dark-purple transition-colors"
             >
-              Close
+              {t('modal.close')}
             </button>
           </div>
         </div>
       )}
+
+      {/* Call to Action Section */}
+      <section className="py-20 bg-gradient-to-r from-royal-purple to-dark-purple text-white">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              {t.rich('cta.title', {
+                styled: (chunks) => <span className="text-gold">{chunks}</span>
+              })}
+            </h2>
+            <p className="text-xl text-gray-100 mb-10 leading-relaxed">
+              {t('cta.subtitle')}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center gap-2 bg-gold text-dark-purple px-8 py-4 rounded-lg font-semibold hover:bg-accent-gold transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                {t('cta.learnAboutUs')}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-purple transition-all duration-300"
+              >
+                {t('cta.visitUs')}
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
     </main>
   );
 }

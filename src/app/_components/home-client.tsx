@@ -8,6 +8,7 @@ import { PostPreview } from "@/app/_components/post-preview";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Post } from "@/interfaces/post";
+import { useTranslations } from 'next-intl';
 
 // Dynamically import heavy components to reduce initial bundle size
 const TDGIProductsSection = dynamic(
@@ -20,6 +21,7 @@ type Props = {
 };
 
 export default function HomeClient({ recentPosts }: Props) {
+  const t = useTranslations('homeClient');
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
@@ -45,10 +47,12 @@ export default function HomeClient({ recentPosts }: Props) {
         <Container>
           <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              A Place Where <span className="text-gold">Faith</span> Comes Alive
+              {t.rich('hero.title', {
+                faith: (chunks) => <span className="text-gold">{chunks}</span>
+              })}
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-gray-100 leading-relaxed max-w-3xl mx-auto">
-              Join us as we worship, grow, and serve together in community
+              {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
@@ -56,14 +60,14 @@ export default function HomeClient({ recentPosts }: Props) {
                 className="inline-flex items-center justify-center gap-3 bg-gold text-dark-purple px-8 py-4 rounded-lg font-semibold hover:bg-accent-gold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <VideoIcon size={22} />
-                Watch Sermons
+                {t('hero.watchSermons')}
               </Link>
               <Link
                 href="/giving"
                 className="inline-flex items-center justify-center gap-3 bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-purple transition-all duration-300"
               >
                 <GiftIcon size={22} />
-                Give to Church
+                {t('hero.giveToChurch')}
               </Link>
             </div>
           </div>
@@ -89,24 +93,24 @@ export default function HomeClient({ recentPosts }: Props) {
             </div>
             <div className="order-1 md:order-2">
               <div className="inline-block mb-4">
-                <span className="text-gold font-semibold text-sm uppercase tracking-wider">Welcome</span>
+                <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('welcome.badge')}</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-6 leading-tight">
-                A Message from Our Prophetess
+                {t('welcome.title')}
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Welcome to our community of faith. Here, we believe in hope, healing, and the power of God's Word to transform lives.
+                {t('welcome.paragraph1')}
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Whether you're searching for answers, seeking a deeper relationship with Christ, or looking for a church family to call home, you are welcomed here with open arms.
+                {t('welcome.paragraph2')}
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-accent-gold flex items-center justify-center">
                   <HeartIcon size={28} className="text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-dark-purple text-lg">Prophetess Toyin Jato</p>
-                  <p className="text-gray-500 text-sm">Senior Prophetess</p>
+                  <p className="font-bold text-dark-purple text-lg">{t('welcome.name')}</p>
+                  <p className="text-gray-500 text-sm">{t('welcome.role')}</p>
                 </div>
               </div>
             </div>
@@ -390,7 +394,28 @@ export default function HomeClient({ recentPosts }: Props) {
               </p>
             </div>
             
-            <form className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100">
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.target as HTMLFormElement;
+                const formData = new FormData(form);
+                const name = formData.get('name') as string;
+                const email = formData.get('email') as string;
+                const message = formData.get('message') as string;
+                
+                // Create mailto link with pre-filled content
+                const subject = encodeURIComponent(`Contact Form: Message from ${name}`);
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                const mailtoLink = `mailto:toyinjato8@gmail.com?subject=${subject}&body=${body}`;
+                
+                // Open user's email client
+                window.location.href = mailtoLink;
+                
+                // Reset form
+                form.reset();
+              }}
+              className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100"
+            >
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-dark-purple mb-2">
@@ -399,6 +424,8 @@ export default function HomeClient({ recentPosts }: Props) {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
                     placeholder="John Doe"
                   />
@@ -410,6 +437,8 @@ export default function HomeClient({ recentPosts }: Props) {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
                     placeholder="john@example.com"
                   />
@@ -421,6 +450,8 @@ export default function HomeClient({ recentPosts }: Props) {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
+                  required
                   rows={6}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all resize-none"
                   placeholder="How can we help you?"

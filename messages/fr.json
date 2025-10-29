@@ -1,0 +1,748 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "sermons": "Sermons",
+    "blog": "Blog",
+    "contact": "Contact",
+    "giving": "Dons",
+    "tdgi": "TDGI"
+  },
+  "home": {
+    "hero": {
+      "title": "Un Lieu Où la <faith>Foi</faith> Prend Vie",
+      "subtitle": "Rejoignez-nous dans l'adoration, la croissance et le service communautaire",
+      "watchSermons": "Regarder les Sermons",
+      "giveToChurch": "Faire un Don"
+    },
+    "welcome": {
+      "badge": "Bienvenue",
+      "title": "Un Message de Notre Prophétesse",
+      "paragraph1": "Bienvenue dans notre communauté de foi. Ici, nous croyons en l'espoir, la guérison et le pouvoir de la Parole de Dieu pour transformer des vies.",
+      "paragraph2": "Que vous recherchiez des réponses, une relation plus profonde avec le Christ, ou une famille d'église à laquelle appartenir, vous êtes accueillis ici à bras ouverts.",
+      "name": "(Évangéliste) Prophétesse Oluwatoyin Jato",
+      "role": "Prophétesse Principale"
+    },
+    "about": {
+      "badge": "À Propos de Nous",
+      "title": "Qui Nous Sommes",
+      "paragraph1": "Beloved New Beginning Ministries est une communauté dynamique de croyants engagés à répandre l'évangile, à nourrir la foi et à servir notre communauté avec excellence et amour.",
+      "paragraph2": "Fondés sur des principes bibliques et guidés par le Saint-Esprit, nous nous efforçons de créer un environnement où chaque personne peut rencontrer Dieu, grandir dans sa foi et découvrir son but.",
+      "learnMore": "En Savoir Plus"
+    },
+    "sermons": {
+      "badge": "Messages",
+      "title": "Sermons Récents",
+      "description": "Regardez nos derniers messages et soyez inspiré par la Parole de Dieu"
+    },
+    "giving": {
+      "badge": "Partenariat",
+      "title": "Soutenez le Ministère",
+      "paragraph1": "Votre générosité nous permet de répandre l'évangile, de soutenir notre communauté et d'impacter des vies pour le Royaume de Dieu.",
+      "paragraph2": "Chaque don, quelle que soit sa taille, fait une différence significative dans l'avancement de l'œuvre de Dieu à travers notre ministère.",
+      "giveNow": "Donner Maintenant",
+      "bankDetails": "Coordonnées Bancaires",
+      "bankDetailsSubtitle": "Pour les virements et dons directs",
+      "bankName": "Nom de la Banque",
+      "bankNameValue": "Union Bank",
+      "accountName": "Nom du Compte",
+      "accountNameValue": "BELOVED New Beginning Ministries",
+      "accountNumber": "Numéro de Compte",
+      "accountNumberValue": "0236577830"
+    },
+    "blog": {
+      "badge": "Blog",
+      "title": "Derniers Articles",
+      "description": "Lisez des histoires et des réflexions inspirantes de notre communauté",
+      "viewAll": "Voir Tous les Articles"
+    },
+    "contact": {
+      "badge": "Contact",
+      "title": "Contactez-Nous",
+      "description": "Vous avez des questions ou souhaitez vous connecter? Nous aimerions avoir de vos nouvelles",
+      "fullName": "Nom Complet",
+      "emailAddress": "Adresse Email",
+      "message": "Message",
+      "sendMessage": "Envoyer le Message",
+      "namePlaceholder": "Jean Dupont",
+      "emailPlaceholder": "jean@exemple.com",
+      "messagePlaceholder": "Comment pouvons-nous vous aider?"
+    }
+  },
+  "giving": {
+    "title": "Soutenez Notre Ministère",
+    "subtitle": "Vos dons généreux nous aident à accomplir notre mission",
+    "description": "Vos contributions nous aident à répandre l'Évangile, à soutenir nos programmes communautaires et à maintenir notre ministère. Chaque don fait la différence.",
+    "hero": {
+      "badge": "Redonner",
+      "title": "Donnez",
+      "generously": "Généreusement",
+      "scripture": "\"Donnez, et il vous sera donné\" - Luc 6:38",
+      "subtitle": "Votre générosité nous aide à transformer des vies et à répandre l'amour de Dieu"
+    },
+    "partnership": {
+      "badge": "Rejoignez-Nous",
+      "title": "Devenez {partner}",
+      "partner": "Partenaire",
+      "intro": "Chez {bnbm}, nous croyons que le partenariat est une connexion divine—où les cœurs, les prières et les ressources s'unissent pour faire avancer le Royaume de Dieu sur terre.",
+      "bnbm": "Beloved New Beginning Ministries",
+      "paragraph1": "Nous accueillons les individus, églises et organisations conduits par l'Esprit qui désirent soutenir cette vision de répandre l'évangile, de restaurer des vies et d'autonomiser les communautés par l'amour du Christ.",
+      "paragraph2": "Votre partenariat nous aide à atteindre plus d'âmes, à soutenir les nécessiteux et à mener des missions d'évangélisation qui transforment des vies pour la gloire de Dieu.",
+      "scripture": "\"Deux valent mieux qu'un, parce qu'ils retirent un bon salaire de leur travail.\"",
+      "scriptureRef": "— Ecclésiaste 4:9",
+      "waysTitle": "Façons de Devenir Partenaire:",
+      "financialSupport": "Soutien financier mensuel ou ponctuel",
+      "donations": "Dons (matériaux, équipements, denrées alimentaires, etc.)",
+      "volunteering": "Bénévolat lors d'évangélisations ou de programmes d'église",
+      "collaboration": "Collaborations ministérielles ou parrainages"
+    },
+    "whyGive": {
+      "title": "Pourquoi Nous Donnons",
+      "description": "Vos dons généreux nous aident à répandre l'Évangile, à soutenir notre communauté et à accomplir la vision de Dieu pour Beloved New Beginning Ministries. Chaque don fait la différence et est grandement apprécié.",
+      "scripture": "\"Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte; car Dieu aime celui qui donne avec joie.\"",
+      "scriptureRef": "- 2 Corinthiens 9:7",
+      "worship": "Adoration",
+      "worshipDesc": "Soutenir nos services et événements d'adoration",
+      "outreach": "Sensibilisation",
+      "outreachDesc": "Aider ceux qui sont dans le besoin dans notre communauté",
+      "growth": "Croissance",
+      "growthDesc": "Investir dans les programmes de développement spirituel"
+    },
+    "givingOptions": {
+      "title": "Options de Don",
+      "oneTime": "Don Unique",
+      "oneTimeDesc": "Faire un don unique",
+      "tithe": "Dîme (10%)",
+      "titheDesc": "Contribution régulière de la dîme",
+      "offering": "Offrande",
+      "offeringDesc": "Don d'offrande spéciale"
+    },
+    "form": {
+      "title": "Faites Votre Contribution",
+      "subtitle": "Choisissez comment vous souhaitez donner aujourd'hui",
+      "selectAmount": "Sélectionner le Montant",
+      "customAmount": "Ou entrez un montant personnalisé",
+      "customAmountPlaceholder": "Entrez un montant personnalisé",
+      "amount": "Montant",
+      "frequency": "Fréquence",
+      "oneTime": "Ponctuel",
+      "monthly": "Mensuel",
+      "givingType": "Type de Don",
+      "types": {
+        "tithe": "Dîme",
+        "offering": "Offrande",
+        "missions": "Missions",
+        "building": "Fonds de Construction"
+      },
+      "name": "Nom Complet",
+      "firstName": "Prénom (Optionnel)",
+      "lastName": "Nom de Famille (Optionnel)",
+      "email": "Adresse Email",
+      "phone": "Numéro de Téléphone (Optionnel)",
+      "firstNamePlaceholder": "Prénom",
+      "lastNamePlaceholder": "Nom de famille",
+      "emailPlaceholder": "Entrez votre email",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "receiptInfo": "Le reçu sera envoyé à cet email",
+      "purpose": "Objectif",
+      "selectPurpose": "Sélectionnez l'objectif",
+      "purposes": {
+        "general": "Offrande Générale",
+        "tithe": "Dîme",
+        "missions": "Missions",
+        "building": "Fonds de Construction",
+        "special": "Projet Spécial"
+      },
+      "message": "Message (Optionnel)",
+      "donate": "Procéder au Don",
+      "processing": "Traitement...",
+      "securePayment": "Passerelle de Paiement Paystack Sécurisée",
+      "paymentInfo": "Propulsé par Paystack. Toutes les transactions sont cryptées et sécurisées avec un cryptage SSL 256 bits."
+    },
+    "security": {
+      "title": "Sécurisé et Fiable",
+      "description": "Toutes les transactions sont cryptées et sécurisées. Nous utilisons Paystack pour le traitement des paiements."
+    },
+    "bankTransfer": {
+      "title": "Ou Faire un Virement Bancaire",
+      "subtitle": "Vous pouvez également donner directement sur notre compte d'église",
+      "detailsTitle": "Détails du Virement Bancaire",
+      "detailsSubtitle": "Transférez directement sur notre compte d'église",
+      "bankName": "Nom de la Banque",
+      "accountName": "Nom du Compte",
+      "accountNumber": "Numéro de Compte",
+      "note": "<strong>Veuillez noter :</strong> Après avoir effectué votre virement, vous pouvez nous envoyer un message de confirmation via WhatsApp ou email pour la prière et une documentation appropriée."
+    },
+    "internationalTransfer": {
+      "title": "Détails de Paiement International",
+      "subtitle": "Pour les dons de l'extérieur du Nigéria par virement bancaire (USD)",
+      "detailsTitle": "Virement Bancaire International",
+      "detailsSubtitle": "Envoyez des dons en USD via virement SWIFT",
+      "accountName": "Nom du Compte",
+      "accountNumber": "Numéro de Compte",
+      "bankName": "Nom de la Banque",
+      "swiftCode": "Code SWIFT / Adresse de la Banque",
+      "swiftAddress": "Adresse de la Banque",
+      "currency": "Devise",
+      "note": "<strong>Important :</strong> Veuillez utiliser ces détails pour les virements internationaux en USD. Des frais bancaires peuvent s'appliquer. Après le transfert, veuillez envoyer une confirmation via WhatsApp ou email."
+    },
+    "prayer": {
+      "badge": "Connectez-vous avec Dieu",
+      "title": "Rencontres Prophétiques & <span>Demandes de Prière</span>",
+      "subtitle": "Soumettez votre demande de prière et connectez-vous avec nous pour une parole prophétique",
+      "formTitle": "Soumettre une Demande de Prière",
+      "fullName": "Nom Complet",
+      "namePlaceholder": "Entrez votre nom",
+      "country": "Pays",
+      "countryPlaceholder": "Entrez votre pays",
+      "request": "Demande de Prière",
+      "requestPlaceholder": "Partagez votre demande de prière...",
+      "submit": "Soumettre une Demande de Prière",
+      "prophetic": {
+        "title": "Connexion Prophétique en Ligne",
+        "description": "Connectez-vous avec la Prophétesse Toyin Jato pour une parole prophétique, des conseils spirituels et une direction divine pour votre vie.",
+        "ministry": "Sessions de ministère prophétique personnel",
+        "deliverance": "Services de prière et de délivrance en ligne",
+        "counseling": "Conseil spirituel et percée",
+        "schedule": "Planifier une Connexion"
+      },
+      "scriptures": {
+        "title": "Écritures Encourageantes",
+        "verse1": "\"La prière d'une personne juste est puissante et efficace.\"",
+        "ref1": "— Jacques 5:16",
+        "verse2": "\"Invoque-moi, et je te répondrai; je t'annoncerai de grandes choses, des choses cachées que tu ne connais pas.\"",
+        "ref2": "— Jérémie 33:3",
+        "verse3": "\"Ne vous inquiétez de rien; mais en toute chose faites connaître vos besoins à Dieu par des prières et des supplications, avec des actions de grâces.\"",
+        "ref3": "— Philippiens 4:6"
+      }
+    }
+  },
+  "sermons": {
+    "title": "Sermons",
+    "subtitle": "Regardez nos derniers messages et soyez inspiré",
+    "loading": "Chargement des sermons...",
+    "noSermons": "Aucun sermon disponible pour le moment.",
+    "watchNow": "Regarder Maintenant",
+    "hero": {
+      "badge": "Regarder et Apprendre",
+      "title": "Sermons &",
+      "messages": "Messages",
+      "subtitle": "Regardez nos services en direct, sermons passés, moments prophétiques et témoignages"
+    },
+    "live": {
+      "title": "Service de Culte en Direct",
+      "schedule": "Rejoignez-nous tous les dimanches à 8h00 (WAT)",
+      "badge": "EN DIRECT MAINTENANT",
+      "notLive": "Nous ne sommes pas en direct pour le moment",
+      "timing": "Notre diffusion en direct commence tous les dimanches à 8h00 (WAT)",
+      "checkBack": "Revenez pendant les heures de service ou regardez nos sermons passés ci-dessous",
+      "experience": "Vivez un culte puissant, une prédication ointe et la présence de Dieu",
+      "youtube": "S'abonner sur YouTube",
+      "facebook": "Suivre sur Facebook"
+    },
+    "pastMessages": {
+      "badge": "Archives des Messages",
+      "title": "Messages Passés",
+      "subtitle": "Parcourez notre collection de sermons, paroles prophétiques et témoignages puissants"
+    },
+    "categories": {
+      "all": "Tous les Messages",
+      "sermons": "Sermons",
+      "prophetic": "Moments Prophétiques",
+      "testimonies": "Témoignages"
+    },
+    "cta": {
+      "title": "Expérimentez Plus de la <styled>Présence de Dieu</styled>",
+      "styled": "Présence de Dieu",
+      "subtitle": "Rejoignez-nous pour un culte en direct et un ministère puissant. Faites partie de notre famille d'église grandissante.",
+      "learnAboutUs": "En Savoir Plus",
+      "visitUs": "Nous Rendre Visite"
+    },
+    "modal": {
+      "close": "Fermer"
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Perspectives & Inspiration",
+      "title": "Blog de <blog>l'Église</blog>",
+      "blog": "l'Église",
+      "subtitle": "Mises à jour, enseignements et messages de notre communauté"
+    },
+    "stats": {
+      "weekly": {
+        "title": "Hebdomadaire",
+        "description": "Nouveaux articles et enseignements publiés régulièrement"
+      },
+      "community": {
+        "title": "Communauté",
+        "description": "Histoires et témoignages de notre famille d'église"
+      },
+      "faith": {
+        "title": "Foi",
+        "description": "Grandir ensemble dans notre marche avec Christ"
+      }
+    },
+    "cta": {
+      "title": "Restez Connecté avec Notre <community>Communauté</community>",
+      "community": "Communauté",
+      "subtitle": "Abonnez-vous pour recevoir les dernières mises à jour, enseignements et histoires inspirantes directement dans votre boîte de réception.",
+      "getInTouch": "Entrer en Contact",
+      "watchSermons": "Regarder les Sermons"
+    }
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "subtitle": "En savoir plus sur notre église et notre mission",
+    "hero": {
+      "badge": "Notre Histoire",
+      "title": "À Propos de",
+      "beloved": "Beloved New Beginning",
+      "subtitle": "Une communauté de croyants marchant dans la Grâce Royale et la Pureté"
+    },
+    "prophetess": {
+      "badge": "Notre Leader",
+      "title": "Prophétesse <styled>Toyin Jato</styled>",
+      "styled": "Toyin Jato",
+      "paragraph1": "<strong>La Prophétesse Toyin Jato</strong> est une femme de Dieu avec un appel prophétique puissant et une passion inébranlable pour les âmes. Elle est la fondatrice et Prophétesse Principale de <ministry>Beloved New Beginning Ministries</ministry>.",
+      "strong": "La Prophétesse Toyin Jato",
+      "ministry": "Beloved New Beginning Ministries",
+      "paragraph2": "Avec un cœur enflammé pour la présence de Dieu et un fardeau profond pour les perdus, elle opère dans le prophétique avec une précision remarquable, apportant des paroles opportunes de direction, de réconfort et de percée aux croyants à travers les nations.",
+      "paragraph3": "Son ministère est caractérisé par une adoration puissante, des guérisons surnaturelles, la délivrance de l'oppression démoniaque et des témoignages qui changent des vies. Grâce à son leadership, d'innombrables personnes ont connu la restauration divine, des percées financières, la restauration maritale et la liberté des malédictions générationnelles.",
+      "paragraph4": "La Prophétesse Toyin a également fondé <tdgi>TDGI Enterprise</tdgi> et <foundation>Toyin Jato Foundation International</foundation>, étendant l'impact de son ministère à travers des produits basés sur la foi et des programmes d'aide humanitaire.",
+      "tdgi": "TDGI Enterprise",
+      "foundation": "Toyin Jato Foundation International",
+      "quote": "\"Je suis appelée à élever une génération qui marche dans la Grâce Royale et la Pureté, habilitée par le Saint-Esprit à accomplir son destin divin.\"",
+      "quoteAuthor": "- Prophétesse Toyin Jato"
+    },
+    "values": {
+      "badge": "Ce Que Nous Défendons",
+      "title": "Nos Valeurs Fondamentales",
+      "subtitle": "Ces principes guident tout ce que nous faisons en tant que communauté d'église",
+      "prayer": {
+        "title": "Prière",
+        "description": "Nous croyons au pouvoir de la prière et recherchons la direction de Dieu dans tout ce que nous faisons. La prière est le fondement de notre ministère."
+      },
+      "word": {
+        "title": "La Parole",
+        "description": "La Bible est notre fondement et guide pour la vie et le ministère. Nous nous tenons fermement sur la Parole immuable de Dieu."
+      },
+      "love": {
+        "title": "Amour",
+        "description": "Nous démontrons l'amour de Dieu à travers nos actions et notre service aux autres, montrant la compassion du Christ à tous."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Nous visons l'excellence en tout, honorant Dieu avec notre meilleur et les normes les plus élevées."
+      },
+      "community": {
+        "title": "Communauté",
+        "description": "Nous favorisons des relations authentiques et nous nous soutenons mutuellement dans l'amour, créant une atmosphère familiale."
+      },
+      "mission": {
+        "title": "Mission",
+        "description": "Nous sommes passionnés par l'évangélisation du monde avec l'Évangile du Christ et la formation de disciples de toutes les nations."
+      }
+    },
+    "gallery": {
+      "badge": "Notre Communauté",
+      "title": "Galerie de l'Église",
+      "subtitle": "Aperçus de notre communauté dynamique dans l'adoration, la communion et le service",
+      "item1": {
+        "title": "Notre Leader Spirituel",
+        "description": "Notre leader spirituelle et fondatrice, engagée à élever une génération qui marche dans la Grâce Royale et la Pureté."
+      },
+      "item2": {
+        "title": "Leadership dans l'Unité",
+        "description": "Unis dans la foi et le ministère, dirigeant notre famille d'église avec amour et sagesse pieuse."
+      },
+      "item3": {
+        "title": "Une Seule Famille d'Église",
+        "description": "Communiant ensemble comme une seule famille, unis dans le but et l'amour du Christ."
+      },
+      "item4": {
+        "title": "Hommes d'Excellence",
+        "description": "Élever des hommes d'excellence et d'intégrité qui marchent dans leur but donné par Dieu."
+      },
+      "item5": {
+        "title": "Femmes de Vertu",
+        "description": "Autonomiser les femmes à marcher dans la vertu, la force et la grâce divine."
+      },
+      "item6": {
+        "title": "Sororité de Foi",
+        "description": "Construire une sororité de foi, où les femmes sont équipées et célébrées."
+      }
+    },
+    "cta": {
+      "title": "Rejoignez Notre <styled>Famille d'Église</styled>",
+      "styled": "Famille d'Église",
+      "subtitle": "Que vous soyez nouveau dans la foi ou que vous cherchiez une église, nous serions ravis de vous accueillir. Vivez une adoration authentique, un enseignement biblique solide et une communauté qui se soucie.",
+      "contactUs": "Nous Contacter",
+      "watchSermons": "Regarder les Sermons"
+    }
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "subtitle": "Nous aimerions avoir de vos nouvelles",
+    "getInTouch": "Entrer en Contact",
+    "description": "Vous avez des questions ou vous voulez en savoir plus sur notre église? Contactez-nous!",
+    "hero": {
+      "badge": "Entrer en Contact",
+      "title": "Contactez",
+      "us": "Nous",
+      "subtitle": "Nous aimerions avoir de vos nouvelles. Contactez-nous à tout moment!"
+    },
+    "info": {
+      "badge": "Coordonnées",
+      "title": "Informations de Contact",
+      "description": "Nous sommes là pour vous servir. Contactez-nous par l'un des canaux ci-dessous.",
+      "location": {
+        "title": "Notre Emplacement",
+        "address": "6 Ibrahim Alade Street, Erunwen, Ikorodu, Lagos, Nigéria"
+      },
+      "phone": {
+        "title": "Téléphone",
+        "label": "Appelez-nous:"
+      },
+      "email": {
+        "title": "Email",
+        "label": "Envoyez-nous un email:"
+      },
+      "hours": {
+        "title": "Heures de Service",
+        "sunday": "Service du Dimanche",
+        "sundayTime": "8h00 - 10h00 (WAT)",
+        "thursday": "Service du Jeudi",
+        "thursdayTime": "17h00 - 19h00 (WAT)",
+        "vigil": "Veillée du Dernier Vendredi",
+        "vigilTime": "00h00 - 02h00 (WAT)",
+        "counseling": "Heures de Conseil",
+        "counselingTime": "Sur Rendez-vous"
+      }
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Questions Fréquemment Posées",
+      "subtitle": "Réponses rapides aux questions courantes",
+      "questions": [
+        {
+          "question": "À quoi dois-je m'attendre lors de ma première visite?",
+          "answer": "Vous pouvez vous attendre à un accueil chaleureux, un culte édifiant et un enseignement biblique pratique. Venez comme vous êtes - il n'y a pas de code vestimentaire! Notre service dure environ 90 minutes."
+        },
+        {
+          "question": "Avez-vous des programmes pour les enfants?",
+          "answer": "Oui! Nous avons des programmes adaptés à l'âge pour les enfants de la crèche au lycée pendant nos services du dimanche. Tous nos travailleurs pour enfants sont vérifiés et formés."
+        },
+        {
+          "question": "Y a-t-il un parking disponible?",
+          "answer": "Nous avons un grand parking gratuit sur place. Notre équipe de stationnement vous aidera à trouver des places disponibles à votre arrivée."
+        },
+        {
+          "question": "Comment puis-je m'impliquer?",
+          "answer": "Il existe de nombreuses façons de servir! Contactez-nous pour en savoir plus sur les opportunités de bénévolat dans le culte, l'hospitalité, le ministère des enfants et la sensibilisation communautaire."
+        }
+      ]
+    },
+    "form": {
+      "title": "Envoyez-Nous un Message",
+      "name": "Votre Nom",
+      "email": "Adresse Email",
+      "phone": "Numéro de Téléphone",
+      "subject": "Sujet",
+      "message": "Votre Message",
+      "submit": "Envoyer le Message",
+      "namePlaceholder": "Jean Dupont",
+      "emailPlaceholder": "jean@exemple.com",
+      "phonePlaceholder": "+234 123 456 7890",
+      "selectSubject": "Sélectionnez un sujet...",
+      "subjects": {
+        "general": "Demande Générale",
+        "prayer": "Demande de Prière",
+        "visit": "Planifier une Visite",
+        "partnership": "Opportunité de Partenariat",
+        "other": "Autre"
+      },
+      "messagePlaceholder": "Dites-nous comment nous pouvons vous aider...",
+      "successMessage": "Merci de nous avoir contactés! Nous vous répondrons bientôt."
+    }
+  },
+  "tdgi": {
+    "hero": {
+      "badge": "Produits Oints",
+      "title": "Produits <products>Basés sur la Foi</products>",
+      "products": "Basés sur la Foi",
+      "subtitle": "Outils bénis et oints pour la guérison, la faveur et la percée"
+    },
+    "aboutUs": {
+      "badge": "À Propos de Nous",
+      "title": "Qui Nous <are>Sommes</are>",
+      "are": "Sommes",
+      "paragraph1": "<tdgi>TDGI Enterprise (RC:3603675)</tdgi> est la division de produits enregistrée de <bnbm>Beloved New Beginning Ministries</bnbm>, opérant en partenariat avec <tjfi>Toyin Jato Foundation International</tjfi>.",
+      "tdgi": "TDGI Enterprise (RC:3603675)",
+      "bnbm": "Beloved New Beginning Ministries",
+      "tjfi": "Toyin Jato Foundation International",
+      "paragraph2": "Sous la direction spirituelle de la <prophetess>Prophétesse Toyin Jato</prophetess>, nous produisons des produits inspirés divinement et basés sur la foi qui servent d'outils spirituels pour la guérison, la percée, la faveur et la connexion divine.",
+      "prophetess": "Prophétesse Toyin Jato",
+      "quote": "Des outils consacrés pour votre victoire spirituelle"
+    },
+    "mission": {
+      "badge": "Notre Objectif",
+      "title": "Notre <mission>Mission</mission>",
+      "mission": "Mission",
+      "paragraph1": "Fournir des produits oints et basés sur les Écritures qui permettent aux croyants d'activer leur foi, de recevoir la guérison divine, d'attirer la faveur surnaturelle et de vivre une percée dans tous les domaines de la vie.",
+      "paragraph2": "Chaque produit est créé et béni dans la prière pour servir de point de contact pour les miracles, combinant des ingrédients naturels de haute qualité avec l'onction spirituelle."
+    },
+    "registration": {
+      "badge": "Enregistrement Officiel",
+      "title": "Enregistré et Officiellement Reconnu",
+      "description": "<tdgi>TDGI Enterprise</tdgi> est officiellement enregistré auprès de la Commission des Affaires Corporatives",
+      "tdgi": "TDGI Enterprise",
+      "rcNumber": "RC: 3603675",
+      "footer": "Une entité commerciale légitime opérant sous <bnbm>Beloved New Beginning Ministries</bnbm> en partenariat avec <tjfi>Toyin Jato Foundation International</tjfi>",
+      "bnbm": "Beloved New Beginning Ministries",
+      "tjfi": "Toyin Jato Foundation International"
+    },
+    "products": {
+      "badge": "Produits Oints",
+      "title": "Nos <faithBased>Produits Basés sur la Foi</faithBased>",
+      "faithBased": "Produits Basés sur la Foi",
+      "subtitle": "Outils de foi inspirés divinement et produits dans la prière pour votre voyage spirituel",
+      "categories": {
+        "all": "Tous les Produits",
+        "soaps": "Savons Oints",
+        "oils": "Huiles & Eaux",
+        "balms": "Baumes de Guérison",
+        "perfumes": "Parfums de Gloire",
+        "herbal": "Produits à Base de Plantes"
+      },
+      "blessed": "Béni",
+      "orderNow": "Commander Maintenant",
+      "orderWhatsApp": "Commander via WhatsApp"
+    },
+    "productList": {
+      "favorSoap": {
+        "name": "Savon de Faveur",
+        "purpose": "Pour attirer la faveur divine et ouvrir les portes",
+        "category": "Savons"
+      },
+      "connectionSoap": {
+        "name": "Savon de Connexion",
+        "purpose": "Pour les aides du destin et les relations divines",
+        "category": "Savons"
+      },
+      "breakthroughSoap": {
+        "name": "Savon de Percée",
+        "purpose": "Pour détruire les barrières spirituelles et débloquer le succès",
+        "category": "Savons"
+      },
+      "mercySoap": {
+        "name": "Savon de Miséricorde",
+        "purpose": "Pour recevoir la miséricorde et la compassion de Dieu",
+        "category": "Savons"
+      },
+      "gloryOil": {
+        "name": "Huile de Gloire",
+        "purpose": "Pour la guérison, la délivrance et le toucher divin",
+        "category": "Huiles & Liquides"
+      },
+      "healingBalm": {
+        "name": "Baume de Guérison",
+        "purpose": "Pour le soulagement, la force et la restauration divine",
+        "category": "Baumes"
+      },
+      "deliveranceSoap": {
+        "name": "Savon de Délivrance",
+        "purpose": "Pour la liberté de l'esclavage et des chaînes spirituelles",
+        "category": "Savons"
+      },
+      "divineSettlementSoap": {
+        "name": "Savon de Règlement Divin",
+        "purpose": "Pour régler les problèmes de longue date et l'intervention divine",
+        "category": "Savons"
+      },
+      "fruitfulnessSoap": {
+        "name": "Savon de Fécondité",
+        "purpose": "Pour la productivité, l'abondance et porter des fruits durables",
+        "category": "Savons"
+      },
+      "peaceCalmSoap": {
+        "name": "Savon de Paix et de Calme",
+        "purpose": "Pour la paix intérieure, le calme et le repos divin",
+        "category": "Savons"
+      },
+      "loveMarriedFavourSoap": {
+        "name": "Savon d'Amour et de Faveur Conjugale",
+        "purpose": "Pour attirer l'amour, les bénédictions conjugales et la faveur relationnelle",
+        "category": "Savons"
+      },
+      "morningGloryOil": {
+        "name": "Huile de Gloire du Matin",
+        "purpose": "Pour de nouveaux départs, la gloire divine et les percées matinales",
+        "category": "Huiles & Liquides"
+      },
+      "spiritExcellenceOil": {
+        "name": "Huile d'Excellence Spirituelle",
+        "purpose": "Pour l'excellence surnaturelle et la performance exceptionnelle",
+        "category": "Huiles & Liquides"
+      },
+      "breakEveryChainBalm": {
+        "name": "Baume Brise Toutes les Chaînes",
+        "purpose": "Pour briser les limitations et les chaînes spirituelles",
+        "category": "Baumes"
+      },
+      "crownGloryBalm": {
+        "name": "Baume de Couronne de Gloire",
+        "purpose": "Pour l'honneur, la dignité et la manifestation de la gloire divine",
+        "category": "Baumes"
+      },
+      "ulcerHerbal": {
+        "name": "Produit Herbal pour Ulcères",
+        "purpose": "Pour la guérison naturelle et le soulagement des symptômes d'ulcère",
+        "category": "Produits à Base de Plantes"
+      }
+    },
+    "modal": {
+      "title": "Complétez Votre Commande",
+      "emailLabel": "Adresse Email",
+      "emailRequired": "Requis",
+      "emailPlaceholder": "votre@email.com",
+      "nameLabel": "Nom Complet (Optionnel)",
+      "namePlaceholder": "Votre nom",
+      "phoneLabel": "Numéro de Téléphone (Optionnel)",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "proceedPayment": "Procéder au Paiement",
+      "footerNote": "Après le paiement, vous serez redirigé vers WhatsApp pour compléter votre commande",
+      "validEmailError": "Veuillez entrer un email valide",
+      "paymentNotConfigured": "Le système de paiement n'est pas configuré. Veuillez nous contacter via WhatsApp pour passer votre commande."
+    },
+    "cta": {
+      "title": "Besoin d'Aide pour Choisir le <right>Bon Produit?</right>",
+      "right": "Bon Produit?",
+      "subtitle": "Notre équipe est là pour vous guider vers le produit spirituel parfait pour vos besoins. Contactez-nous pour des recommandations personnalisées et un soutien dans la prière.",
+      "whatsapp": "Contactez-nous sur WhatsApp",
+      "email": "Envoyez-nous un Email"
+    }
+  },
+  "checkout": {
+    "title": "Paiement",
+    "shippingInformation": "Informations de Livraison",
+    "fullName": "Nom Complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "city": "Ville",
+    "state": "État/Province",
+    "zipCode": "Code Postal",
+    "country": "Pays",
+    "countries": {
+      "ng": "Nigéria",
+      "us": "États-Unis",
+      "uk": "Royaume-Uni",
+      "ca": "Canada",
+      "au": "Australie"
+    },
+    "paymentInformation": "Informations de Paiement",
+    "paymentSecure": "Votre paiement est sécurisé et crypté",
+    "orderSummary": "Résumé de la Commande",
+    "product": "Produit",
+    "price": "Prix",
+    "quantity": "Quantité",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "total": "Total",
+    "proceedPayment": "Procéder au Paiement",
+    "processing": "Traitement en cours...",
+    "fieldRequired": "Ce champ est requis"
+  },
+  "givingSuccess": {
+    "hero": {
+      "title": "Merci pour Votre <styled>Don Généreux!</styled>",
+      "subtitle": "Votre contribution fait une différence réelle dans notre communauté et aide à répandre l'amour et la grâce de Dieu."
+    },
+    "paymentConfirmation": {
+      "title": "Détails du Paiement",
+      "reference": "Référence",
+      "amount": "Montant",
+      "date": "Date",
+      "status": "Statut",
+      "statusSuccess": "Succès",
+      "method": "Méthode",
+      "email": "Email",
+      "receiptSent": "Un reçu a été envoyé à votre adresse email"
+    },
+    "whatsNext": {
+      "title": "Et Maintenant?",
+      "step1": {
+        "title": "Rejoignez-Nous en Ligne",
+        "description": "Participez à nos services de culte en direct et connectez-vous avec notre communauté"
+      },
+      "step2": {
+        "title": "Restez Connecté",
+        "description": "Suivez-nous sur les réseaux sociaux pour des mises à jour et de l'inspiration quotidienne"
+      },
+      "step3": {
+        "title": "Explorez Plus",
+        "description": "Découvrez nos sermons, événements et ressources pour approfondir votre foi"
+      }
+    },
+    "cta": {
+      "title": "Continuez Votre Parcours",
+      "card1": {
+        "title": "Regarder les Sermons",
+        "description": "Explorez notre collection de sermons inspirants"
+      },
+      "card2": {
+        "title": "Visitez Notre Blog",
+        "description": "Lisez des articles et témoignages édifiants"
+      },
+      "card3": {
+        "title": "Contactez-Nous",
+        "description": "Nous serions ravis de vous entendre"
+      }
+    }
+  },
+  "postDetail": {
+    "backToBlog": "Retour au Blog",
+    "enjoyedArticle": "Vous avez aimé cet article?",
+    "exploreMore": "Explorez plus d'articles inspirants et de témoignages de notre communauté.",
+    "viewAllPosts": "Voir Tous les Articles"
+  },
+  "homeClient": {
+    "hero": {
+      "title": "Bienvenue chez Beloved New Beginning Ministries",
+      "subtitle": "Un lieu de <faith>foi</faith>, d'espoir et d'amour",
+      "watchSermons": "Regarder les Sermons",
+      "giveToChurch": "Donner à l'Église"
+    },
+    "welcome": {
+      "badge": "Bienvenue",
+      "title": "Un Message de Notre Prophétesse",
+      "description1": "Nous sommes ravis de vous accueillir dans notre famille d'église. Ici, vous trouverez une communauté aimante et solidaire où vous pourrez grandir dans votre foi et vous connecter avec d'autres croyants.",
+      "description2": "Que vous soyez nouveau dans la foi ou que vous soyez croyant depuis des années, nous sommes là pour vous soutenir dans votre parcours spirituel. Rejoignez-nous alors que nous explorons ensemble la Parole de Dieu."
+    }
+  },
+  "footer": {
+    "about": "À Propos de Nous",
+    "aboutText": "Beloved New Beginning Ministries est une communauté de croyants dédiée au partage de l'amour et de la grâce de Dieu.",
+    "quickLinks": "Liens Rapides",
+    "connect": "Connectez-Vous Avec Nous",
+    "copyright": "© {year} Beloved New Beginning Ministries. Tous droits réservés.",
+    "builtWith": "Construit avec foi et amour"
+  },
+  "common": {
+    "learnMore": "En Savoir Plus",
+    "readMore": "Lire Plus",
+    "viewAll": "Voir Tout",
+    "loading": "Chargement...",
+    "error": "Quelque chose s'est mal passé",
+    "tryAgain": "Réessayer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "language": "Langue"
+  }
+}

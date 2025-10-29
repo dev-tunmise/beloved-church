@@ -1,0 +1,813 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "sermons": "Sermons",
+    "blog": "Blog",
+    "contact": "Contact",
+    "giving": "Giving",
+    "tdgi": "TDGI"
+  },
+  "home": {
+    "hero": {
+      "title": "A Place Where <faith>Faith</faith> Comes Alive",
+      "subtitle": "Join us as we worship, grow, and serve together in community",
+      "watchSermons": "Watch Sermons",
+      "giveToChurch": "Give to Church"
+    },
+    "welcome": {
+      "badge": "Welcome",
+      "title": "A Message from Our Prophetess",
+      "paragraph1": "Welcome to our community of faith. Here, we believe in hope, healing, and the power of God's Word to transform lives.",
+      "paragraph2": "Whether you're searching for answers, seeking a deeper relationship with Christ, or looking for a church family to call home, you are welcomed here with open arms.",
+      "name": "(Evang.) Prophetess Oluwatoyin Jato",
+      "role": "Senior Prophetess"
+    },
+    "about": {
+      "badge": "About Us",
+      "title": "Who We Are",
+      "paragraph1": "Beloved New Beginning Ministries is a vibrant community of believers committed to spreading the gospel, nurturing faith, and serving our community with excellence and love.",
+      "paragraph2": "Founded on biblical principles and guided by the Holy Spirit, we strive to create an environment where every person can encounter God, grow in their faith, and discover their purpose.",
+      "learnMore": "Learn More"
+    },
+    "sermons": {
+      "badge": "Messages",
+      "title": "Recent Sermons",
+      "description": "Watch our latest messages and be inspired by the Word of God"
+    },
+    "giving": {
+      "badge": "Partnership",
+      "title": "Support the Ministry",
+      "paragraph1": "Your generosity enables us to spread the gospel, support our community, and impact lives for the Kingdom of God.",
+      "paragraph2": "Every gift, regardless of size, makes a significant difference in advancing God's work through our ministry.",
+      "giveNow": "Give Now",
+      "bankDetails": "Bank Details",
+      "bankDetailsSubtitle": "For direct transfers and donations",
+      "bankName": "Bank Name",
+      "bankNameValue": "Union Bank",
+      "accountName": "Account Name",
+      "accountNameValue": "BELOVED New Beginning Ministries",
+      "accountNumber": "Account Number",
+      "accountNumberValue": "0236577830"
+    },
+    "blog": {
+      "badge": "Blog",
+      "title": "Latest Articles",
+      "description": "Read inspiring stories and insights from our community",
+      "viewAll": "View All Articles"
+    },
+    "contact": {
+      "badge": "Contact",
+      "title": "Get in Touch",
+      "description": "Have questions or want to connect? We'd love to hear from you",
+      "fullName": "Full Name",
+      "emailAddress": "Email Address",
+      "message": "Message",
+      "sendMessage": "Send Message",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "john@example.com",
+      "messagePlaceholder": "How can we help you?"
+    }
+  },
+  "giving": {
+    "title": "Support Our Ministry",
+    "subtitle": "Your generous giving helps us fulfill our mission",
+    "description": "Your contributions help us spread the Gospel, support our community programs, and maintain our ministry. Every gift makes a difference.",
+    "hero": {
+      "badge": "Give Back",
+      "title": "Give {generously}",
+      "generously": "Generously",
+      "scripture": "\"Give, and it will be given to you\" - Luke 6:38",
+      "subtitle": "Your generosity helps us transform lives and spread God's love"
+    },
+    "partnership": {
+      "badge": "Join Us",
+      "title": "Become a {partner}",
+      "partner": "Partner",
+      "intro": "At {bnbm}, we believe that partnership is a divine connection—where hearts, prayers, and resources unite to advance God's Kingdom on earth.",
+      "bnbm": "Beloved New Beginning Ministries",
+      "paragraph1": "We welcome spirit-led individuals, churches, and organizations who desire to support this vision of spreading the gospel, restoring lives, and empowering communities through the love of Christ.",
+      "paragraph2": "Your partnership helps us reach more souls, support the needy, and carry out outreach missions that transform lives for God's glory.",
+      "scripture": "\"Two are better than one, because they have a good reward for their labor.\"",
+      "scriptureRef": "— Ecclesiastes 4:9",
+      "waysTitle": "Ways to Partner:",
+      "financialSupport": "Monthly or one-time financial support",
+      "donations": "Donations (materials, equipment, food items, etc.)",
+      "volunteering": "Volunteering during outreaches or church programs",
+      "collaboration": "Ministry collaborations or sponsorship"
+    },
+    "whyGive": {
+      "title": "Why We Give",
+      "description": "Your generous giving helps us spread the Gospel, support our community, and fulfill God's vision for Beloved New Beginning Ministries. Every gift makes a difference and is greatly appreciated.",
+      "scripture": "\"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.\"",
+      "scriptureRef": "- 2 Corinthians 9:7",
+      "worship": "Worship",
+      "worshipDesc": "Supporting our worship services and events",
+      "outreach": "Outreach",
+      "outreachDesc": "Helping those in need in our community",
+      "growth": "Growth",
+      "growthDesc": "Investing in spiritual development programs"
+    },
+    "givingOptions": {
+      "title": "Giving Options",
+      "oneTime": "One-Time Gift",
+      "oneTimeDesc": "Make a single donation",
+      "tithe": "Tithe (10%)",
+      "titheDesc": "Regular tithe contribution",
+      "offering": "Offering",
+      "offeringDesc": "Special offering gift"
+    },
+    "form": {
+      "title": "Make Your Contribution",
+      "subtitle": "Choose how you'd like to give today",
+      "selectAmount": "Select Amount",
+      "customAmount": "Or enter custom amount",
+      "customAmountPlaceholder": "Enter custom amount",
+      "amount": "Amount",
+      "amountNaira": "Amount (₦)",
+      "frequency": "Frequency",
+      "oneTime": "One-Time",
+      "monthly": "Monthly",
+      "givingType": "Type of Giving",
+      "types": {
+        "tithe": "Tithe",
+        "offering": "Offering",
+        "missions": "Missions",
+        "building": "Building Fund"
+      },
+      "name": "Full Name",
+      "firstName": "First Name (Optional)",
+      "lastName": "Last Name (Optional)",
+      "email": "Email Address",
+      "phone": "Phone Number (Optional)",
+      "firstNamePlaceholder": "First name",
+      "lastNamePlaceholder": "Last name",
+      "emailPlaceholder": "Enter your email",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "receiptInfo": "Receipt will be sent to this email",
+      "purpose": "Purpose",
+      "selectPurpose": "Select purpose",
+      "purposes": {
+        "general": "General Offering",
+        "tithe": "Tithe",
+        "missions": "Missions",
+        "building": "Building Fund",
+        "special": "Special Project"
+      },
+      "message": "Message (Optional)",
+      "donate": "Proceed to Donate",
+      "processing": "Processing...",
+      "giveNow": "Give Now",
+      "securePayment": "Secure Paystack Payment Gateway",
+      "paymentInfo": "Powered by Paystack. All transactions are encrypted and secure with 256-bit SSL encryption."
+    },
+    "security": {
+      "title": "Secure & Trusted",
+      "description": "All transactions are encrypted and secure. We use Paystack for payment processing."
+    },
+    "bankTransfer": {
+      "title": "Or Make a Bank Transfer",
+      "subtitle": "You can also give directly to our church account",
+      "detailsTitle": "Bank Transfer Details",
+      "detailsSubtitle": "Transfer directly to our church account",
+      "bankName": "Bank Name",
+      "accountName": "Account Name",
+      "accountNumber": "Account Number",
+      "note": "<strong>Please note:</strong> After making your transfer, you can send us a confirmation message via WhatsApp or email for prayer and proper documentation."
+    },
+    "internationalTransfer": {
+      "title": "International Payment Details",
+      "subtitle": "For donations from outside Nigeria via bank transfer (USD)",
+      "detailsTitle": "International Bank Transfer",
+      "detailsSubtitle": "Send USD donations via SWIFT transfer",
+      "accountName": "Account Name",
+      "accountNumber": "Account Number",
+      "bankName": "Bank Name",
+      "swiftCode": "SWIFT Code / Bank Address",
+      "swiftAddress": "Bank Address",
+      "currency": "Currency",
+      "note": "<strong>Important:</strong> Please use these details for international wire transfers in USD. Bank charges may apply. After transfer, kindly send confirmation via WhatsApp or email."
+    },
+    "prayer": {
+      "badge": "Connect with God",
+      "title": "Prophetic Encounters & <span>Prayer Requests</span>",
+      "subtitle": "Submit your prayer request and connect with us for a prophetic word",
+      "formTitle": "Submit Prayer Request",
+      "fullName": "Full Name",
+      "namePlaceholder": "Enter your name",
+      "country": "Country",
+      "countryPlaceholder": "Enter your country",
+      "request": "Prayer Request",
+      "requestPlaceholder": "Share your prayer request...",
+      "submit": "Submit Prayer Request",
+      "prophetic": {
+        "title": "Online Prophetic Connection",
+        "description": "Connect with Prophetess Toyin Jato for a prophetic word, spiritual guidance, and divine direction for your life.",
+        "ministry": "Personal prophetic ministry sessions",
+        "deliverance": "Online prayer and deliverance services",
+        "counseling": "Spiritual counseling and breakthrough",
+        "schedule": "Schedule Connection"
+      },
+      "scriptures": {
+        "title": "Encouraging Scriptures",
+        "verse1": "\"The prayer of a righteous person is powerful and effective.\"",
+        "ref1": "— James 5:16",
+        "verse2": "\"Call to me and I will answer you and tell you great and unsearchable things you do not know.\"",
+        "ref2": "— Jeremiah 33:3",
+        "verse3": "\"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.\"",
+        "ref3": "— Philippians 4:6"
+      }
+    }
+  },
+  "sermons": {
+    "title": "Sermons",
+    "subtitle": "Watch our latest messages and be inspired",
+    "loading": "Loading sermons...",
+    "noSermons": "No sermons available at the moment.",
+    "watchNow": "Watch Now",
+    "hero": {
+      "badge": "Watch & Learn",
+      "title": "Sermons & {messages}",
+      "messages": "Messages",
+      "subtitle": "Watch our live services, past sermons, prophetic moments, and testimonies"
+    },
+    "live": {
+      "title": "Live Worship Service",
+      "schedule": "Join us every Sunday at 8:00 AM (WAT)",
+      "badge": "LIVE NOW",
+      "notLive": "We're Not Live at the Moment",
+      "timing": "Our live stream begins every Sunday at 8:00 AM (WAT)",
+      "checkBack": "Check back during service hours or watch our past sermons below",
+      "experience": "Experience powerful worship, anointed preaching, and the presence of God",
+      "youtube": "Subscribe on YouTube",
+      "facebook": "Follow on Facebook"
+    },
+    "pastMessages": {
+      "badge": "Message Archive",
+      "title": "Past Messages",
+      "subtitle": "Browse our collection of sermons, prophetic words, and powerful testimonies"
+    },
+    "categories": {
+      "all": "All Messages",
+      "sermons": "Sermons",
+      "prophetic": "Prophetic Moments",
+      "testimonies": "Testimonies"
+    },
+    "filter": {
+      "filterBy": "Filter by category"
+    },
+    "cta": {
+      "title": "Experience More of <styled>God's Presence</styled>",
+      "styled": "God's Presence",
+      "subtitle": "Join us for live worship and powerful ministry. Be part of our growing church family.",
+      "learnAboutUs": "Learn About Us",
+      "visitUs": "Visit Us"
+    },
+    "modal": {
+      "close": "Close"
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Insights & Inspiration",
+      "title": "Church <blog>Blog</blog>",
+      "blog": "Blog",
+      "subtitle": "Updates, teachings, and messages from our community"
+    },
+    "stats": {
+      "weekly": {
+        "title": "Weekly",
+        "description": "New articles and teachings published regularly"
+      },
+      "community": {
+        "title": "Community",
+        "description": "Stories and testimonies from our church family"
+      },
+      "faith": {
+        "title": "Faith",
+        "description": "Growing together in our walk with Christ"
+      }
+    },
+    "cta": {
+      "title": "Stay Connected with Our <community>Community</community>",
+      "community": "Community",
+      "subtitle": "Subscribe to receive the latest updates, teachings, and inspiring stories directly to your inbox.",
+      "getInTouch": "Get in Touch",
+      "watchSermons": "Watch Sermons"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Learn more about our church and mission",
+    "hero": {
+      "badge": "Our Story",
+      "title": "About {beloved}",
+      "beloved": "Beloved New Beginning",
+      "subtitle": "A community of believers walking in Royal Grace and Purity"
+    },
+    "aboutBnbm": {
+      "badge": "Who We Are",
+      "title": "About {beloved}",
+      "beloved": "Beloved New Beginning Ministries",
+      "intro": "Beloved New Beginning Ministries (BNBM) is a Spirit-filled, Christ-centered ministry dedicated to spreading the gospel of Jesus Christ and transforming lives through the power of God's Word.",
+      "leadership": "Founded under the prophetic leadership of {prophetess}, our ministry is a beacon of hope, healing, and restoration for believers seeking to walk in their divine purpose and experience God's supernatural breakthrough.",
+      "prophetess": "Prophetess Toyin Jato",
+      "commitment": "We are committed to raising a generation of believers who walk in {royalGrace}, equipped with the knowledge of God's Word and empowered by the Holy Spirit to fulfill their God-given destiny.",
+      "royalGrace": "Royal Grace and Purity"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be a beacon of God's love, spreading the gospel of Jesus Christ to all nations, and raising a generation of believers who walk in righteousness, power, and divine purpose. We envision a church where every member is equipped to fulfill their God-given destiny."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To worship God in spirit and in truth, disciple believers to spiritual maturity, empower them with the Word of God, and reach the lost through evangelism, outreach, and compassionate service."
+    },
+    "coreValues": {
+      "title": "Our Core Values",
+      "subtitle": "The foundation of everything we do",
+      "faith": "Faith",
+      "faithDesc": "We believe in the power of unwavering faith in Jesus Christ",
+      "prayer": "Prayer",
+      "prayerDesc": "We are a house of prayer, interceding for our community and the world",
+      "word": "Word of God",
+      "wordDesc": "We uphold the Bible as the inspired, infallible Word of God",
+      "holiness": "Holiness",
+      "holinessDesc": "We pursue righteous living and spiritual purity in all we do",
+      "love": "Love",
+      "loveDesc": "We demonstrate God's unconditional love to all people",
+      "service": "Service",
+      "serviceDesc": "We serve God and our community with humility and excellence"
+    },
+    "leadership": {
+      "title": "Our Leadership",
+      "subtitle": "Meet the team shepherding our church",
+      "founder": "Founder & Senior Prophetess",
+      "founderName": "Prophetess Oluwatoyin Jato",
+      "founderTitle": "(Evang.) Prophetess Oluwatoyin Jato",
+      "founderBio": "Called by God to establish Beloved New Beginning Ministries, Prophetess Toyin Jato is a vessel of God's power and grace. With a heart for the lost and broken, she ministers in prophetic insight, healing, and deliverance. Her passion is to see believers walk in their God-given authority and fulfill their divine purpose."
+    },
+    "whatWeBelieve": {
+      "title": "What We Believe",
+      "subtitle": "Our statement of faith",
+      "trinity": "The Trinity",
+      "trinityDesc": "We believe in one God existing in three persons: Father, Son, and Holy Spirit.",
+      "salvation": "Salvation",
+      "salvationDesc": "We believe salvation is by grace through faith in Jesus Christ alone.",
+      "bible": "The Bible",
+      "bibleDesc": "We believe the Bible is the inspired, infallible Word of God.",
+      "church": "The Church",
+      "churchDesc": "We believe the church is the body of Christ, called to make disciples.",
+      "return": "Second Coming",
+      "returnDesc": "We believe in the personal return of Jesus Christ and eternal life."
+    },
+    "joinUs": {
+      "title": "Join Our Community",
+      "description": "We invite you to be part of our growing family. Experience the love of God and walk in your divine purpose.",
+      "contactUs": "Contact Us",
+      "watchSermons": "Watch Sermons"
+    },
+    "prophetess": {
+      "badge": "Our Leader",
+      "title": "Prophetess <styled>Toyin Jato</styled>",
+      "styled": "Toyin Jato",
+      "paragraph1": "<strong>Prophetess Toyin Jato</strong> is a woman of God with a powerful prophetic calling and an unwavering passion for souls. She is the founder and Senior Prophetess of <ministry>Beloved New Beginning Ministries</ministry>.",
+      "strong": "Prophetess Toyin Jato",
+      "ministry": "Beloved New Beginning Ministries",
+      "paragraph2": "With a heart ablaze for God's presence and a deep burden for the lost, she operates in the prophetic with remarkable accuracy, bringing forth timely words of direction, comfort, and breakthrough to believers across nations.",
+      "paragraph3": "Her ministry is characterized by powerful worship, supernatural healings, deliverance from demonic oppression, and life-changing testimonies. Through her leadership, countless individuals have experienced divine restoration, financial breakthroughs, marital restoration, and freedom from generational curses.",
+      "paragraph4": "Prophetess Toyin also founded <tdgi>TDGI Enterprise</tdgi> and <foundation>Toyin Jato Foundation International</foundation>, extending her ministry's impact through faith-based products and humanitarian outreach programs.",
+      "tdgi": "TDGI Enterprise",
+      "foundation": "Toyin Jato Foundation International",
+      "quote": "\"I am called to raise a generation that walks in Royal Grace and Purity, empowered by the Holy Spirit to fulfill their divine destiny.\"",
+      "quoteAuthor": "- Prophetess Toyin Jato"
+    },
+    "values": {
+      "badge": "What We Stand For",
+      "title": "Our Core Values",
+      "subtitle": "These principles guide everything we do as a church community",
+      "prayer": {
+        "title": "Prayer",
+        "description": "We believe in the power of prayer and seek God's guidance in all we do. Prayer is the foundation of our ministry."
+      },
+      "word": {
+        "title": "The Word",
+        "description": "The Bible is our foundation and guide for life and ministry. We stand firmly on God's unchanging Word."
+      },
+      "love": {
+        "title": "Love",
+        "description": "We demonstrate God's love through our actions and service to others, showing Christ's compassion to all."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for excellence in everything, honoring God with our best and highest standards."
+      },
+      "community": {
+        "title": "Community",
+        "description": "We foster authentic relationships and support one another in love, creating a family atmosphere."
+      },
+      "mission": {
+        "title": "Mission",
+        "description": "We are passionate about reaching the world with the Gospel of Christ and making disciples of all nations."
+      }
+    },
+    "gallery": {
+      "badge": "Our Community",
+      "title": "Church Gallery",
+      "subtitle": "Glimpses of our vibrant community in worship, fellowship, and service",
+      "item1": {
+        "title": "Our Spiritual Leader",
+        "description": "Our spiritual leader and founder, committed to raising a generation that walks in Royal Grace and Purity."
+      },
+      "item2": {
+        "title": "Leadership in Unity",
+        "description": "United in faith and ministry, leading our church family with love and godly wisdom."
+      },
+      "item3": {
+        "title": "One Church Family",
+        "description": "Fellowshipping together as one family, united in purpose and love for Christ."
+      },
+      "item4": {
+        "title": "Men of Excellence",
+        "description": "Raising men of excellence and integrity who walk in their God-given purpose."
+      },
+      "item5": {
+        "title": "Women of Virtue",
+        "description": "Empowering women to walk in virtue, strength, and divine grace."
+      },
+      "item6": {
+        "title": "Sisterhood of Faith",
+        "description": "Building a sisterhood of faith, where women are equipped and celebrated."
+      }
+    },
+    "cta": {
+      "title": "Join Our <styled>Church Family</styled>",
+      "styled": "Church Family",
+      "subtitle": "Whether you're new to faith or looking for a church home, we'd love to welcome you. Experience authentic worship, solid biblical teaching, and a community that cares.",
+      "contactUs": "Contact Us",
+      "watchSermons": "Watch Sermons"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "getInTouch": "Get In Touch",
+    "description": "Have questions or want to know more about our church? Reach out to us!",
+    "hero": {
+      "badge": "Get In Touch",
+      "title": "Contact {us}",
+      "us": "Us",
+      "subtitle": "We'd love to hear from you. Reach out to us anytime!"
+    },
+    "connectSection": {
+      "badge": "Let's Connect",
+      "title": "Get in Touch",
+      "description": "Whether you have a question, need prayer, or want to learn more about our church, we're here for you. Contact us through any of the methods below."
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "john@example.com",
+      "phonePlaceholder": "+234 123 456 7890",
+      "selectSubject": "Select a subject...",
+      "subjects": {
+        "general": "General Inquiry",
+        "prayer": "Prayer Request",
+        "visit": "Plan a Visit",
+        "partnership": "Partnership Opportunity",
+        "other": "Other"
+      },
+      "messagePlaceholder": "Tell us how we can help you...",
+      "successMessage": "Thank you for contacting us! We'll get back to you soon."
+    },
+    "info": {
+      "badge": "Contact Details",
+      "title": "Contact Information",
+      "description": "We're here to serve you. Reach out through any of the channels below.",
+      "location": {
+        "title": "Our Location",
+        "address": "6 Ibrahim Alade Street, Erunwen, Ikorodu, Lagos, Nigeria"
+      },
+      "phone": {
+        "title": "Phone",
+        "label": "Call us:"
+      },
+      "email": {
+        "title": "Email",
+        "label": "Email us:"
+      },
+      "hours": {
+        "title": "Service Hours",
+        "sunday": "Sunday Service",
+        "sundayTime": "8:00 AM - 10:00 AM (WAT)",
+        "thursday": "Thursday Service",
+        "thursdayTime": "5:00 PM - 7:00 PM (WAT)",
+        "vigil": "Last Friday Night Vigil",
+        "vigilTime": "12:00 AM - 2:00 AM (WAT)",
+        "counseling": "Counseling Hours",
+        "counselingTime": "By Appointment"
+      }
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Quick answers to common questions",
+      "questions": [
+        {
+          "question": "What should I expect on my first visit?",
+          "answer": "You can expect a warm welcome, uplifting worship, and practical biblical teaching. Come as you are – there's no dress code! Our service lasts about 90 minutes."
+        },
+        {
+          "question": "Do you have programs for children?",
+          "answer": "Yes! We have age-appropriate programs for children from nursery through high school during our Sunday services. All our children's workers are background-checked and trained."
+        },
+        {
+          "question": "Is parking available?",
+          "answer": "We have ample free parking on-site. Our parking team will help direct you to available spots when you arrive."
+        },
+        {
+          "question": "How can I get involved?",
+          "answer": "There are many ways to serve! Contact us to learn about volunteer opportunities in worship, hospitality, children's ministry, and community outreach."
+        }
+      ]
+    }
+  },
+  "tdgi": {
+    "hero": {
+      "badge": "Anointed Products",
+      "title": "Faith-Based <products>Products</products>",
+      "products": "Products",
+      "subtitle": "Blessed, anointed tools for healing, favour, and breakthrough"
+    },
+    "aboutUs": {
+      "badge": "About Us",
+      "title": "Who We <are>Are</are>",
+      "are": "Are",
+      "paragraph1": "<tdgi>TDGI Enterprise (RC:3603675)</tdgi> is the registered product division of <bnbm>Beloved New Beginning Ministries</bnbm>, operating in partnership with <tjfi>Toyin Jato Foundation International</tjfi>.",
+      "tdgi": "TDGI Enterprise (RC:3603675)",
+      "bnbm": "Beloved New Beginning Ministries",
+      "tjfi": "Toyin Jato Foundation International",
+      "paragraph2": "Under the spiritual leadership of <prophetess>Prophetess Toyin Jato</prophetess>, we produce divinely inspired, faith-based products that serve as spiritual tools for healing, breakthrough, favor, and divine connection.",
+      "prophetess": "Prophetess Toyin Jato",
+      "quote": "Consecrated tools for your spiritual victory"
+    },
+    "mission": {
+      "badge": "Our Purpose",
+      "title": "Our <mission>Mission</mission>",
+      "mission": "Mission",
+      "paragraph1": "To provide anointed, scripture-based products that empower believers to activate their faith, receive divine healing, attract supernatural favor, and experience breakthrough in every area of life.",
+      "paragraph2": "Each product is prayerfully created and blessed to serve as a point of contact for miracles, combining high-quality natural ingredients with spiritual anointing."
+    },
+    "registration": {
+      "badge": "Official Registration",
+      "title": "Registered & Officially Recognized",
+      "description": "<tdgi>TDGI Enterprise</tdgi> is officially registered with the Corporate Affairs Commission",
+      "tdgi": "TDGI Enterprise",
+      "rcNumber": "RC: 3603675",
+      "footer": "A legitimate business entity operating under <bnbm>Beloved New Beginning Ministries</bnbm> in partnership with <tjfi>Toyin Jato Foundation International</tjfi>",
+      "bnbm": "Beloved New Beginning Ministries",
+      "tjfi": "Toyin Jato Foundation International"
+    },
+    "products": {
+      "badge": "Anointed Products",
+      "title": "Our <faithBased>Faith-Based Products</faithBased>",
+      "faithBased": "Faith-Based Products",
+      "subtitle": "Divinely inspired, prayerfully produced faith tools for your spiritual journey",
+      "categories": {
+        "all": "All Products",
+        "soaps": "Anointed Soaps",
+        "oils": "Oils & Waters",
+        "balms": "Healing Balms",
+        "perfumes": "Glory Perfumes",
+        "herbal": "Herbal Products"
+      },
+      "blessed": "Blessed",
+      "orderNow": "Order Now",
+      "orderWhatsApp": "Order via WhatsApp"
+    },
+    "productList": {
+      "favorSoap": {
+        "name": "Favour Soap",
+        "purpose": "For attracting divine favour and open doors",
+        "category": "Soaps"
+      },
+      "connectionSoap": {
+        "name": "Connection Soap",
+        "purpose": "For destiny helpers and divine relationships",
+        "category": "Soaps"
+      },
+      "breakthroughSoap": {
+        "name": "Breakthrough Soap",
+        "purpose": "For destroying spiritual barriers and unlocking success",
+        "category": "Soaps"
+      },
+      "mercySoap": {
+        "name": "Mercy Soap",
+        "purpose": "For receiving God's mercy and compassion",
+        "category": "Soaps"
+      },
+      "gloryOil": {
+        "name": "Glory Oil",
+        "purpose": "For healing, deliverance, and divine touch",
+        "category": "Oils & Liquids"
+      },
+      "healingBalm": {
+        "name": "Healing Balm",
+        "purpose": "For relief, strength, and divine restoration",
+        "category": "Balms"
+      },
+      "deliveranceSoap": {
+        "name": "Deliverance Soap",
+        "purpose": "For freedom from bondage and spiritual chains",
+        "category": "Soaps"
+      },
+      "divineSettlementSoap": {
+        "name": "Divine Settlement Soap",
+        "purpose": "For settling long-standing issues and divine intervention",
+        "category": "Soaps"
+      },
+      "fruitfulnessSoap": {
+        "name": "Fruitfulness Soap",
+        "purpose": "For productivity, abundance, and bearing lasting fruit",
+        "category": "Soaps"
+      },
+      "peaceCalmSoap": {
+        "name": "Peace and Calm Soap",
+        "purpose": "For inner peace, calmness, and divine rest",
+        "category": "Soaps"
+      },
+      "loveMarriedFavourSoap": {
+        "name": "Love and Married Favour Soap",
+        "purpose": "For attracting love, marital blessings, and relationship favour",
+        "category": "Soaps"
+      },
+      "morningGloryOil": {
+        "name": "Morning Glory Oil",
+        "purpose": "For fresh beginnings, divine glory, and morning breakthroughs",
+        "category": "Oils & Liquids"
+      },
+      "spiritExcellenceOil": {
+        "name": "Spirit of Excellence Oil",
+        "purpose": "For supernatural excellence and outstanding performance",
+        "category": "Oils & Liquids"
+      },
+      "breakEveryChainBalm": {
+        "name": "Break Every Chain Balm",
+        "purpose": "For breaking limitations and spiritual chains",
+        "category": "Balms"
+      },
+      "crownGloryBalm": {
+        "name": "Crown of Glory Balm",
+        "purpose": "For honor, dignity, and divine glory manifestation",
+        "category": "Balms"
+      },
+      "ulcerHerbal": {
+        "name": "Ulcer Herbal Product",
+        "purpose": "For natural healing and relief from ulcer symptoms",
+        "category": "Herbal Products"
+      }
+    },
+    "modal": {
+      "title": "Complete Your Order",
+      "emailLabel": "Email Address",
+      "emailRequired": "Required",
+      "emailPlaceholder": "your@email.com",
+      "nameLabel": "Full Name (Optional)",
+      "namePlaceholder": "Your name",
+      "phoneLabel": "Phone Number (Optional)",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "proceedPayment": "Proceed to Payment",
+      "footerNote": "After payment, you'll be redirected to WhatsApp to complete your order",
+      "validEmailError": "Please enter a valid email",
+      "paymentNotConfigured": "Payment system is not configured. Please contact us via WhatsApp to place your order."
+    },
+    "cta": {
+      "title": "Need Help Choosing the <right>Right Product?</right>",
+      "right": "Right Product?",
+      "subtitle": "Our team is here to guide you to the perfect spiritual product for your needs. Contact us for personalized recommendations and prayer support.",
+      "whatsapp": "WhatsApp Us Now",
+      "email": "Email Us"
+    }
+  },
+  "footer": {
+    "about": "About Us",
+    "aboutText": "Beloved New Beginning Ministries is a community of believers dedicated to sharing God's love and grace.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect With Us",
+    "copyright": "© {year} Beloved New Beginning Ministries. All rights reserved.",
+    "builtWith": "Built with faith and love"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "tryAgain": "Try Again",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "language": "Language"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shippingInfo": "Shipping Information",
+    "paymentInfo": "Payment Information",
+    "orderSummary": "Order Summary",
+    "fullName": "Full Name *",
+    "email": "Email *",
+    "phone": "Phone *",
+    "address": "Address *",
+    "city": "City *",
+    "state": "State *",
+    "zipCode": "Zip Code *",
+    "country": "Country *",
+    "selectCountry": "Select Country",
+    "countries": {
+      "us": "United States",
+      "ca": "Canada",
+      "uk": "United Kingdom",
+      "au": "Australia",
+      "ng": "Nigeria"
+    },
+    "securePayment": "Secure payment powered by Stripe",
+    "stripeForm": "Stripe Payment Form",
+    "toBeIntegrated": "(To be integrated)",
+    "completePurchase": "Complete Purchase",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "FREE",
+    "tax": "Tax",
+    "total": "Total",
+    "freeShippingNote": "✓ Free shipping on orders over $50",
+    "continueShopping": "← Continue Shopping",
+    "quantity": "Qty"
+  },
+  "givingSuccess": {
+    "hero": {
+      "title": "Thank You for Your <styled>Generosity!</styled>",
+      "styled": "Generosity!",
+      "subtitle": "Your payment has been received successfully"
+    },
+    "paymentSuccessful": "Payment Successful",
+    "paymentConfirmation": "Payment Confirmation",
+    "transactionDetails": "Your transaction details",
+    "transactionReference": "Transaction Reference",
+    "givingType": "Giving Type",
+    "amountPaid": "Amount Paid",
+    "scripture": "\"God loves a cheerful giver.\"",
+    "scriptureRef": "- 2 Corinthians 9:7",
+    "whatsNext": {
+      "title": "What Happens Next?",
+      "step1Title": "Email Confirmation",
+      "step1Desc": "You'll receive a payment receipt via email shortly",
+      "step2Title": "Prayer & Blessing",
+      "step2Desc": "Your gift will be acknowledged in prayer by our pastoral team",
+      "step3Title": "Kingdom Impact",
+      "step3Desc": "Your generosity helps us spread the Gospel and support our community"
+    },
+    "cta": {
+      "title": "Continue Your Journey With Us",
+      "subtitle": "Explore more ways to connect and grow in faith",
+      "home": "Home",
+      "homeDesc": "Return to homepage",
+      "watchSermons": "Watch Sermons",
+      "sermonsDesc": "View latest messages",
+      "contactUs": "Contact Us",
+      "contactDesc": "Get in touch"
+    }
+  },
+  "postDetail": {
+    "backToBlog": "Back to Blog",
+    "enjoyedArticle": "Enjoyed This Article?",
+    "exploreMore": "Explore more inspiring content from our blog",
+    "viewAllPosts": "View All Posts"
+  },
+  "homeClient": {
+    "hero": {
+      "title": "A Place Where <faith>Faith</faith> Comes Alive",
+      "faith": "Faith",
+      "subtitle": "Join us as we worship, grow, and serve together in community",
+      "watchSermons": "Watch Sermons",
+      "giveToChurch": "Give to Church"
+    },
+    "welcome": {
+      "badge": "Welcome",
+      "title": "A Message from Our Prophetess",
+      "paragraph1": "Welcome to our community of faith. Here, we believe in hope, healing, and the power of God's Word to transform lives.",
+      "paragraph2": "Whether you're searching for answers, seeking a deeper relationship with Christ, or looking for a church family to call home, you are welcomed here with open arms.",
+      "name": "(Evang.) Prophetess Oluwatoyin Jato",
+      "role": "Senior Prophetess"
+    }
+  }
+}

@@ -1,10 +1,13 @@
 'use client';
 
 import Container from "@/app/_components/container";
+import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon } from "@/app/_components/icons";
 
 export default function ContactPage() {
+  const t = useTranslations('contact');
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,9 +18,26 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would send the form data to your backend or email service
-    alert("Thank you for contacting us! We'll get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    
+    // Create mailto link with pre-filled content
+    const subject = encodeURIComponent(`${formData.subject || 'Contact Form'}: Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n` +
+      `Subject: ${formData.subject}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:toyinjato8@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open user's email client
+    window.location.href = mailtoLink;
+    
+    // Show success message and reset form
+    setTimeout(() => {
+      alert(t('form.successMessage'));
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    }, 500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -53,7 +73,7 @@ export default function ContactPage() {
             <div className="inline-block mb-6 animate-fade-in">
               <div className="flex items-center gap-3 justify-center">
                 <div className="h-px w-8 bg-gold"></div>
-                <span className="text-gold font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                <span className="text-gold font-semibold text-sm uppercase tracking-wider">{t('hero.badge')}</span>
                 <div className="h-px w-8 bg-gold"></div>
               </div>
             </div>
@@ -61,7 +81,7 @@ export default function ContactPage() {
               Contact <span className="text-gold">Us</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto animate-slide-up-delay">
-              We'd love to hear from you. Reach out to us anytime!
+              {t('hero.subtitle')}
             </p>
             
             {/* Decorative element */}
@@ -87,14 +107,13 @@ export default function ContactPage() {
             <div>
               <div className="mb-12">
                 <div className="inline-block mb-4">
-                  <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">Let's Connect</span>
+                  <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('info.badge')}</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-6">
-                  Get in Touch
+                  {t('info.title')}
                 </h2>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Whether you have a question, need prayer, or want to learn more about our church,
-                  we're here for you. Contact us through any of the methods below.
+                  {t('info.description')}
                 </p>
               </div>
 
@@ -105,11 +124,9 @@ export default function ContactPage() {
                       <LocationIcon size={24} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-dark-purple mb-2 text-lg">Visit Us</h3>
+                      <h3 className="font-bold text-dark-purple mb-2 text-lg">{t('info.location.title')}</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        6 Ibrahim Alade Street<br />
-                        Erunwen, Ikorodu<br />
-                        Lagos, Nigeria
+                        {t('info.location.address')}
                       </p>
                     </div>
                   </div>
@@ -121,9 +138,9 @@ export default function ContactPage() {
                       <PhoneIcon size={24} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-dark-purple mb-2 text-lg">Call Us</h3>
+                      <h3 className="font-bold text-dark-purple mb-2 text-lg">{t('info.phone.title')}</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Office: <a href="tel:+2347069609892" className="text-royal-purple hover:text-gold transition-colors">07069609892</a>
+                        {t('info.phone.label')} <a href="tel:+2347069609892" className="text-royal-purple hover:text-gold transition-colors">07069609892</a>
                       </p>
                     </div>
                   </div>
@@ -135,9 +152,9 @@ export default function ContactPage() {
                       <EmailIcon size={24} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-dark-purple mb-2 text-lg">Email Us</h3>
+                      <h3 className="font-bold text-dark-purple mb-2 text-lg">{t('info.email.title')}</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        General: <a href="mailto:toyinjato8@gmail.com" className="text-royal-purple hover:text-gold transition-colors">toyinjato8@gmail.com</a>
+                        {t('info.email.label')} <a href="mailto:toyinjato8@gmail.com" className="text-royal-purple hover:text-gold transition-colors">toyinjato8@gmail.com</a>
                       </p>
                     </div>
                   </div>
@@ -149,12 +166,12 @@ export default function ContactPage() {
                       <ClockIcon size={24} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-dark-purple mb-2 text-lg">Service Times</h3>
+                      <h3 className="font-bold text-dark-purple mb-2 text-lg">{t('info.hours.title')}</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        <strong>Glorious Sunday Service:</strong> 8:00 AM - 10:00 AM<br />
-                        <strong>Thursday Service:</strong> 5:00 PM - 7:00 PM<br />
-                        <strong>Last Friday Vigil:</strong> 12:00 AM - 2:00 AM<br />
-                        <strong>Counseling:</strong> Tuesday 12:00 PM - 4:00 PM
+                        <strong>{t('info.hours.sunday')}:</strong> {t('info.hours.sundayTime')}<br />
+                        <strong>{t('info.hours.thursday')}:</strong> {t('info.hours.thursdayTime')}<br />
+                        <strong>{t('info.hours.vigil')}:</strong> {t('info.hours.vigilTime')}<br />
+                        <strong>{t('info.hours.counseling')}:</strong> {t('info.hours.counselingTime')}
                       </p>
                     </div>
                   </div>
@@ -165,12 +182,12 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10 border border-gray-100">
               <h2 className="text-3xl font-bold text-dark-purple mb-6">
-                Send Us a Message
+                {t('form.title')}
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
-                    Your Name *
+                    {t('form.name')} *
                   </label>
                   <input
                     type="text"
@@ -180,13 +197,13 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
-                    placeholder="John Doe"
+                    placeholder={t('form.namePlaceholder')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-                    Email Address *
+                    {t('form.email')} *
                   </label>
                   <input
                     type="email"
@@ -196,13 +213,13 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
-                    placeholder="john@example.com"
+                    placeholder={t('form.emailPlaceholder')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
-                    Phone Number
+                    {t('form.phone')}
                   </label>
                   <input
                     type="tel"
@@ -211,13 +228,13 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
-                    placeholder="(555) 123-4567"
+                    placeholder={t('form.phonePlaceholder')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
-                    Subject *
+                    {t('form.subject')} *
                   </label>
                   <select
                     id="subject"
@@ -227,18 +244,18 @@ export default function ContactPage() {
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="prayer">Prayer Request</option>
-                    <option value="visit">Visit Information</option>
-                    <option value="partnership">Partnership/Giving</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('form.selectSubject')}</option>
+                    <option value="general">{t('form.subjects.general')}</option>
+                    <option value="prayer">{t('form.subjects.prayer')}</option>
+                    <option value="visit">{t('form.subjects.visit')}</option>
+                    <option value="partnership">{t('form.subjects.partnership')}</option>
+                    <option value="other">{t('form.subjects.other')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
-                    Message *
+                    {t('form.message')} *
                   </label>
                   <textarea
                     id="message"
@@ -248,7 +265,7 @@ export default function ContactPage() {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us how we can help you..."
+                    placeholder={t('form.messagePlaceholder')}
                   ></textarea>
                 </div>
 
@@ -257,7 +274,7 @@ export default function ContactPage() {
                   className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <EmailIcon size={22} />
-                  Send Message
+                  {t('form.submit')}
                 </button>
               </form>
             </div>
@@ -269,13 +286,13 @@ export default function ContactPage() {
       <section className="py-0">
         <div className="w-full h-96 bg-gray-200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093705!2d144.9537353153169!3d-37.81720997975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2s!4v1566524721694!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7193688446886!2d3.5044889!3d6.614444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93e8b8b8b8b8%3A0x0!2zNsKwMzYnNTIuMCJOIDPCsDMwJzE2LjIiRQ!5e0!3m2!1sen!2sng!4v1698000000000!5m2!1sen!2sng"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
-            title="Church Location Map"
+            title="Beloved New Beginning Ministries - 6 Ibrahim Alade Street, Erunwen, Ikorodu, Lagos"
           ></iframe>
         </div>
       </section>
@@ -286,54 +303,50 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
-                <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">FAQ</span>
+                <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('faq.badge')}</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4">
-                Frequently Asked Questions
+                {t('faq.title')}
               </h2>
               <p className="text-gray-600 text-lg">
-                Quick answers to common questions
+                {t('faq.subtitle')}
               </p>
             </div>
 
             <div className="space-y-4">
               <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-dark-purple mb-2">
-                  What should I expect on my first visit?
+                  {t('faq.questions.0.question')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  You can expect a warm welcome, uplifting worship, and practical biblical teaching.
-                  Come as you are – there's no dress code! Our service lasts about 90 minutes.
+                  {t('faq.questions.0.answer')}
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-dark-purple mb-2">
-                  Do you have programs for children?
+                  {t('faq.questions.1.question')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Yes! We have age-appropriate programs for children from nursery through high school
-                  during our Sunday services. All our children's workers are background-checked and trained.
+                  {t('faq.questions.1.answer')}
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-dark-purple mb-2">
-                  Is parking available?
+                  {t('faq.questions.2.question')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We have ample free parking on-site. Our parking team will help direct you
-                  to available spots when you arrive.
+                  {t('faq.questions.2.answer')}
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-dark-purple mb-2">
-                  How can I get involved?
+                  {t('faq.questions.3.question')}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  There are many ways to serve! Contact us to learn about volunteer opportunities
-                  in worship, hospitality, children's ministry, and community outreach.
+                  {t('faq.questions.3.answer')}
                 </p>
               </div>
             </div>

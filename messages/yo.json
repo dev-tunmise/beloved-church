@@ -1,0 +1,750 @@
+{
+  "nav": {
+    "home": "Ilé",
+    "about": "Nípa Wa",
+    "sermons": "Àwọn Ìwásù",
+    "blog": "Búlọ́ọ̀gù",
+    "contact": "Ìbásọ̀rọ̀",
+    "giving": "Ìfúnni",
+    "tdgi": "TDGI"
+  },
+  "home": {
+    "hero": {
+      "title": "Ibì Tí <faith>Ìgbàgbọ́</faith> Ti Ń Wà Láààyè",
+      "subtitle": "Darapọ̀ mọ́ wa bí a ṣe ń jọ́sìn, dàgbà, kí a sì máa ṣiṣẹ́ papọ̀ nínú àwùjọ",
+      "watchSermons": "Wo Àwọn Ìwásù",
+      "giveToChurch": "Fún Ìjọ"
+    },
+    "welcome": {
+      "badge": "Káàbọ̀",
+      "title": "Ìfihàn Láti Ọ̀dọ̀ Wòlíì Wa",
+      "paragraph1": "Káàbọ̀ sí àwùjọ ìgbàgbọ́ wa. Níbí, a gbàgbọ́ nínú ìrètí, ìwòsàn, àti agbára Ọ̀rọ̀ Ọlọ́run láti yí àwọn ìgbésí ayé padà.",
+      "paragraph2": "Bóyá o ń wá àwọn ìdáhùn, o ń wá ìbáṣepọ̀ tí ó jinlẹ̀ pẹ̀lú Kristi, tàbí o ń wá ẹbí ìjọ láti pè ní ilé, a gbà ọ́ káàbọ̀ níbí pẹ̀lú ọwọ́ títú.",
+      "name": "(Òjíṣẹ́-Ìhìnrere) Wòlíì Oluwatoyin Jato",
+      "role": "Wòlíì Àgbà"
+    },
+    "about": {
+      "badge": "Nípa Wa",
+      "title": "Ta Ni Wa",
+      "paragraph1": "Beloved New Beginning Ministries jẹ́ àwùjọ tí ó ní agbára ti àwọn onígbàgbọ́ tí ó ti pinnu láti tan ìhìnrere, láti tọ́jú ìgbàgbọ́, àti láti ṣiṣẹ́ fún àwùjọ wa pẹ̀lú ìdárayá àti ìfẹ́.",
+      "paragraph2": "Tí a dá sílẹ̀ lórí àwọn ìlànà Bíbélì àti tí Ẹ̀mí Mímọ́ ń darí, a ń gbìyànjú láti ṣẹ̀dá àyíká níbi tí gbogbo ènìyàn lè pàdé Ọlọ́run, dàgbà nínú ìgbàgbọ́ wọn, kí wọ́n sì ṣàwárí ète wọn.",
+      "learnMore": "Kọ́ Síi"
+    },
+    "sermons": {
+      "badge": "Àwọn Ìfihàn",
+      "title": "Àwọn Ìwásù Tuntun",
+      "description": "Wo àwọn ọ̀rọ̀ tuntun wa kí o sì gba ìwúrí láti Ọ̀rọ̀ Ọlọ́run"
+    },
+    "giving": {
+      "badge": "Ìfọwọ́sowọ́pọ̀",
+      "title": "Ṣe Àtìlẹ́yìn Iṣẹ́-Ìṣìn",
+      "paragraph1": "Ìfúnni rẹ jẹ́ kí a lè tan ìhìnrere, láti ṣe àtìlẹ́yìn àwùjọ wa, àti láti ní ipa lórí àwọn ìgbésí ayé fún Ìjọba Ọlọ́run.",
+      "paragraph2": "Gbogbo ẹ̀bùn, láìka ìwọ̀n rẹ̀, ṣe ìyàtọ̀ pàtàkì nínú ìtẹ̀síwájú iṣẹ́ Ọlọ́run nípasẹ̀ iṣẹ́-ìṣìn wa.",
+      "giveNow": "Fún Ní Báyìí",
+      "bankDetails": "Àwọn Àlàyé Bánkì",
+      "bankDetailsSubtitle": "Fún gbígbé owó àti ẹ̀bùn tààrà",
+      "bankName": "Orúkọ Bánkì",
+      "bankNameValue": "Union Bank",
+      "accountName": "Orúkọ Àkọ́ọ̀ntì",
+      "accountNameValue": "BELOVED New Beginning Ministries",
+      "accountNumber": "Nọ́mbà Àkọ́ọ̀ntì",
+      "accountNumberValue": "0236577830"
+    },
+    "blog": {
+      "badge": "Búlọ́ọ̀gù",
+      "title": "Àwọn Àròkọ Tuntun",
+      "description": "Ka àwọn ìtàn àti ìmọ̀ tí ó ń wúrí láti àwùjọ wa",
+      "viewAll": "Wo Gbogbo Àwọn Àròkọ"
+    },
+    "contact": {
+      "badge": "Ìbásọ̀rọ̀",
+      "title": "Bá Wa Sọ̀rọ̀",
+      "description": "Ṣé o ní àwọn ìbéèrè tàbí o fẹ́ so pọ̀? A fẹ́ láti gbọ́ látọ̀dọ̀ rẹ",
+      "fullName": "Orúkọ Kíkún",
+      "emailAddress": "Àdírẹ́sì Ímeèlì",
+      "message": "Ìfihàn",
+      "sendMessage": "Fi Ìfihàn Ránṣẹ́",
+      "namePlaceholder": "Adé Olúwọlé",
+      "emailPlaceholder": "ade@apẹẹrẹ.com",
+      "messagePlaceholder": "Báwo ni a ṣe lè ràn ọ́ lọ́wọ́?"
+    }
+  },
+  "giving": {
+    "title": "Ṣe Àtìlẹ́yìn Iṣẹ́-Ìṣìn Wa",
+    "subtitle": "Ìfúnni rẹ ń ran wa lọ́wọ́ láti mú iṣẹ́ àpinfúnni wa ṣẹ",
+    "description": "Àwọn ìfúnni rẹ ń ran wa lọ́wọ́ láti tan Ìhìnrere, láti ṣe àtìlẹ́yìn àwọn ètò àwùjọ wa, àti láti tọ́jú iṣẹ́-ìṣìn wa. Gbogbo ẹ̀bùn ṣe pàtàkì.",
+    "hero": {
+      "badge": "Fún Padà",
+      "title": "Fún",
+      "generously": "Láì Lọ́wọ́ Mímú",
+      "scripture": "\"Ẹ fún, a ó sì fún yín\" - Luku 6:38",
+      "subtitle": "Ìfúnni rẹ ń ran wa lọ́wọ́ láti yí àwọn ìgbésí ayé padà àti láti tàn ìfẹ́ Ọlọ́run"
+    },
+    "partnership": {
+      "badge": "Darapọ̀ Mọ́ Wa",
+      "title": "Di {partner}",
+      "partner": "Alábàṣepọ̀",
+      "intro": "Ní {bnbm}, a gbàgbọ́ pé ìfọwọ́sowọ́pọ̀ jẹ́ ìsopọ̀ àtọ̀runwá—níbi tí àwọn ọkàn, àdúrà, àti àwọn ohun èlò dapọ̀ láti mú Ìjọba Ọlọ́run lọ síwájú láyé.",
+      "bnbm": "Beloved New Beginning Ministries",
+      "paragraph1": "A gbà àwọn ẹni-kọ̀ọ̀kan, àwọn ìjọ, àti àwọn ìgbèrò tí Ẹ̀mí darí tí ó fẹ́ ṣe àtìlẹ́yìn ìran yìí láti tan ìhìnrere, láti mú àwọn ìgbésí ayé padà bọ̀ sípò, àti láti fún àwọn àwùjọ lágbára nípasẹ̀ ìfẹ́ Kristi.",
+      "paragraph2": "Ìfọwọ́sowọ́pọ̀ rẹ ń ran wa lọ́wọ́ láti dé ọ̀dọ̀ ọ̀pọ̀lọpọ̀ ẹ̀mí, láti ṣe àtìlẹ́yìn àwọn tí ó nílò, àti láti ṣe àwọn iṣẹ́ ìtàn kálẹ̀ tí ń yí àwọn ìgbésí ayé padà fún ògo Ọlọ́run.",
+      "scripture": "\"Méjèèjì sàn ju ọ̀kan lọ, nítorí wọ́n ní èrè rere fún iṣẹ́ wọn.\"",
+      "scriptureRef": "— Òkìkí Sọ́lọ́mọ́nì 4:9",
+      "waysTitle": "Àwọn Ọ̀nà Láti Jẹ́ Alábàṣepọ̀:",
+      "financialSupport": "Àtìlẹ́yìn owó oṣooṣù tàbí ẹyọ kan",
+      "donations": "Àwọn ìfúnni (àwọn ohun èlò, ohun èlò, oúnjẹ, àti bẹ́ẹ̀ bẹ́ẹ̀ lọ)",
+      "volunteering": "Ṣiṣẹ́ ọ̀fẹ́ ní àkókò àwọn ìtànkálẹ̀ tàbí àwọn ètò ìjọ",
+      "collaboration": "Àwọn ìfọwọ́sowọ́pọ̀ iṣẹ́-ìṣìn tàbí ìgbéga"
+    },
+    "whyGive": {
+      "title": "Kí Ni Ìdí Tí A Fí Ń Fún",
+      "description": "Ìfúnni rẹ tí ó lọ́wọ́ rẹrẹ ń ran wa lọ́wọ́ láti tan Ìhìnrere, láti ṣe àtìlẹ́yìn àwùjọ wa, àti láti mú ìran Ọlọ́run ṣẹ fún Beloved New Beginning Ministries. Gbogbo ẹ̀bùn ṣe ìyàtọ̀ àti pé a mọ̀ọ́ rí i lọ́pọ̀lọ́pọ̀.",
+      "scripture": "\"Kí olúkúlùkù ènìyàn fún bí ó ti gbèrò nínú ọkàn rẹ̀; kí ó má ṣe fi ìbànújẹ́ tàbí ìpá-àkàn, nítorí Ọlọ́run fẹ́ràn olùfúnni tí ó ń fún láìnígbà.\"",
+      "scriptureRef": "- 2 Kọ́rínítì 9:7",
+      "worship": "Ìjọ́sìn",
+      "worshipDesc": "Ṣe àtìlẹ́yìn àwọn iṣẹ́ ìjọ́sìn àti àwọn ìṣẹ̀lẹ̀ wa",
+      "outreach": "Ìtànkálẹ̀",
+      "outreachDesc": "Ràn àwọn tí ó nílò lọ́wọ́ nínú àwùjọ wa",
+      "growth": "Ìdàgbàsókè",
+      "growthDesc": "Dúró sí àwọn ètò ìdàgbàsókè ẹ̀mí"
+    },
+    "givingOptions": {
+      "title": "Àwọn Ọ̀nà Ìfúnni",
+      "oneTime": "Ẹ̀bùn Ẹyọ Kan",
+      "oneTimeDesc": "Ṣe ìfúnni ẹyọ kan",
+      "tithe": "Ìdámẹ́wàá (10%)",
+      "titheDesc": "Ìfúnni ìdámẹ́wàá déédéé",
+      "offering": "Ọrẹ",
+      "offeringDesc": "Ẹ̀bùn ọrẹ pàtàkì"
+    },
+    "form": {
+      "title": "Fún Nísinsin Yìí",
+      "subtitle": "Ṣe ìfúnni rẹ láì ṣiyèméjì",
+      "selectAmount": "Yan Iye",
+      "customAmount": "Iye Àkànṣe",
+      "customAmountPlaceholder": "Tẹ iye sílẹ̀",
+      "amount": "Iye",
+      "frequency": "Ìgbòòrò",
+      "oneTime": "Ẹẹ̀kan",
+      "monthly": "Oṣooṣù",
+      "givingType": "Irú Ìfúnni",
+      "types": {
+        "tithe": "Ìdámẹ́wàá",
+        "offering": "Ọrẹ",
+        "missions": "Ìránṣẹ́",
+        "building": "Owó Kíkọ́"
+      },
+      "firstName": "Orúkọ Àkọ́kọ́",
+      "lastName": "Orúkọ Ìdílé",
+      "email": "Ímeèlì",
+      "phone": "Nọ́mbà Fóònù",
+      "firstNamePlaceholder": "Tẹ orúkọ àkọ́kọ́ rẹ",
+      "lastNamePlaceholder": "Tẹ orúkọ ìdílé rẹ",
+      "emailPlaceholder": "Tẹ àdírẹ́ẹ̀sì ímeèlì rẹ",
+      "phonePlaceholder": "Tẹ nọ́mbà fóònù rẹ",
+      "receiptInfo": "Ìwé-àpẹẹrẹ yóò jẹ́ fífíránṣẹ́ sí ímeèlì rẹ",
+      "securePayment": "Ọ̀nà Ìsanwó Paystack Tó Ní Ààbò",
+      "paymentInfo": "Tí ó ní agbára nípa Paystack. Gbogbo àwọn ìdúnàdúrà ní ààbò pẹ̀lú ìfibọ SSL 256-bit.",
+      "continue": "Tẹ̀síwájú sí Ìsanwó",
+      "processing": "Ń ṣe àtúnṣe...",
+      "error": "Àṣìṣe kan wáyé. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.",
+      "name": "Orúkọ Kíkún",
+      "purpose": "Ìdí",
+      "selectPurpose": "Yan ìdí",
+      "purposes": {
+        "general": "Ọrẹ Gbogbogbò",
+        "tithe": "Ìdámẹ́wàá",
+        "missions": "Àwọn Iṣẹ́ Ìránṣẹ́",
+        "building": "Owó Ilé",
+        "special": "Iṣẹ́ Àkànṣe Pàtàkì"
+      },
+      "message": "Ìfihàn (Ti Ko Dandan)",
+      "donate": "Tẹ̀síwájú Láti Fún"
+    },
+    "security": {
+      "title": "Ààbò Àti Ìgbẹ́kẹ̀lé",
+      "description": "Gbogbo àwọn ìṣòwò ni a fi ààbò bò. A máa ń lo Paystack fún ìsanwó."
+    },
+    "bankTransfer": {
+      "title": "Tàbí Ṣe Gbígbé Owó Bánkì",
+      "subtitle": "O tún lè fún ní tààrà sí àkáǹtì ìjọ wa",
+      "detailsTitle": "Àwọn Àlàyé Gbígbé Owó Bánkì",
+      "detailsSubtitle": "Gbé owó tààrà sí àkáǹtì ìjọ wa",
+      "bankName": "Orúkọ Bánkì",
+      "accountName": "Orúkọ Àkáǹtì",
+      "accountNumber": "Nọ́mbà Àkáǹtì",
+      "note": "<strong>Jọ̀wọ́ ṣàkíyèsí:</strong> Lẹ́yìn tí o bá ṣe gbígbé owó rẹ, o lè fíránṣẹ́ ìfihàn ìjẹ́rìísí sí wa nípasẹ̀ WhatsApp tàbí ímeèlì fún àdúrà àti ìwé àkọsílẹ̀ tó tọ́."
+    },
+    "internationalTransfer": {
+      "title": "Àwọn Àlàyé Ìsanwó Káríayé",
+      "subtitle": "Fún àwọn ẹ̀bùn láti ìta Nàìjíríà nípasẹ̀ gbígbé owó bánkì (USD)",
+      "detailsTitle": "Gbígbé Owó Bánkì Káríayé",
+      "detailsSubtitle": "Fi àwọn ẹ̀bùn USD ránṣẹ́ nípasẹ̀ gbígbé SWIFT",
+      "accountName": "Orúkọ Àkáǹtì",
+      "accountNumber": "Nọ́mbà Àkáǹtì",
+      "bankName": "Orúkọ Bánkì",
+      "swiftCode": "Kóòdù SWIFT / Àdírẹ́ẹ̀sì Bánkì",
+      "swiftAddress": "Àdírẹ́ẹ̀sì Bánkì",
+      "currency": "Owó",
+      "note": "<strong>Pàtàkì:</strong> Jọ̀wọ́ lo àwọn àlàyé wọ̀nyí fún gbígbé owó káríayé ní USD. Àwọn ìdíyelé bánkì lè wà. Lẹ́yìn gbígbé owó, jọ̀wọ́ fi ìjẹ́rìísí ránṣẹ́ nípasẹ̀ WhatsApp tàbí ímeèlì."
+    },
+    "prayer": {
+      "badge": "Darapọ̀ Mọ́ Ọlọ́run",
+      "title": "Àwọn Àkọsílẹ̀ Àsọtẹ́lẹ̀ & <span>Àwọn Ìbéèrè Àdúrà</span>",
+      "subtitle": "Firánṣẹ́ ìbéèrè àdúrà rẹ kí o sì darapọ̀ mọ́ wa fún ọ̀rọ̀ àsọtẹ́lẹ̀",
+      "formTitle": "Firánṣẹ́ Ìbéèrè Àdúrà",
+      "fullName": "Orúkọ Kíkún",
+      "namePlaceholder": "Tẹ orúkọ rẹ sílẹ̀",
+      "country": "Orílẹ̀-èdè",
+      "countryPlaceholder": "Tẹ orílẹ̀-èdè rẹ sílẹ̀",
+      "request": "Ìbéèrè Àdúrà",
+      "requestPlaceholder": "Pín ìbéèrè àdúrà rẹ...",
+      "submit": "Firánṣẹ́ Ìbéèrè Àdúrà",
+      "prophetic": {
+        "title": "Ìdàpọ̀ Àsọtẹ́lẹ̀ Lórí Íńtánẹ́ẹ̀tì",
+        "description": "Darapọ̀ mọ́ Wòlíì Toyin Jato fún ọ̀rọ̀ àsọtẹ́lẹ̀, ìtọ́sọ́nà ẹ̀mí, àti ìtọ́sọ́nà Ọlọ́run fún ìgbésí ayé rẹ.",
+        "ministry": "Àwọn àkókò ìránṣẹ́ àsọtẹ́lẹ̀ ti ara ẹni",
+        "deliverance": "Àwọn iṣẹ́ àdúrà àti ìdásílẹ̀ lórí íńtánẹ́ẹ̀tì",
+        "counseling": "Ìmọ̀ràn ẹ̀mí àti ìṣẹ́gun",
+        "schedule": "Ṣètò Ìdàpọ̀"
+      },
+      "scriptures": {
+        "title": "Àwọn Ìwé Mímọ́ Tí Ń Fún Ni Ìgboyà",
+        "verse1": "\"Àdúrà olódodo ènìyàn ní agbára púpọ̀ ó sì ń ṣiṣẹ́.\"",
+        "ref1": "— Jémíìsì 5:16",
+        "verse2": "\"Ké sí mi, èmi yóò sì dáhùn ọ́, èmi yóò sì sọ àwọn nǹkan ńlá àti àwọn nǹkan tí ó pamọ́ tí ìwọ kò mọ̀ fún ọ.\"",
+        "ref2": "— Jeremiah 33:3",
+        "verse3": "\"Ẹ má ṣe ṣàníyàn nípa ohunkóhun, ṣùgbọ́n ní gbogbo ìṣẹ̀lẹ̀, ẹ jẹ́ kí Ọlọ́run mọ àwọn ìbéèrè yín nípa àdúrà àti ẹ̀bẹ̀, pẹ̀lú ọpẹ́.\"",
+        "ref3": "— Fílípì 4:6"
+      }
+    }
+  },
+  "sermons": {
+    "title": "Àwọn Ìwásù",
+    "subtitle": "Wo àwọn ọ̀rọ̀ tuntun wa kí o sì gba ìwúrí",
+    "loading": "Ń ṣí àwọn ìwásù...",
+    "noSermons": "Kò sí ìwásù kankan ní báyìí.",
+    "watchNow": "Wò Ó Báyìí",
+    "hero": {
+      "badge": "Wò & Kọ́",
+      "title": "Àwọn Ìwásù &",
+      "messages": "Ìfihàn",
+      "subtitle": "Wo àwọn iṣẹ́ àlàáfíà wa, àwọn ìwásù tẹ́lẹ̀, àwọn àkókò àsọtẹ́lẹ̀, àti ẹ̀rí"
+    },
+    "live": {
+      "title": "Iṣẹ́ Ìjọ́sìn Láààyè",
+      "schedule": "Darapọ̀ mọ́ wa ní gbogbo Ọjọ́ Àìkú ní 8:00 Àárọ̀ (WAT)",
+      "badge": "LÁÀÀYÈ NÍ BÁYÌÍ",
+      "notLive": "A Kò Ń Ṣàfihàn Láààyè Ní Báyìí",
+      "timing": "Ìṣàfihàn láààyè wa bẹ̀rẹ̀ ní gbogbo Ọjọ́ Àìkú ní 8:00 Àárọ̀ (WAT)",
+      "checkBack": "Padà wá ní àkókò iṣẹ́ tàbí wo àwọn ìwásù tẹ́lẹ̀ wa nísàlẹ̀",
+      "experience": "Ní ìrírí ìjọ́sìn tí ó lágbára, ìwásù tí a fi òróró yàn, àti iwájú Ọlọ́run",
+      "youtube": "Ṣe Ìforúkọsílẹ̀ Lórí YouTube",
+      "facebook": "Tẹ̀lé Lórí Facebook"
+    },
+    "pastMessages": {
+      "badge": "Ìkójọ Ìfihàn",
+      "title": "Àwọn Ìfihàn Tẹ́lẹ̀",
+      "subtitle": "Wo àkójọ àwọn ìwásù wa, àwọn ọ̀rọ̀ àsọtẹ́lẹ̀, àti ẹ̀rí tí ó lágbára"
+    },
+    "categories": {
+      "all": "Gbogbo Ìfihàn",
+      "sermons": "Àwọn Ìwásù",
+      "prophetic": "Àwọn Àkókò Àsọtẹ́lẹ̀",
+      "testimonies": "Àwọn Ẹ̀rí"
+    },
+    "cta": {
+      "title": "Ní Ìrírí Púpọ̀ Si Ti <styled>Iwájú Ọlọ́run</styled>",
+      "styled": "Iwájú Ọlọ́run",
+      "subtitle": "Darapọ̀ mọ́ wa fún ìjọ́sìn láààyè àti iṣẹ́-ìṣìn tí ó lágbára. Jẹ́ ara ẹbí ìjọ wa tí ó ń dàgbà.",
+      "learnAboutUs": "Kọ́ Nípa Wa",
+      "visitUs": "Bẹ̀ Wa Wò"
+    },
+    "modal": {
+      "close": "Tìí"
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Òye & Ìmísí",
+      "title": "Búlọ́ọ̀gù <blog>Ìjọ</blog>",
+      "blog": "Ìjọ",
+      "subtitle": "Àwọn ìmúdójúiwọ̀n, ẹ̀kọ́, àti àwọn iṣẹ́ ránṣẹ́ láti ọ̀dọ̀ àwùjọ wa"
+    },
+    "stats": {
+      "weekly": {
+        "title": "Lóṣòóṣè",
+        "description": "Àwọn àròkọ àti ẹ̀kọ́ tuntun tí a ń tẹ̀jáde déédéé"
+      },
+      "community": {
+        "title": "Àwùjọ",
+        "description": "Àwọn ìtàn àti ẹ̀rí láti ọ̀dọ̀ ẹbí ìjọ wa"
+      },
+      "faith": {
+        "title": "Ìgbàgbọ́",
+        "description": "Ndàgbà papọ̀ nínú ìrìn wa pẹ̀lú Kristi"
+      }
+    },
+    "cta": {
+      "title": "Wà Ní Ìsopọ̀ Pẹ̀lú <community>Àwùjọ</community> Wa",
+      "community": "Àwùjọ",
+      "subtitle": "Forúkọsílẹ̀ láti gba àwọn ìmúdójúiwọ̀n tuntun, ẹ̀kọ́, àti àwọn ìtàn ìmísí tààrà sínú àpótí-lẹ́tà rẹ.",
+      "getInTouch": "Kàn Sí Wa",
+      "watchSermons": "Wo Àwọn Ìwàásù"
+    }
+  },
+  "about": {
+    "title": "Nípa Wa",
+    "subtitle": "Kọ́ síi nípa ìjọ àti iṣẹ́ àpinfúnni wa",
+    "hero": {
+      "badge": "Ìtàn Wa",
+      "title": "Nípa",
+      "beloved": "Beloved New Beginning",
+      "subtitle": "Àwùjọ àwọn onígbàgbọ́ tí ń rìn nínú Oore-Ọ̀fẹ́ Ọba àti Mímọ́"
+    },
+    "prophetess": {
+      "badge": "Olórí Wa",
+      "title": "Wòlíì <styled>Toyin Jato</styled>",
+      "styled": "Toyin Jato",
+      "paragraph1": "<strong>Wòlíì Toyin Jato</strong> jẹ́ obìnrin Ọlọ́run tí ó ní ìpè àsọtẹ́lẹ̀ tí ó lágbára àti ìfẹ́ tí kò lè yí padà fún àwọn ẹ̀mí. Ó jẹ́ olùdásílẹ̀ àti Wòlíì Àgbà ti <ministry>Beloved New Beginning Ministries</ministry>.",
+      "strong": "Wòlíì Toyin Jato",
+      "ministry": "Beloved New Beginning Ministries",
+      "paragraph2": "Pẹ̀lú ọkàn tí ń jó fún iwájú Ọlọ́run àti ẹrù tí ó jinlẹ̀ fún àwọn tí ó sọnù, ó ń ṣiṣẹ́ nínú àsọtẹ́lẹ̀ pẹ̀lú ìṣedéédé tí ó yà ni lẹ́nu, ń mú àwọn ọ̀rọ̀ àkókò wá nípa ìtọ́sọ́nà, ìtùnú, àti ìṣẹ́gun fún àwọn onígbàgbọ́ káàkiri orílẹ̀-èdè.",
+      "paragraph3": "Iṣẹ́-ìṣìn rẹ̀ jẹ́ àpẹẹrẹ nípasẹ̀ ìjọ́sìn tí ó lágbára, àwọn ìwòsàn alágbára-òkè, ìdásílẹ̀ látọ̀dọ̀ ìpọ́njú ẹ̀mí búburú, àti ẹ̀rí tí ó ń yí ìgbésí ayé padà. Nípasẹ̀ ìtọ́sọ́nà rẹ̀, àwọn èèyàn láìníye ti ní ìrírí ìmúpadàbọ̀sípò Ọlọ́run, àwọn ìṣẹ́gun ọrọ̀, ìmúpadàbọ̀sípò ìgbéyàwó, àti òmìnira látọ̀dọ̀ àwọn èpè ìran.",
+      "paragraph4": "Wòlíì Toyin tún dá <tdgi>TDGI Enterprise</tdgi> àti <foundation>Toyin Jato Foundation International</foundation> sílẹ̀, tí ń fẹ ipa iṣẹ́-ìṣìn rẹ̀ nípasẹ̀ àwọn ọjà tí ó dá lórí ìgbàgbọ́ àti àwọn ètò ìtànkálẹ̀ ọmọnìyàn.",
+      "tdgi": "TDGI Enterprise",
+      "foundation": "Toyin Jato Foundation International",
+      "quote": "\"A ti pè mí láti gbé ìran kan dìde tí yóò máa rìn nínú Oore-Ọ̀fẹ́ Ọba àti Mímọ́, tí Ẹ̀mí Mímọ́ fún ní agbára láti mú àyànmọ́ Ọlọ́run wọn ṣẹ.\"",
+      "quoteAuthor": "- Wòlíì Toyin Jato"
+    },
+    "values": {
+      "badge": "Ohun Tí A Dúró Fún",
+      "title": "Àwọn Ìlànà Ìpìlẹ̀ Wa",
+      "subtitle": "Àwọn ìlànà wọ̀nyí ń darí gbogbo ohun tí a ṣe bí àwùjọ ìjọ",
+      "prayer": {
+        "title": "Àdúrà",
+        "description": "A gbàgbọ́ nínú agbára àdúrà a sì ń wá ìtọ́sọ́nà Ọlọ́run nínú gbogbo ohun tí a ṣe. Àdúrà ni ìpìlẹ̀ iṣẹ́-ìṣìn wa."
+      },
+      "word": {
+        "title": "Ọ̀rọ̀ Náà",
+        "description": "Bíbélì ni ìpìlẹ̀ àti ìtọ́sọ́nà wa fún ìgbésí ayé àti iṣẹ́-ìṣìn. A dúró ṣinṣin lórí Ọ̀rọ̀ Ọlọ́run tí kò yípadà."
+      },
+      "love": {
+        "title": "Ìfẹ́",
+        "description": "A ń fihàn ìfẹ́ Ọlọ́run nípasẹ̀ àwọn ìṣe àti iṣẹ́ wa sí àwọn ẹlòmíràn, ń fihàn àánú Kristi sí gbogbo èèyàn."
+      },
+      "excellence": {
+        "title": "Ìdárayá",
+        "description": "A ń gbìyànjú fún ìdárayá nínú gbogbo nǹkan, ń bu ọlá fún Ọlọ́run pẹ̀lú ohun tí ó dára jùlọ àti àwọn ìlànà tí ó ga jùlọ."
+      },
+      "community": {
+        "title": "Àwùjọ",
+        "description": "A ń mú àwọn ìbáṣepọ̀ tòótọ́ dàgbà a sì ń ṣe àtìlẹ́yìn fún ara wa nínú ìfẹ́, ń ṣẹ̀dá àyíká ẹbí."
+      },
+      "mission": {
+        "title": "Iṣẹ́ Àpinfúnni",
+        "description": "A ní ìfẹ́ tí ó jinlẹ̀ láti dé ọ̀dọ̀ ayé pẹ̀lú Ìhìnrere Kristi àti láti ṣe àwọn ọmọ-ẹ̀yìn nínú gbogbo orílẹ̀-èdè."
+      }
+    },
+    "gallery": {
+      "badge": "Àwùjọ Wa",
+      "title": "Gálérì Ìjọ",
+      "subtitle": "Àwọn àfihàn àwùjọ wa tí ó ní agbára nínú ìjọ́sìn, ìdàpọ̀, àti iṣẹ́",
+      "item1": {
+        "title": "Olórí Ẹ̀mí Wa",
+        "description": "Olórí ẹ̀mí àti olùdásílẹ̀ wa, tí ó ti pinnu láti gbé ìran kan dìde tí yóò máa rìn nínú Oore-Ọ̀fẹ́ Ọba àti Mímọ́."
+      },
+      "item2": {
+        "title": "Ìtọ́sọ́nà Nínú Ìsọ̀kan",
+        "description": "Ní ìsọ̀kan nínú ìgbàgbọ́ àti iṣẹ́-ìṣìn, ń darí ẹbí ìjọ wa pẹ̀lú ìfẹ́ àti ọgbọ́n Ọlọ́run."
+      },
+      "item3": {
+        "title": "Ẹbí Ìjọ Kan",
+        "description": "Ń dàpọ̀ papọ̀ bí ẹbí kan, ní ìsọ̀kan nínú ète àti ìfẹ́ fún Kristi."
+      },
+      "item4": {
+        "title": "Àwọn Ọkùnrin Ìdárayá",
+        "description": "Ń gbé àwọn ọkùnrin ìdárayá àti òdodo dìde tí ń rìn nínú ète tí Ọlọ́run fún wọn."
+      },
+      "item5": {
+        "title": "Àwọn Obìnrin Ìwà Rere",
+        "description": "Ń fún àwọn obìnrin ní agbára láti rìn nínú ìwà rere, agbára, àti oore-ọ̀fẹ́ Ọlọ́run."
+      },
+      "item6": {
+        "title": "Ẹgbẹ́ Ìgbàgbọ́ Obìnrin",
+        "description": "Ń kọ́ ẹgbẹ́ ìgbàgbọ́ obìnrin, níbi tí a ti ń múra àwọn obìnrin àti láti ṣe àjọyọ̀ wọn."
+      }
+    },
+    "cta": {
+      "title": "Darapọ̀ Mọ́ <styled>Ẹbí Ìjọ</styled> Wa",
+      "styled": "Ẹbí Ìjọ",
+      "subtitle": "Bóyá o tuntun sí ìgbàgbọ́ tàbí o ń wá ilé ìjọ, a fẹ́ láti gbà ọ́ káàbọ̀. Ní ìrírí ìjọ́sìn tòótọ́, ẹ̀kọ́ Bíbélì tí ó lágbára, àti àwùjọ tí ó ń bikítà.",
+      "contactUs": "Kàn Sí Wa",
+      "watchSermons": "Wo Àwọn Ìwásù"
+    }
+  },
+  "contact": {
+    "title": "Bá Wa Sọ̀rọ̀",
+    "subtitle": "A fẹ́ láti gbọ́ látọ̀dọ̀ rẹ",
+    "getInTouch": "Kàn Sí Wa",
+    "description": "Ṣé o ní àwọn ìbéèrè tàbí o fẹ́ mọ̀ síi nípa ìjọ wa? Kàn sí wa!",
+    "hero": {
+      "badge": "Kàn Sí Wa",
+      "title": "Bá Wa",
+      "us": "Sọ̀rọ̀",
+      "subtitle": "A fẹ́ láti gbọ́ látọ̀dọ̀ rẹ. Kàn sí wa ní ìgbàkígbà!"
+    },
+    "info": {
+      "badge": "Àlàyé Ìbásọ̀rọ̀",
+      "title": "Àlàyé Ìbásọ̀rọ̀",
+      "description": "A wà níbí láti ṣe ìránṣẹ́ fún ọ. Kàn sí wa nípasẹ̀ èyíkéyìí nínú àwọn ọ̀nà ìsàlẹ̀.",
+      "location": {
+        "title": "Ibùdó Wa",
+        "address": "6 Ibrahim Alade Street, Erunwen, Ikorodu, Lagos, Nàìjíríà"
+      },
+      "phone": {
+        "title": "Fóònù",
+        "label": "Pe wa:"
+      },
+      "email": {
+        "title": "Ímeèlì",
+        "label": "Fi ímeèlì ránṣẹ́ sí wa:"
+      },
+      "hours": {
+        "title": "Àwọn Wákàtí Iṣẹ́",
+        "sunday": "Iṣẹ́ Ọjọ́ Àìkú",
+        "sundayTime": "8:00 Àárọ̀ - 10:00 Àárọ̀ (WAT)",
+        "thursday": "Iṣẹ́ Ọjọ́bọ",
+        "thursdayTime": "5:00 Àálẹ́ - 7:00 Àálẹ́ (WAT)",
+        "vigil": "Ìṣọ́ Àìkú Ọjọ́ Ẹtì Ìkẹyìn",
+        "vigilTime": "12:00 Àárọ̀ - 2:00 Àárọ̀ (WAT)",
+        "counseling": "Àwọn Wákàtí Ìmọ̀ràn",
+        "counselingTime": "Nípa Àdéhùn"
+      }
+    },
+    "faq": {
+      "badge": "Àwọn Ìbéèrè Tí A Máa Ń Béèrè",
+      "title": "Àwọn Ìbéèrè Tí A Máa Ń Béèrè",
+      "subtitle": "Àwọn ìdáhùn kíákíá sí àwọn ìbéèrè tí ó wọ́pọ̀",
+      "questions": [
+        {
+          "question": "Kí ni mo yẹ ní retí ní ìbẹ̀wò àkọ́kọ́ mi?",
+          "answer": "O lè retí ìtẹ́wọ́gbà tí ó lówúrò, ìjọ́sìn tí ó gbéga, àti ẹ̀kọ́ Bíbélì tí ó wúlò. Wá bí o ṣe wà – kò sí òfin aṣọ kankan! Iṣẹ́ wa máa ń to bíi ìṣẹ́jú 90."
+        },
+        {
+          "question": "Ṣé ẹ ní àwọn ètò fún àwọn ọmọdé?",
+          "answer": "Bẹ́ẹ̀ni! A ní àwọn ètò tí ó bá ọjọ́-orí mu fún àwọn ọmọdé láti ilé-ìtọ́jú títí dé ilé-ẹ̀kọ́ gíga ní àkókò àwọn iṣẹ́ Ọjọ́ Àìkú wa. Gbogbo àwọn òṣìṣẹ́ ọmọdé wa ní ìwádìí ẹ̀yìn àti ìkọ́ni."
+        },
+        {
+          "question": "Ṣé ààyè ìdúró ọkọ̀ wà?",
+          "answer": "A ní ààyè ìdúró ọkọ̀ ọ̀fẹ́ tí ó pọ̀ ní ojú ibùdó. Ẹgbẹ́ ìdúró ọkọ̀ wa yóò ràn ọ́ lọ́wọ́ láti darí ọ sí àwọn ààyè tí ó wà nígbà tí o bá dé."
+        },
+        {
+          "question": "Báwo ni mo ṣe lè lọ́wọ́ sí?",
+          "answer": "Ọ̀pọ̀lọpọ̀ àwọn ọ̀nà ló wà láti ṣiṣẹ́! Kàn sí wa láti kọ́ nípa àwọn àǹfààní ọ̀fẹ́ nínú ìjọ́sìn, ìtẹ́wọ́gbà, iṣẹ́-ìṣìn ọmọdé, àti ìtànkálẹ̀ àwùjọ."
+        }
+      ]
+    },
+    "form": {
+      "title": "Fi Ìfihàn Ránṣẹ́ Sí Wa",
+      "name": "Orúkọ Rẹ",
+      "email": "Àdírẹ́sì Ímeèlì",
+      "phone": "Nọ́mbà Fóònù",
+      "subject": "Kókó Ọ̀rọ̀",
+      "message": "Ìfihàn Rẹ",
+      "submit": "Fi Ìfihàn Ránṣẹ́",
+      "namePlaceholder": "Adé Olúwọlé",
+      "emailPlaceholder": "ade@apẹẹrẹ.com",
+      "phonePlaceholder": "+234 123 456 7890",
+      "selectSubject": "Yan kókó ọ̀rọ̀...",
+      "subjects": {
+        "general": "Ìbéèrè Gbogbogbò",
+        "prayer": "Ìbéèrè Àdúrà",
+        "visit": "Gbèrò Ìbẹ̀wò",
+        "partnership": "Àǹfààní Ìfọwọ́sowọ́pọ̀",
+        "other": "Míràn"
+      },
+      "messagePlaceholder": "Sọ fún wa bí a ṣe lè ràn ọ́ lọ́wọ́...",
+      "successMessage": "Ẹ ṣeun fún kíkàn sí wa! A ó padà tọ̀ ọ́ wá láìpẹ́."
+    }
+  },
+  "tdgi": {
+    "hero": {
+      "badge": "Àwọn Ọja Tí A Fi Òróró Yàn",
+      "title": "Àwọn Ọja <products>Tó Dá Lórí Ìgbàgbọ́</products>",
+      "products": "Tó Dá Lórí Ìgbàgbọ́",
+      "subtitle": "Àwọn ohun èlò tí a bùkún fún ìwòsàn, ojúrere, àti àṣeyọrí"
+    },
+    "aboutUs": {
+      "badge": "Nípa Wa",
+      "title": "Àwa <are>Nìyí</are>",
+      "are": "Nìyí",
+      "paragraph1": "<tdgi>TDGI Enterprise (RC:3603675)</tdgi> ni apá ọja tí a forúkọ sílẹ̀ ti <bnbm>Beloved New Beginning Ministries</bnbm>, tí ń ṣiṣẹ́ pẹ̀lú <tjfi>Toyin Jato Foundation International</tjfi>.",
+      "tdgi": "TDGI Enterprise (RC:3603675)",
+      "bnbm": "Beloved New Beginning Ministries",
+      "tjfi": "Toyin Jato Foundation International",
+      "paragraph2": "Lábẹ́ itọ́sọ́nà ẹ̀mí <prophetess>Wòlíì Toyin Jato</prophetess>, a ń ṣe àwọn ọja tí Ọlọ́run ti fún wa láti lò gẹ́gẹ́ bí ohun èlò ẹ̀mí fún ìwòsàn, àṣeyọrí, ojúrere, àti ìsopọ̀ àtọ̀runwá.",
+      "prophetess": "Wòlíì Toyin Jato",
+      "quote": "Àwọn ohun èlò tí a yàsímímọ́ fún ìṣẹ́gun ẹ̀mí rẹ"
+    },
+    "mission": {
+      "badge": "Èrò Wa",
+      "title": "Iṣẹ́ Àpèsè <mission>Wa</mission>",
+      "mission": "Wa",
+      "paragraph1": "Láti pèsè àwọn ọja tí a fi òróró yàn tó dá lórí Bíbélì tí yóò ran àwọn onígbàgbọ́ lọ́wọ́ láti mú ìgbàgbọ́ wọn ṣiṣẹ́, gba ìwòsàn àtọ̀runwá, fa ojúrere alágbára, àti ní ìrírí àṣeyọrí ní gbogbo ọ̀nà ìgbésí ayé.",
+      "paragraph2": "A ń ṣe àti bùkún ọ̀kọ̀ọ̀kan ọja pẹ̀lú àdúrà láti jẹ́ ibi ìbáṣepọ̀ fún àwọn iṣẹ́ ìyanu, tí a fi àwọn èròjà àdáyébá tó tayọ pọ̀ mọ́ òróró ẹ̀mí."
+    },
+    "registration": {
+      "badge": "Ìforúkọsílẹ̀ Ìjọba",
+      "title": "A Ti Forúkọ Sílẹ̀ Àti Tí Ìjọba Ti Dá A Lójú",
+      "description": "<tdgi>TDGI Enterprise</tdgi> ti forúkọ sílẹ̀ ní ọ̀dọ̀ Corporate Affairs Commission",
+      "tdgi": "TDGI Enterprise",
+      "rcNumber": "RC: 3603675",
+      "footer": "Ilé-iṣẹ́ tó bófin mu tí ń ṣiṣẹ́ lábẹ́ <bnbm>Beloved New Beginning Ministries</bnbm> pẹ̀lú <tjfi>Toyin Jato Foundation International</tjfi>",
+      "bnbm": "Beloved New Beginning Ministries",
+      "tjfi": "Toyin Jato Foundation International"
+    },
+    "products": {
+      "badge": "Àwọn Ọja Tí A Fi Òróró Yàn",
+      "title": "Àwọn <faithBased>Ọja Tó Dá Lórí Ìgbàgbọ́</faithBased> Wa",
+      "faithBased": "Ọja Tó Dá Lórí Ìgbàgbọ́",
+      "subtitle": "Àwọn ohun èlò ìgbàgbọ́ tí Ọlọ́run ti fún wa tí a sì fi àdúrà ṣe fún ìrìnàjò ẹ̀mí rẹ",
+      "categories": {
+        "all": "Gbogbo Àwọn Ọja",
+        "soaps": "Àwọn Ọṣẹ Tí A Fi Òróró Yàn",
+        "oils": "Àwọn Òróró & Omi",
+        "balms": "Àwọn Ìta Ìwòsàn",
+        "perfumes": "Àwọn Tùràrí Ògo",
+        "herbal": "Àwọn Ọja Ewébẹ̀"
+      },
+      "blessed": "A Ti Bùkún",
+      "orderNow": "Ṣe Ìbéèrè Báyìí",
+      "orderWhatsApp": "Ṣe Ìbéèrè Lórí WhatsApp"
+    },
+    "productList": {
+      "favorSoap": {
+        "name": "Ọṣẹ Ojúrere",
+        "purpose": "Fún fífà ojúrere àtọ̀runwá àti àwọn ìlẹ̀kùn ṣíṣí",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "connectionSoap": {
+        "name": "Ọṣẹ Ìsopọ̀",
+        "purpose": "Fún àwọn olùrànlọ́wọ́ àyànmọ́ àti àwọn ìbáṣepọ̀ àtọ̀runwá",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "breakthroughSoap": {
+        "name": "Ọṣẹ Àṣeyọrí",
+        "purpose": "Fún bíbi àwọn ìdènà ẹ̀mí àti ṣíṣí àṣeyọrí",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "mercySoap": {
+        "name": "Ọṣẹ Àánú",
+        "purpose": "Fún gbígba àánú àti ìyọ́nú Ọlọ́run",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "gloryOil": {
+        "name": "Òróró Ògo",
+        "purpose": "Fún ìwòsàn, ìdáǹdè, àti ìfọwọ́kàn àtọ̀runwá",
+        "category": "Àwọn Òróró & Omi"
+      },
+      "healingBalm": {
+        "name": "Ìta Ìwòsàn",
+        "purpose": "Fún ìtura, agbára, àti ìmúpadàbọ̀sípò àtọ̀runwá",
+        "category": "Àwọn Ìta"
+      },
+      "deliveranceSoap": {
+        "name": "Ọṣẹ Ìdáǀndè",
+        "purpose": "Fún òmìnira kúrò nínú ìdè àti àwọn ẹ̀wọ̀n ẹ̀mí",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "divineSettlementSoap": {
+        "name": "Ọṣẹ Ìpinnu Àtọ̀runwá",
+        "purpose": "Fún yíyanjú àwọn ọ̀rọ̀ pípẹ́ àti ìfaramọ́ àtọ̀runwá",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "fruitfulnessSoap": {
+        "name": "Ọṣẹ Èso Bíbí",
+        "purpose": "Fún ìṣelọ́pọ̀, ọ̀pọ̀lọpọ̀, àti bíbí èso tó dúró pẹ́",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "peaceCalmSoap": {
+        "name": "Ọṣẹ Àlàáfíà àti Ìdákẹ́rọ́rọ́",
+        "purpose": "Fún àlàáfíà inú, ìdákẹ́rọ́rọ́, àti ìsinmi àtọ̀runwá",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "loveMarriedFavourSoap": {
+        "name": "Ọṣẹ Ìfẹ́ àti Ojúrere Ìgbéyàwó",
+        "purpose": "Fún fífà ìfẹ́, ìbùkún ìgbéyàwó, àti ojúrere nínú ìbáṣepọ̀",
+        "category": "Àwọn Ọṣẹ"
+      },
+      "morningGloryOil": {
+        "name": "Òróró Ògo Òwúrọ̀",
+        "purpose": "Fún ìbẹ̀rẹ̀ tuntun, ògo àtọ̀runwá, àti àṣeyọrí òwúrọ̀",
+        "category": "Àwọn Òróró & Omi"
+      },
+      "spiritExcellenceOil": {
+        "name": "Òróró Ẹ̀mí Ọlọ́lá",
+        "purpose": "Fún ọlọ́lá alágbára àti iṣẹ́ tó tayọ",
+        "category": "Àwọn Òróró & Omi"
+      },
+      "breakEveryChainBalm": {
+        "name": "Ìta Bí Gbogbo Ẹ̀wọ̀n",
+        "purpose": "Fún bíbi àwọn ìdíwọ́ àti ẹ̀wọ̀n ẹ̀mí",
+        "category": "Àwọn Ìta"
+      },
+      "crownGloryBalm": {
+        "name": "Ìta Adé Ògo",
+        "purpose": "Fún ọlá, ọ̀wọ̀, àti ìfihàn ògo àtọ̀runwá",
+        "category": "Àwọn Ìta"
+      },
+      "ulcerHerbal": {
+        "name": "Ọja Ewébẹ̀ Fún Ọgbẹ́",
+        "purpose": "Fún ìwòsàn àdáyébá àti ìtura àìsàn ọgbẹ́",
+        "category": "Àwọn Ọja Ewébẹ̀"
+      }
+    },
+    "modal": {
+      "title": "Parí Ìbéèrè Rẹ",
+      "emailLabel": "Àdírẹ́sì Ímeèlì",
+      "emailRequired": "À Nílò",
+      "emailPlaceholder": "tirẹ@imeeli.com",
+      "nameLabel": "Orúkọ Ní Kíkún (Tí Kò Nílò)",
+      "namePlaceholder": "Orúkọ rẹ",
+      "phoneLabel": "Nọ́mbà Fóònù (Tí Kò Nílò)",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "proceedPayment": "Lọ Síwájú Sí Ìsanwó",
+      "footerNote": "Lẹ́yìn ìsanwó, a máa darí ọ lọ sí WhatsApp láti parí ìbéèrè rẹ",
+      "validEmailError": "Jọ̀wọ́ tẹ ímeèlì tó tọ́",
+      "paymentNotConfigured": "Ètò ìsanwó kò ṣiṣẹ́. Jọ̀wọ́ kàn sí wa lórí WhatsApp láti ṣe ìbéèrè rẹ."
+    },
+    "cta": {
+      "title": "Ṣé O Nílò Ìrànlọ́wọ́ Láti Yan <right>Ọja Tó Tọ́?</right>",
+      "right": "Ọja Tó Tọ́?",
+      "subtitle": "Ẹgbẹ́ wa wà níbí láti darí ọ lọ sí ọja ẹ̀mí tó pé fún àwọn ìnílò rẹ. Kàn sí wa fún àwọn ìmọ̀ràn àkànṣe àti ìtìlẹyìn àdúrà.",
+      "whatsapp": "Kàn Sí Wa Lórí WhatsApp",
+      "email": "Fi Ímeèlì Ránwa"
+    }
+  },
+  "checkout": {
+    "title": "Ìsanwó",
+    "shippingInformation": "Ìfitónilétí Ìfiránṣẹ́",
+    "fullName": "Orúkọ Kíkún",
+    "email": "Ímeèlì",
+    "phone": "Fóònù",
+    "address": "Àdírẹ́ẹ̀sì",
+    "city": "Ìlú",
+    "state": "Ìpínlẹ̀",
+    "zipCode": "Kóòdù Àgbègbè",
+    "country": "Orílẹ̀-èdè",
+    "countries": {
+      "ng": "Nàìjíríà",
+      "us": "Amẹ́ríkà",
+      "uk": "Gẹ̀ẹ́sì",
+      "ca": "Kánádà",
+      "au": "Ọstrélíà"
+    },
+    "paymentInformation": "Ìfitónilétí Ìsanwó",
+    "paymentSecure": "Ìsanwó rẹ wà ní ààbò àti fọ́nrán",
+    "orderSummary": "Àkópọ̀ Ìbéèrè",
+    "product": "Ọjà",
+    "price": "Owó",
+    "quantity": "Ìwọ̀n",
+    "subtotal": "Àkópọ̀ Kékeré",
+    "shipping": "Ìfiránṣẹ́",
+    "total": "Àpapọ̀",
+    "proceedPayment": "Tẹ̀síwájú Pẹ̀lú Ìsanwó",
+    "processing": "Ń ṣe é...",
+    "fieldRequired": "A nílò àyè yìí"
+  },
+  "givingSuccess": {
+    "hero": {
+      "title": "O Ṣeun Fún <styled>Ẹ̀bùn Rẹ Tó Lọ́pọ̀lọpọ!</styled>",
+      "subtitle": "Ìlọwọ́sí rẹ ń ṣe ìyàtọ̀ gidi nínú àwùjọ wa ó sì ń ràn wá lọ́wọ́ láti tan ìfẹ́ àti oore-ọ̀fẹ́ Ọlọ́run ká."
+    },
+    "paymentConfirmation": {
+      "title": "Àwọn Ẹ̀kúnrẹ́rẹ́ Ìsanwó",
+      "reference": "Ìtọ́kasí",
+      "amount": "Iye Owó",
+      "date": "Ọjọ́",
+      "status": "Ipò",
+      "statusSuccess": "Àṣeyọrí",
+      "method": "Ọ̀nà",
+      "email": "Ímeèlì",
+      "receiptSent": "A ti fi ìwé-ẹ̀rí ránṣẹ́ sí àdírẹ́ẹ̀sì ímeèlì rẹ"
+    },
+    "whatsNext": {
+      "title": "Kí Ni Ó Tẹ̀lé?",
+      "step1": {
+        "title": "Darapọ̀ Mọ́ Wa Lórí Íntánẹ́ẹ̀tì",
+        "description": "Kópa nínú àwọn iṣẹ́ ìsìn ààyè wa kí o sì darapọ̀ mọ́ àwùjọ wa"
+      },
+      "step2": {
+        "title": "Wà Ní Ìsopọ̀",
+        "description": "Tẹ̀lé wa lórí àwọn ojú òpó àwùjọ fún àwọn ìmúdójúìwọ̀n àti ìwúrí ojoojúmọ́"
+      },
+      "step3": {
+        "title": "Ṣàwárí Síi",
+        "description": "Ṣàwárí àwọn ìwàásù, ìṣẹ̀lẹ̀ àti àwọn ohun èlò wa láti mú ìgbàgbọ́ rẹ jinlẹ̀"
+      }
+    },
+    "cta": {
+      "title": "Tẹ̀síwájú Ìrìnàjò Rẹ",
+      "card1": {
+        "title": "Wo Àwọn Ìwàásù",
+        "description": "Ṣàwárí àkójọ àwọn ìwàásù aláfúnni wa"
+      },
+      "card2": {
+        "title": "Ṣàbẹ̀wò Búlọ́ọ̀gù Wa",
+        "description": "Ka àwọn àròkọ àti ẹ̀rí tó ń gbé ẹni sókè"
+      },
+      "card3": {
+        "title": "Kàn Sí Wa",
+        "description": "A máa fẹ́ láti gbọ́ lọ́dọ̀ rẹ"
+      }
+    }
+  },
+  "postDetail": {
+    "backToBlog": "Padà Sí Búlọ́ọ̀gù",
+    "enjoyedArticle": "Ṣé O Gbádùn Àròkọ Yìí?",
+    "exploreMore": "Ṣàwárí àwọn àròkọ aláfúnni àti ẹ̀rí láti ọ̀dọ̀ àwùjọ wa.",
+    "viewAllPosts": "Wo Gbogbo Àwọn Àròkọ"
+  },
+  "homeClient": {
+    "hero": {
+      "title": "Káàbọ̀ Sí Beloved New Beginning Ministries",
+      "subtitle": "Ibì kan tí <faith>ìgbàgbọ́</faith>, ìrètí àti ìfẹ́",
+      "watchSermons": "Wo Àwọn Ìwàásù",
+      "giveToChurch": "Fún Ìjọ Ní Ẹ̀bùn"
+    },
+    "welcome": {
+      "badge": "Káàbọ̀",
+      "title": "Ìròyìn Láti Ọ̀dọ̀ Wòlíì Wa",
+      "description1": "Inú wa dùn láti gbà ọ́ sínú ìdílé ìjọ wa. Níbí, iwọ yóò rí àwùjọ alálàáfíà àti àtìlẹ́yìn níbi tí o ti lè dàgbàsókè nínú ìgbàgbọ́ rẹ kí o sì darapọ̀ mọ́ àwọn onígbàgbọ́ míì.",
+      "description2": "Yálà o ṣẹ̀ṣẹ̀ wà nínú ìgbàgbọ́ tàbí o ti jẹ́ onígbàgbọ́ fún ọ̀pọ̀lọpọ̀ ọdún, a wà níbí láti ṣe àtìlẹ́yìn fún ọ nínú ìrìn-àjò ẹ̀mí rẹ. Darapọ̀ mọ́ wa bí a ti ń ṣàwárí Ọ̀rọ̀ Ọlọ́run papọ̀."
+    }
+  },
+  "footer": {
+    "about": "Nípa Wa",
+    "aboutText": "Beloved New Beginning Ministries jẹ́ àwùjọ àwọn onígbàgbọ́ tí ó ti pinnu láti pín ìfẹ́ àti oore-ọ̀fẹ́ Ọlọ́run.",
+    "quickLinks": "Àwọn Líǹkì Kíákíá",
+    "connect": "Darapọ̀ Mọ́ Wa",
+    "copyright": "© {year} Beloved New Beginning Ministries. Gbogbo ẹ̀tọ́ ni a dáàbò bò.",
+    "builtWith": "A fi ìgbàgbọ́ àti ìfẹ́ kọ́"
+  },
+  "common": {
+    "learnMore": "Kọ́ Síi",
+    "readMore": "Ka Síi",
+    "viewAll": "Wo Gbogbo",
+    "loading": "Ń ṣí...",
+    "error": "Nǹkan kan ti lọ ní àṣìṣe",
+    "tryAgain": "Gbìyànjú Lẹ́ẹ̀kan Síi",
+    "close": "Tì",
+    "back": "Padà",
+    "next": "Tókàn",
+    "previous": "Tẹ́lẹ̀",
+    "submit": "Fi Sílẹ̀",
+    "cancel": "Fagilee",
+    "save": "Fi Pamọ́",
+    "language": "Èdè"
+  }
+}
