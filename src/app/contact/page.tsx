@@ -140,7 +140,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-dark-purple mb-2 text-lg">{t('info.phone.title')}</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        {t('info.phone.label')} <a href="tel:+2347069609892" className="text-royal-purple hover:text-gold transition-colors">07069609892</a>
+                        {t('info.phone.label')} <a href="tel:+2347069609892" className="text-royal-purple hover:text-gold transition-colors">+2347069609892</a>
                       </p>
                     </div>
                   </div>

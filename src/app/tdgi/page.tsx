@@ -451,7 +451,7 @@ export default function TDGIPage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-royal-purple/20 rounded-2xl blur-2xl"></div>
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069"
+                      src="images/who-are-we-t.jpg"
                       alt="Faith-based products and spiritual tools"
                       className="w-full h-full object-cover"
                     />
@@ -471,7 +471,7 @@ export default function TDGIPage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-royal-purple/20 to-dark-purple/20 rounded-2xl blur-2xl"></div>
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070"
+                      src="images/our-mission-t.jpg"
                       alt="People in worship and prayer"
                       className="w-full h-full object-cover"
                     />
