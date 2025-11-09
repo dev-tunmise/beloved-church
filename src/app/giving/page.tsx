@@ -4,6 +4,7 @@ import Container from "@/app/_components/container";
 import Link from "next/link";
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
+import { useForm, ValidationError } from '@formspree/react';
 import { GiftIcon, HeartIcon, GlobeIcon, ChurchIcon, CheckIcon } from "@/app/_components/icons";
 import { usePaystackDonation } from "@/hooks/usePaystackDonation";
 import { PaystackDonationButton } from "@/app/_components/paystack-button";
@@ -23,6 +24,9 @@ export default function GivingPage() {
   const { initializePayment, redirectToSuccess, isConfigured } = usePaystackDonation();
 
   const predefinedAmounts = [10000, 20000, 50000, 100000, 300000, 500000];
+
+  // Initialize Formspree for prayer requests
+  const [prayerRequestState, handlePrayerRequest] = useForm("mgvrwnpj");
 
   const handlePaystackPayment = () => {
     // Validate inputs
@@ -586,84 +590,107 @@ export default function GivingPage() {
                   {t('prayer.formTitle')}
                 </h3>
                 
-                <form 
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    const form = e.target as HTMLFormElement;
-                    const formData = new FormData(form);
-                    const name = formData.get('prayerName') as string;
-                    const country = formData.get('country') as string;
-                    const request = formData.get('prayerRequest') as string;
-                    
-                    // Create mailto link with pre-filled content
-                    const subject = encodeURIComponent(`Prayer Request from ${name}`);
-                    const body = encodeURIComponent(
-                      `Name: ${name}\n` +
-                      `Country: ${country}\n\n` +
-                      `Prayer Request:\n${request}`
-                    );
-                    const mailtoLink = `mailto:toyinjato8@gmail.com?subject=${subject}&body=${body}`;
-                    
-                    // Open user's email client
-                    window.location.href = mailtoLink;
-                    
-                    // Reset form
-                    form.reset();
-                  }}
-                  className="space-y-5"
-                >
-                  <div>
-                    <label htmlFor="prayerName" className="block text-sm font-semibold text-dark-purple mb-2">
-                      {t('prayer.fullName')} *
-                    </label>
-                    <input
-                      type="text"
-                      id="prayerName"
-                      name="prayerName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
-                      placeholder={t('prayer.namePlaceholder')}
-                    />
+                {prayerRequestState.succeeded ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckIcon size={32} className="text-green-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-dark-purple mb-2">
+                      {t('prayer.success')}
+                    </h4>
+                    <p className="text-gray-600">
+                      {t('prayer.successMessage')}
+                    </p>
                   </div>
-
-                  <div>
-                    <label htmlFor="country" className="block text-sm font-semibold text-dark-purple mb-2">
-                      {t('prayer.country')} *
-                    </label>
-                    <input
-                      type="text"
-                      id="country"
-                      name="country"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
-                      placeholder={t('prayer.countryPlaceholder')}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="prayerRequest" className="block text-sm font-semibold text-dark-purple mb-2">
-                      {t('prayer.request')} *
-                    </label>
-                    <textarea
-                      id="prayerRequest"
-                      name="prayerRequest"
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all resize-none"
-                      placeholder={t('prayer.requestPlaceholder')}
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                ) : (
+                  <form 
+                    onSubmit={handlePrayerRequest}
+                    className="space-y-5"
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
-                    {t('prayer.submit')}
-                  </button>
-                </form>
+                    <div>
+                      <label htmlFor="prayerName" className="block text-sm font-semibold text-dark-purple mb-2">
+                        {t('prayer.fullName')} *
+                      </label>
+                      <input
+                        type="text"
+                        id="prayerName"
+                        name="prayerName"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
+                        placeholder={t('prayer.namePlaceholder')}
+                      />
+                      <ValidationError 
+                        prefix="Name"
+                        field="prayerName"
+                        errors={prayerRequestState.errors}
+                        className="text-red-600 mt-1 text-sm"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="country" className="block text-sm font-semibold text-dark-purple mb-2">
+                        {t('prayer.country')} *
+                      </label>
+                      <input
+                        type="text"
+                        id="country"
+                        name="country"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
+                        placeholder={t('prayer.countryPlaceholder')}
+                      />
+                      <ValidationError 
+                        prefix="Country"
+                        field="country"
+                        errors={prayerRequestState.errors}
+                        className="text-red-600 mt-1 text-sm"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="prayerRequest" className="block text-sm font-semibold text-dark-purple mb-2">
+                        {t('prayer.request')} *
+                      </label>
+                      <textarea
+                        id="prayerRequest"
+                        name="prayerRequest"
+                        required
+                        rows={6}
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all resize-none"
+                        placeholder={t('prayer.requestPlaceholder')}
+                      ></textarea>
+                      <ValidationError 
+                        prefix="Prayer Request"
+                        field="prayerRequest"
+                        errors={prayerRequestState.errors}
+                        className="text-red-600 mt-1 text-sm"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={prayerRequestState.submitting}
+                      className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {prayerRequestState.submitting ? (
+                        <>
+                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          {t('prayer.submitting')}
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                          </svg>
+                          {t('prayer.submit')}
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
 
               {/* Online Prophetic Connection & Encouraging Scriptures */}

@@ -7,6 +7,7 @@
     "cf-build": "pnpm install && pnpm run build"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@stripe/stripe-js": "^8.0.0",
     "classnames": "^2.5.1",
     "date-fns": "^3.6.0",

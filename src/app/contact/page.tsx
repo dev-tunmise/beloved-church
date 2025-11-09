@@ -2,50 +2,27 @@
 
 import Container from "@/app/_components/container";
 import Link from "next/link";
-import { useState } from "react";
 import { useTranslations } from 'next-intl';
 import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon } from "@/app/_components/icons";
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function ContactPage() {
   const t = useTranslations('contact');
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: ""
-  });
+  const [state, handleSubmit] = useForm("xjkjbaar");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create mailto link with pre-filled content
-    const subject = encodeURIComponent(`${formData.subject || 'Contact Form'}: Message from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone || 'Not provided'}\n` +
-      `Subject: ${formData.subject}\n\n` +
-      `Message:\n${formData.message}`
+  if (state.succeeded) {
+    return (
+      <Container>
+        <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
+          <h2 className="text-2xl font-bold mb-4">{t('form.successMessage')}</h2>
+          <p className="mb-4">{t('form.thankYou')}</p>
+          <Link href="/" className="text-blue-600 hover:text-blue-800">
+            {t('form.backToHome')}
+          </Link>
+        </div>
+      </Container>
     );
-    const mailtoLink = `mailto:toyinjato8@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open user's email client
-    window.location.href = mailtoLink;
-    
-    // Show success message and reset form
-    setTimeout(() => {
-      alert(t('form.successMessage'));
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    }, 500);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  }
 
   return (
     <main className="bg-white">
@@ -193,11 +170,15 @@ export default function ContactPage() {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
                     placeholder={t('form.namePlaceholder')}
+                  />
+                  <ValidationError 
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
+                    className="text-red-600 mt-1 text-sm"
                   />
                 </div>
 
@@ -209,11 +190,15 @@ export default function ContactPage() {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
                     placeholder={t('form.emailPlaceholder')}
+                  />
+                  <ValidationError 
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                    className="text-red-600 mt-1 text-sm"
                   />
                 </div>
 
@@ -225,10 +210,14 @@ export default function ContactPage() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
                     placeholder={t('form.phonePlaceholder')}
+                  />
+                  <ValidationError 
+                    prefix="Phone"
+                    field="phone"
+                    errors={state.errors}
+                    className="text-red-600 mt-1 text-sm"
                   />
                 </div>
 
@@ -239,8 +228,6 @@ export default function ContactPage() {
                   <select
                     id="subject"
                     name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors"
                   >
@@ -251,6 +238,12 @@ export default function ContactPage() {
                     <option value="partnership">{t('form.subjects.partnership')}</option>
                     <option value="other">{t('form.subjects.other')}</option>
                   </select>
+                  <ValidationError 
+                    prefix="Subject"
+                    field="subject"
+                    errors={state.errors}
+                    className="text-red-600 mt-1 text-sm"
+                  />
                 </div>
 
                 <div>
@@ -260,21 +253,26 @@ export default function ContactPage() {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     rows={6}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-royal-purple focus:outline-none transition-colors resize-none"
                     placeholder={t('form.messagePlaceholder')}
                   ></textarea>
+                  <ValidationError 
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                    className="text-red-600 mt-1 text-sm"
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                  disabled={state.submitting}
+                  className="w-full bg-gradient-to-r from-royal-purple to-dark-purple text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <EmailIcon size={22} />
-                  {t('form.submit')}
+                  {state.submitting ? t('form.sending') : t('form.submit')}
                 </button>
               </form>
             </div>

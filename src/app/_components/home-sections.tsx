@@ -3,8 +3,9 @@
 import Container from "@/app/_components/container";
 import Link from "next/link";
 import Image from "next/image";
-import { VideoIcon, HeartIcon, GiftIcon, ArrowRightIcon } from "@/app/_components/icons";
+import { VideoIcon, HeartIcon, GiftIcon, ArrowRightIcon, CheckIcon } from "@/app/_components/icons";
 import { useTranslations } from 'next-intl';
+import { useForm, ValidationError } from '@formspree/react';
 
 export function HeroSection() {
   const t = useTranslations('home.hero');
@@ -253,26 +254,28 @@ export function BlogSection() {
 
 export function ContactSection() {
   const t = useTranslations('home.contact');
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const message = formData.get('message') as string;
-    
-    // Create mailto link with pre-filled content
-    const subject = encodeURIComponent(`Contact Form: Message from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    const mailtoLink = `mailto:toyinjato8@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open user's email client
-    window.location.href = mailtoLink;
-    
-    // Reset form
-    form.reset();
-  };
+  const [state, handleSubmit] = useForm("manawpad");
+
+  if (state.succeeded) {
+    return (
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center py-12 bg-white rounded-2xl shadow-lg border border-gray-100">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckIcon size={32} className="text-green-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-dark-purple mb-3">
+            {t('success')}
+          </h3>
+          <p className="text-gray-600 max-w-md mx-auto mb-6">
+            {t('successMessage')}
+          </p>
+          <Link href="/" className="text-royal-purple hover:text-dark-purple transition-colors">
+            {t('backToHome')}
+          </Link>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="max-w-4xl mx-auto">
@@ -302,6 +305,12 @@ export function ContactSection() {
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
               placeholder={t('namePlaceholder')}
             />
+            <ValidationError 
+              prefix="Name"
+              field="name"
+              errors={state.errors}
+              className="text-red-600 mt-1 text-sm"
+            />
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-semibold text-dark-purple mb-2">
@@ -314,6 +323,12 @@ export function ContactSection() {
               required
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
               placeholder={t('emailPlaceholder')}
+            />
+            <ValidationError 
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+              className="text-red-600 mt-1 text-sm"
             />
           </div>
         </div>
@@ -329,12 +344,29 @@ export function ContactSection() {
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all resize-none"
             placeholder={t('messagePlaceholder')}
           ></textarea>
+          <ValidationError 
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+            className="text-red-600 mt-1 text-sm"
+          />
         </div>
         <button
           type="submit"
-          className="w-full bg-royal-purple text-white px-8 py-4 rounded-lg font-semibold hover:bg-dark-purple transition-all duration-300 shadow-lg hover:shadow-xl"
+          disabled={state.submitting}
+          className="w-full bg-royal-purple text-white px-8 py-4 rounded-lg font-semibold hover:bg-dark-purple transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
-          {t('sendMessage')}
+          {state.submitting ? (
+            <>
+              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              {t('sending')}
+            </>
+          ) : (
+            t('sendMessage')
+          )}
         </button>
       </form>
     </div>
