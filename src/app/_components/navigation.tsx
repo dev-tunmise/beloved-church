@@ -91,7 +91,7 @@ const Navigation = () => {
                   {/* Dropdown Menu */}
                   {isResourcesOpen && (
                     <div className="absolute top-full left-0 mt-s w-64 bg-dark-purple/95 backdrop-blur-sm rounded-lg shadow-2xl border border-gold/30 py-2 z-50">
-                      {link.dropdownItems?.map((item) => (
+                      {link.dropdownItems?.map((item: any) => (
                         <Link
                           key={item.href}
                           href={item.isPlaceholder ? '#' : item.href}
@@ -195,7 +195,7 @@ const Navigation = () => {
                   
                   {isResourcesOpen && (
                     <div className="my-4 ml-4 space-y-1 bg-dark-purple/50 round p-2 border-l-2 border-gold">
-                      {link.dropdownItems?.map((item) => (
+                      {link.dropdownItems?.map((item: any) => (
                         <Link
                           key={item.href}
                           href={item.isPlaceholder ? '#' : item.href}
