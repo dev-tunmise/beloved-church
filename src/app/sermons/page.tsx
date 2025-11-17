@@ -30,10 +30,10 @@ const sermons = [
     id: 3,
     title: "Prophetic Moment: New Season",
     date: "2024-09-29",
-    videoId: "iDMNslFItEc",
+    videoId: "xSt8gg8NllY",
     description: "God is doing something new in this season.",
     category: "prophetic",
-    thumbnail: "https://i.ytimg.com/vi/iDMNslFItEc/hqdefault.jpg"
+    thumbnail: "https://i.ytimg.com/vi/xSt8gg8NllY/hqdefault.jpg"
   },
   {
     id: 4,

@@ -6,7 +6,14 @@
     "blog": "Blog",
     "contact": "Contact",
     "giving": "Giving",
-    "tdgi": "TDGI"
+    "tdgi": "TDGI",
+    "resources": {
+      "title": "Resources",
+      "blog": "Blog",
+      "eventHall": "Event Hall Booking",
+      "prayerRequest": "Prayer Request",
+      "deliverance": "Deliverance Information"
+    }
   },
   "home": {
     "hero": {
@@ -33,7 +40,8 @@
     "sermons": {
       "badge": "Messages",
       "title": "Recent Sermons",
-      "description": "Watch our latest messages and be inspired by the Word of God"
+      "description": "Watch our latest messages and be inspired by the Word of God",
+      "viewAll": "Watch More Sermons"
     },
     "giving": {
       "badge": "Partnership",
@@ -49,6 +57,43 @@
       "accountNameValue": "BELOVED New Beginning Ministries",
       "accountNumber": "Account Number",
       "accountNumberValue": "0236577830"
+    },
+    "deliverance": {
+      "badge": "Ministry",
+      "title": "Deliverance & Healing Sessions",
+      "subtitle": "Experience Freedom. Wherever You Are.",
+      "intro": "We are a deliverance ministry. If anyone is facing spiritual battles, delays, sickness, oppression, or invisible limitations, they can book a personal session for prayer, guidance, and deliverance. Distance is not a barrier.",
+      "typesTitle": "Types of Sessions:",
+      "type1": "One-on-One Deliverance",
+      "type2": "Healing & Restoration",
+      "type3": "Breakthrough & Destiny",
+      "type4": "Family Deliverance",
+      "expectTitle": "What to Expect:",
+      "expect1": "Prayer & prophetic guidance",
+      "expect2": "Deliverance declarations",
+      "expect3": "Word of knowledge",
+      "expect4": "Healing ministration",
+      "expect5": "Freedom from oppression",
+      "expect6": "Direction for next steps",
+      "cta": "Book your session — Your freedom is waiting. Distance is not a barrier",
+      "formTitle": "Book Your Session",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "whatsapp": "WhatsApp Number",
+      "whatsappPlaceholder": "+234 XXX XXX XXXX",
+      "country": "Country",
+      "countryPlaceholder": "Enter your country",
+      "needDeliverance": "What you need deliverance from",
+      "needDeliverancePlaceholder": "Please describe your situation...",
+      "datetime": "Preferred Date & Time",
+      "sessionType": "Choose Session Type",
+      "selectSessionType": "Select a session type",
+      "sessionMode": "Session Mode",
+      "online": "Online",
+      "physical": "Physical",
+      "submitButton": "Book Appointment",
+      "confirmationTitle": "Thank You!",
+      "confirmationMessage": "Thank you. Our prayer team will contact you to confirm your appointment."
     },
     "blog": {
       "badge": "Blog",
@@ -809,5 +854,85 @@
       "name": "(Evang.) Prophetess Oluwatoyin Jato",
       "role": "Senior Prophetess"
     }
+  },
+  "eventHall": {
+    "hero": {
+      "badge": "Book Our Venue",
+      "title": "Event Hall Booking",
+      "subtitle": "A beautiful, sacred space for your special occasions and gatherings"
+    },
+    "intro": {
+      "title": "Welcome to Our Event Hall",
+      "paragraph1": "Our church event hall is a welcoming, well-equipped space perfect for weddings, birthday celebrations, conferences, seminars, corporate meetings, and other special events.",
+      "paragraph2": "Whether you're planning a sacred ceremony or a community gathering, our hall provides a blessed environment with modern amenities to make your event memorable and successful."
+    },
+    "gallery": {
+      "badge": "Our Facility",
+      "title": "Event Hall Gallery",
+      "mainView": "Main Hall View",
+      "interior": "Interior Setup",
+      "setup": "Event Setup",
+      "ceremony": "Ceremony Space"
+    },
+    "features": {
+      "badge": "Amenities",
+      "title": "Hall Features & Amenities",
+      "subtitle": "Everything you need for a successful event",
+      "capacity": "Large Capacity",
+      "capacityDesc": "Seats up to 200 guests comfortably",
+      "soundSystem": "Sound System",
+      "soundSystemDesc": "Professional audio equipment included",
+      "airConditioned": "Climate Control",
+      "airConditionedDesc": "Fully air-conditioned for comfort",
+      "seating": "Flexible Seating",
+      "seatingDesc": "Customizable seating arrangements",
+      "parking": "Ample Parking",
+      "parkingDesc": "Free parking space for guests",
+      "catering": "Catering Space",
+      "cateringDesc": "Kitchen facilities available"
+    },
+    "pricing": {
+      "badge": "Pricing",
+      "title": "Affordable Pricing",
+      "description": "We offer competitive rates for our event hall. Contact us directly for detailed pricing information, availability, and to discuss your specific event needs. Our team is ready to help make your event a success.",
+      "callButton": "Call for Pricing",
+      "whatsappButton": "WhatsApp Enquiry",
+      "phoneNumber": "+2348166697755",
+      "whatsappNumber": "2348166697755"
+    },
+    "bookingForm": {
+      "badge": "Book Now",
+      "title": "Submit Booking Request",
+      "subtitle": "Fill out the form below and we'll get back to you within 24 hours",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "eventType": "Event Type",
+      "selectEventType": "Select event type",
+      "eventTypes": {
+        "wedding": "Wedding",
+        "birthday": "Birthday Party",
+        "conference": "Conference",
+        "seminar": "Seminar/Workshop",
+        "reception": "Reception",
+        "meeting": "Corporate Meeting",
+        "other": "Other"
+      },
+      "preferredDate": "Preferred Date",
+      "additionalNotes": "Additional Notes",
+      "additionalNotesPlaceholder": "Tell us more about your event (guest count, special requirements, etc.)",
+      "submitButton": "Submit Booking Request",
+      "submitting": "Submitting...",
+      "callButton": "Call for Enquiries",
+      "callNumber": "+2348166697755",
+      "privacyNote": "Your information will be kept confidential and used only to process your booking request.",
+      "successTitle": "Request Submitted Successfully!",
+      "successMessage": "Thank you for your booking request. Our team will review your information and contact you within 24 hours to confirm availability and discuss next steps.",
+      "submitAnother": "Submit Another Request"
+    }
   }
 }
+

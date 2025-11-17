@@ -8,7 +8,8 @@ import SermonCards from "@/app/_components/sermon-cards";
 import { 
   HeroSection, 
   WelcomeSection, 
-  AboutSection, 
+  AboutSection,
+  DeliveranceSection,
   SermonsSection, 
   GivingSection,
   BlogSection,
@@ -26,6 +27,7 @@ export default async function Index() {
   const allPosts = getAllPosts();
   const recentPosts = allPosts.slice(0, 3);
   const t = await getTranslations('home.blog');
+  const tSermons = await getTranslations('home.sermons');
   
   return (
     <main className="bg-white">
@@ -38,11 +40,23 @@ export default async function Index() {
       {/* About Us Section */}
       <AboutSection />
 
+      {/* Deliverance & Healing Section */}
+      <DeliveranceSection />
+
       {/* Sermons Section */}
       <section className="py-20 bg-white">
         <Container>
           <SermonsSection />
           <SermonCards />
+          <div className="text-center mt-12">
+            <Link
+              href="/sermons"
+              className="inline-flex items-center gap-2 bg-royal-purple text-white px-8 py-4 rounded-lg font-semibold hover:bg-dark-purple transition-all duration-300 shadow-lg"
+            >
+              {tSermons('viewAll')}
+              <ArrowRightIcon size={18} />
+            </Link>
+          </div>
         </Container>
       </section>
 
@@ -82,13 +96,7 @@ export default async function Index() {
           </div>
         </Container>
       </section>
-
-      {/* Contact / Get in Touch Section */}
-      <section className="py-20 bg-white">
-        <Container>
-          <ContactSection />
-        </Container>
-      </section>
+      
     </main>
   );
 }

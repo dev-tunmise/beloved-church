@@ -6,7 +6,14 @@
     "blog": "Blog",
     "contact": "Contact",
     "giving": "Dons",
-    "tdgi": "TDGI"
+    "tdgi": "TDGI",
+    "resources": {
+      "title": "Ressources",
+      "blog": "Blog",
+      "eventHall": "Réservation de Salle",
+      "prayerRequest": "Demande de Prière",
+      "deliverance": "Informations sur la Délivrance"
+    }
   },
   "home": {
     "hero": {
@@ -33,7 +40,8 @@
     "sermons": {
       "badge": "Messages",
       "title": "Sermons Récents",
-      "description": "Regardez nos derniers messages et soyez inspiré par la Parole de Dieu"
+      "description": "Regardez nos derniers messages et soyez inspiré par la Parole de Dieu",
+      "viewAll": "Regarder Plus de Sermons"
     },
     "giving": {
       "badge": "Partenariat",
@@ -49,6 +57,43 @@
       "accountNameValue": "BELOVED New Beginning Ministries",
       "accountNumber": "Numéro de Compte",
       "accountNumberValue": "0236577830"
+    },
+    "deliverance": {
+      "badge": "Ministère",
+      "title": "Sessions de Délivrance et Guérison",
+      "subtitle": "Expérimentez la Liberté. Où Que Vous Soyez.",
+      "intro": "Nous sommes un ministère de délivrance. Si quelqu'un fait face à des batailles spirituelles, des retards, des maladies, de l'oppression ou des limitations invisibles, il peut réserver une session personnelle pour la prière, les conseils et la délivrance. La distance n'est pas une barrière.",
+      "typesTitle": "Types de Sessions:",
+      "type1": "Délivrance Individuelle",
+      "type2": "Guérison et Restauration",
+      "type3": "Percée et Destinée",
+      "type4": "Délivrance Familiale",
+      "expectTitle": "À Quoi S'Attendre:",
+      "expect1": "Prière et guidance prophétique",
+      "expect2": "Déclarations de délivrance",
+      "expect3": "Parole de connaissance",
+      "expect4": "Ministration de guérison",
+      "expect5": "Liberté de l'oppression",
+      "expect6": "Direction pour les prochaines étapes",
+      "cta": "Réservez votre session — votre liberté commence par un pas.",
+      "formTitle": "Réservez Votre Session",
+      "fullName": "Nom Complet",
+      "fullNamePlaceholder": "Entrez votre nom complet",
+      "whatsapp": "Numéro WhatsApp",
+      "whatsappPlaceholder": "+33 X XX XX XX XX",
+      "country": "Pays",
+      "countryPlaceholder": "Entrez votre pays",
+      "needDeliverance": "De quoi avez-vous besoin de délivrance",
+      "needDeliverancePlaceholder": "Veuillez décrire votre situation...",
+      "datetime": "Date et Heure Préférées",
+      "sessionType": "Choisissez le Type de Session",
+      "selectSessionType": "Sélectionnez un type de session",
+      "sessionMode": "Mode de Session",
+      "online": "En Ligne",
+      "physical": "Présentiel",
+      "submitButton": "Réserver un Rendez-vous",
+      "confirmationTitle": "Merci!",
+      "confirmationMessage": "Merci. Notre équipe de prière vous contactera pour confirmer votre rendez-vous."
     },
     "blog": {
       "badge": "Blog",
@@ -744,5 +789,85 @@
     "cancel": "Annuler",
     "save": "Enregistrer",
     "language": "Langue"
+  },
+  "eventHall": {
+    "hero": {
+      "badge": "Réservez Notre Lieu",
+      "title": "Réservation de Salle d'Événements",
+      "subtitle": "Un espace magnifique et sacré pour vos occasions spéciales et rassemblements"
+    },
+    "intro": {
+      "title": "Bienvenue à Notre Salle d'Événements",
+      "paragraph1": "Notre salle d'événements de l'église est un espace accueillant et bien équipé, parfait pour les mariages, les célébrations d'anniversaire, les conférences, les séminaires, les réunions d'entreprise et autres événements spéciaux.",
+      "paragraph2": "Que vous planifiiez une cérémonie sacrée ou un rassemblement communautaire, notre salle offre un environnement béni avec des commodités modernes pour rendre votre événement mémorable et réussi."
+    },
+    "gallery": {
+      "badge": "Nos Installations",
+      "title": "Galerie de la Salle d'Événements",
+      "mainView": "Vue Principale de la Salle",
+      "interior": "Aménagement Intérieur",
+      "setup": "Configuration d'Événement",
+      "ceremony": "Espace de Cérémonie"
+    },
+    "features": {
+      "badge": "Commodités",
+      "title": "Caractéristiques et Commodités de la Salle",
+      "subtitle": "Tout ce dont vous avez besoin pour un événement réussi",
+      "capacity": "Grande Capacité",
+      "capacityDesc": "Accueille jusqu'à 200 invités confortablement",
+      "soundSystem": "Système Audio",
+      "soundSystemDesc": "Équipement audio professionnel inclus",
+      "airConditioned": "Climatisation",
+      "airConditionedDesc": "Entièrement climatisé pour votre confort",
+      "seating": "Sièges Flexibles",
+      "seatingDesc": "Disposition des sièges personnalisable",
+      "parking": "Grand Parking",
+      "parkingDesc": "Espace de stationnement gratuit pour les invités",
+      "catering": "Espace Traiteur",
+      "cateringDesc": "Installations de cuisine disponibles"
+    },
+    "pricing": {
+      "badge": "Tarifs",
+      "title": "Tarifs Abordables",
+      "description": "Nous proposons des tarifs compétitifs pour notre salle d'événements. Contactez-nous directement pour des informations détaillées sur les prix, la disponibilité et pour discuter de vos besoins spécifiques pour l'événement. Notre équipe est prête à vous aider à faire de votre événement un succès.",
+      "callButton": "Appeler pour les Tarifs",
+      "whatsappButton": "Demande WhatsApp",
+      "phoneNumber": "+2348166697755",
+      "whatsappNumber": "2348166697755"
+    },
+    "bookingForm": {
+      "badge": "Réservez Maintenant",
+      "title": "Soumettre une Demande de Réservation",
+      "subtitle": "Remplissez le formulaire ci-dessous et nous vous contacterons dans les 24 heures",
+      "fullName": "Nom Complet",
+      "fullNamePlaceholder": "Entrez votre nom complet",
+      "email": "Adresse Email",
+      "emailPlaceholder": "votre@email.com",
+      "phone": "Numéro de Téléphone",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "eventType": "Type d'Événement",
+      "selectEventType": "Sélectionnez le type d'événement",
+      "eventTypes": {
+        "wedding": "Mariage",
+        "birthday": "Fête d'Anniversaire",
+        "conference": "Conférence",
+        "seminar": "Séminaire/Atelier",
+        "reception": "Réception",
+        "meeting": "Réunion d'Entreprise",
+        "other": "Autre"
+      },
+      "preferredDate": "Date Préférée",
+      "additionalNotes": "Notes Supplémentaires",
+      "additionalNotesPlaceholder": "Parlez-nous de votre événement (nombre d'invités, exigences spéciales, etc.)",
+      "submitButton": "Soumettre la Demande de Réservation",
+      "submitting": "Envoi en cours...",
+      "callButton": "Appeler pour Renseignements",
+      "callNumber": "+2348166697755",
+      "privacyNote": "Vos informations resteront confidentielles et ne seront utilisées que pour traiter votre demande de réservation.",
+      "successTitle": "Demande Soumise avec Succès!",
+      "successMessage": "Merci pour votre demande de réservation. Notre équipe examinera vos informations et vous contactera dans les 24 heures pour confirmer la disponibilité et discuter des prochaines étapes.",
+      "submitAnother": "Soumettre une Autre Demande"
+    }
   }
 }
+

@@ -21,9 +21,9 @@ export default function SermonCards() {
       description: "Understanding how faith moves mountains and transforms impossible situations into divine opportunities."
     },
     {
-      id: "iDMNslFItEc",
-      title: "Living a Life of Worship",
-      date: "September 22, 2025",
+      id: "xSt8gg8NllY",
+      title: "Foundational Limitations - November 16, 2025",
+      date: "November 16, 2025",
       description: "Explore what it means to worship God not just in song, but through every aspect of your daily life."
     }
   ];

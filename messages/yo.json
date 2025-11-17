@@ -6,7 +6,14 @@
     "blog": "Búlọ́ọ̀gù",
     "contact": "Ìbásọ̀rọ̀",
     "giving": "Ìfúnni",
-    "tdgi": "TDGI"
+    "tdgi": "TDGI",
+    "resources": {
+      "title": "Àwọn Ohun Èlò",
+      "blog": "Búlọ́ọ̀gù",
+      "eventHall": "Ìdáwọ́lé Gbàgede",
+      "prayerRequest": "Ìbéèrè Àdúrà",
+      "deliverance": "Ìsọfúnni Ìdásílẹ̀"
+    }
   },
   "home": {
     "hero": {
@@ -33,7 +40,8 @@
     "sermons": {
       "badge": "Àwọn Ìfihàn",
       "title": "Àwọn Ìwásù Tuntun",
-      "description": "Wo àwọn ọ̀rọ̀ tuntun wa kí o sì gba ìwúrí láti Ọ̀rọ̀ Ọlọ́run"
+      "description": "Wo àwọn ọ̀rọ̀ tuntun wa kí o sì gba ìwúrí láti Ọ̀rọ̀ Ọlọ́run",
+      "viewAll": "Wo Àwọn Ìwásù Míì"
     },
     "giving": {
       "badge": "Ìfọwọ́sowọ́pọ̀",
@@ -49,6 +57,43 @@
       "accountNameValue": "BELOVED New Beginning Ministries",
       "accountNumber": "Nọ́mbà Àkọ́ọ̀ntì",
       "accountNumberValue": "0236577830"
+    },
+    "deliverance": {
+      "badge": "Iṣẹ́-Ìṣìn",
+      "title": "Àwọn Ìpàdé Ìdásílẹ̀ àti Ìwòsàn",
+      "subtitle": "Ní Ìrírí Òmìnira. Níbikíbi Tí O Bá Wà.",
+      "intro": "A jẹ́ iṣẹ́-ìṣìn ìdásílẹ̀. Tí ẹnikẹ́ni bá ń kojú àwọn ìjà ẹ̀mí, ìdádúró, àìsàn, ìnilára, tàbí àwọn ìdíwọ́ àìmọ, wọ́n lè ṣe ìdánwò ìpàdé tiwọn fún àdúrà, ìtọ́sọ́nà, àti ìdásílẹ̀. Ìjìnnàsí kìí ṣe ìdíwọ́.",
+      "typesTitle": "Àwọn Oríṣi Ìpàdé:",
+      "type1": "Ìdásílẹ̀ Ẹ̀dá-kan-sí-Ẹ̀dá-kan",
+      "type2": "Ìwòsàn àti Ìmúpadàbọ̀sípò",
+      "type3": "Ìtẹ̀síwájú àti Àyànmọ́",
+      "type4": "Ìdásílẹ̀ Ìdílé",
+      "expectTitle": "Kíni Láti Rò:",
+      "expect1": "Àdúrà àti ìtọ́sọ́nà asọtẹ́lẹ̀",
+      "expect2": "Àwọn ìkéde ìdásílẹ̀",
+      "expect3": "Ọ̀rọ̀ ìmọ̀",
+      "expect4": "Ìṣẹ́-ìṣìn ìwòsàn",
+      "expect5": "Òmìnira láti inilára",
+      "expect6": "Ìtọ́sọ́nà fún àwọn igbésẹ̀ tókàn",
+      "cta": "Ṣe ìdánwò ìpàdé rẹ — òmìnira rẹ bẹ̀rẹ̀ pẹ̀lú igbésẹ̀ kan.",
+      "formTitle": "Ṣe Ìdánwò Ìpàdé Rẹ",
+      "fullName": "Orúkọ Kíkún",
+      "fullNamePlaceholder": "Tẹ orúkọ kíkún rẹ sínú",
+      "whatsapp": "Nọ́mbà WhatsApp",
+      "whatsappPlaceholder": "+234 XXX XXX XXXX",
+      "country": "Orílẹ̀-èdè",
+      "countryPlaceholder": "Tẹ orílẹ̀-èdè rẹ sínú",
+      "needDeliverance": "Kíni o nílò ìdásílẹ̀ fún",
+      "needDeliverancePlaceholder": "Jọ̀wọ́ ṣe àpèjúwe ipò rẹ...",
+      "datetime": "Ọjọ́ àti Àkókò Tí O Fẹ́",
+      "sessionType": "Yan Oríṣi Ìpàdé",
+      "selectSessionType": "Yan oríṣi ìpàdé kan",
+      "sessionMode": "Ọ̀nà Ìpàdé",
+      "online": "Lórí Íńtánẹ́ẹ̀tì",
+      "physical": "Nípa Ara",
+      "submitButton": "Ṣe Ìdánwò Ìpàdé",
+      "confirmationTitle": "Ẹ Ṣeun!",
+      "confirmationMessage": "Ẹ ṣeun. Ẹgbẹ́ àdúrà wa yóò kàn sí ọ láti jẹ́rìí ìpàdé rẹ."
     },
     "blog": {
       "badge": "Búlọ́ọ̀gù",
@@ -746,5 +791,85 @@
     "cancel": "Fagilee",
     "save": "Fi Pamọ́",
     "language": "Èdè"
+  },
+  "eventHall": {
+    "hero": {
+      "badge": "Ṣe Ìdáwọ́lé Ààyè Wa",
+      "title": "Ìdáwọ́lé Gbàgede Ìṣẹ̀lẹ̀",
+      "subtitle": "Ààyè tó lẹ́wà tó sì jẹ́ mímọ́ fún àwọn ìṣẹ̀lẹ̀ pàtàkì rẹ àti àwọn ìpéjọpọ̀"
+    },
+    "intro": {
+      "title": "Káàbọ̀ Sí Gbàgede Ìṣẹ̀lẹ̀ Wa",
+      "paragraph1": "Gbàgede ìṣẹ̀lẹ̀ ìjọ wa jẹ́ ààyè ìtẹ́wọ́gbà tó sì ní ohun èlò tó dára, tó péye fún ìgbéyàwó, àjọ̀dún ìbí, àpéjọ, àwọn ìkànṣe, àpéjọ ilé-iṣẹ́, àti àwọn ìṣẹ̀lẹ̀ pàtàkì míràn.",
+      "paragraph2": "Bóyá o ń gbèrò àyájọ́ mímọ́ tàbí ìpéjọpọ̀ àwùjọ, gbàgede wa ń pèsè àyíká ìbùkún pẹ̀lú àwọn ohun èlò òde òní láti jẹ́ kí ìṣẹ̀lẹ̀ rẹ jẹ́ ohun ìrántí tó sì ṣàṣeyọrí."
+    },
+    "gallery": {
+      "badge": "Ilé-iṣẹ́ Wa",
+      "title": "Àwòrán Gbàgede Ìṣẹ̀lẹ̀",
+      "mainView": "Ìwòye Gbàgede Àkọ́kọ́",
+      "interior": "Ètò Inú Ilé",
+      "setup": "Ètò Ìṣẹ̀lẹ̀",
+      "ceremony": "Ààyè Àyájọ́"
+    },
+    "features": {
+      "badge": "Àwọn Ohun Èlò",
+      "title": "Àwọn Ẹ̀yà àti Ohun Èlò Gbàgede",
+      "subtitle": "Gbogbo ohun tí o nílò fún ìṣẹ̀lẹ̀ tó ṣàṣeyọrí",
+      "capacity": "Ìpamọ́ Ńlá",
+      "capacityDesc": "Ó lè gba àwọn àlejò tó tó 200 ní ìrọ̀rùn",
+      "soundSystem": "Ètò Ìró",
+      "soundSystemDesc": "Ẹ̀rọ ohùn ọjọ́gbọ́n wa nínú rẹ̀",
+      "airConditioned": "Ìṣàkóso Ojú Ọjọ́",
+      "airConditionedDesc": "Ó ní ẹ̀rọ afẹ́fẹ́ tó pé fún ìrọ̀rùn",
+      "seating": "Àwọn Ìjókòó Àyípadà",
+      "seatingDesc": "Ètò ìjókòó tó lè yípadà",
+      "parking": "Ibùdó Ọkọ̀ Púpọ̀",
+      "parkingDesc": "Ààyè ìdúró ọkọ̀ ọ̀fẹ́ fún àwọn àlejò",
+      "catering": "Ààyè Oúnjẹ",
+      "cateringDesc": "Àwọn ohun èlò ilé ìdáná wà"
+    },
+    "pricing": {
+      "badge": "Àwọn Ìdíyelé",
+      "title": "Àwọn Ìdíyelé Tó Rórun",
+      "description": "A ń pèsè àwọn owó ìdíyelé tó lè díje fún gbàgede ìṣẹ̀lẹ̀ wa. Pè wá tààrà fún àlàyé ìdíyelé tó pé, ìwà àti láti sọ̀rọ̀ nípa àwọn ìnílò pàtàkì ìṣẹ̀lẹ̀ rẹ. Ẹgbẹ́ wa ṣetán láti ṣèrànwọ́ láti jẹ́ kí ìṣẹ̀lẹ̀ rẹ jẹ́ àṣeyọrí.",
+      "callButton": "Pe Fún Ìdíyelé",
+      "whatsappButton": "Ìbéèrè WhatsApp",
+      "phoneNumber": "+2348166697755",
+      "whatsappNumber": "2348166697755"
+    },
+    "bookingForm": {
+      "badge": "Ṣe Ìdáwọ́lé Báyìí",
+      "title": "Fi Ìbéèrè Ìdáwọ́lé Sílẹ̀",
+      "subtitle": "Kún fọ́ọ̀mù ìsàlẹ̀ yìí kí a sì pè ọ́ láàrín wákàtí 24",
+      "fullName": "Orúkọ Ní Kíkún",
+      "fullNamePlaceholder": "Tẹ orúkọ rẹ ní kíkún sílẹ̀",
+      "email": "Àdírẹ́ẹ̀sì Ímeèlì",
+      "emailPlaceholder": "tirẹ@email.com",
+      "phone": "Nọ́mbà Fóònù",
+      "phonePlaceholder": "+234 XXX XXX XXXX",
+      "eventType": "Irú Ìṣẹ̀lẹ̀",
+      "selectEventType": "Yan irú ìṣẹ̀lẹ̀",
+      "eventTypes": {
+        "wedding": "Ìgbéyàwó",
+        "birthday": "Àjọ̀dún Ìbí",
+        "conference": "Àpéjọ",
+        "seminar": "Ìkànṣe/Ìdánilẹ́kọ̀ọ́",
+        "reception": "Ìgbàlejò",
+        "meeting": "Ìpàdé Ilé-iṣẹ́",
+        "other": "Òmíràn"
+      },
+      "preferredDate": "Ọjọ́ Tí O Fẹ́",
+      "additionalNotes": "Àwọn Àkọsílẹ̀ Àfikún",
+      "additionalNotesPlaceholder": "Sọ fún wa síi nípa ìṣẹ̀lẹ̀ rẹ (iye àwọn àlejò, àwọn ìbéèrè pàtàkì, àti bẹ́ẹ̀ bẹ́ẹ̀ lọ)",
+      "submitButton": "Fi Ìbéèrè Ìdáwọ́lé Sílẹ̀",
+      "submitting": "Ń fi sílẹ̀...",
+      "callButton": "Pe Fún Ìbéèrè",
+      "callNumber": "+2348166697755",
+      "privacyNote": "A ó pa ìsọfúnni rẹ mọ́ ní ìkọ̀kọ̀ kí a sì lò ó fún ìṣesí ìbéèrè ìdáwọ́lé rẹ nìkan.",
+      "successTitle": "A Ti Fi Ìbéèrè Sílẹ̀ Ní Àṣeyọrí!",
+      "successMessage": "Ẹ ṣeun fún ìbéèrè ìdáwọ́lé rẹ. Ẹgbẹ́ wa yóò ṣàyẹ̀wò ìsọfúnni rẹ kí ó sì pè ọ́ láàrín wákàtí 24 láti jẹ́rìísí ìwà kí ó sì sọ̀rọ̀ nípa àwọn ìgbésẹ̀ tókàn.",
+      "submitAnother": "Fi Ìbéèrè Míràn Sílẹ̀"
+    }
   }
 }
+

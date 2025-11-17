@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Container from "@/app/_components/container";
 import Link from "next/link";
 import Image from "next/image";
@@ -149,6 +150,258 @@ export function AboutSection() {
                 className="object-cover object-center"
               />
             </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function DeliveranceSection() {
+  const t = useTranslations('home.deliverance');
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center py-12 bg-white rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckIcon size={32} className="text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">
+                {t('confirmationTitle')}
+              </h3>
+              <p className="text-gray-600 max-w-md mx-auto">
+                {t('confirmationMessage')}
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-20 bg-white">
+      <Container>
+        <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+          {/* Left Column - Text Content */}
+          <div>
+            <div className="inline-block mb-4">
+              <span className="text-royal-purple font-semibold text-sm uppercase tracking-wider">{t('badge')}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-dark-purple mb-4 leading-tight">
+              {t('title')}
+            </h2>
+            <p className="text-2xl text-gold font-semibold mb-6">
+              {t('subtitle')}
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              {t('intro')}
+            </p>
+
+            {/* Types of Sessions */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-dark-purple mb-4">{t('typesTitle')}</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-gold mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('type1')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-gold mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('type2')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-gold mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('type3')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-gold mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('type4')}</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* What to Expect */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-dark-purple mb-4">{t('expectTitle')}</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-royal-purple mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('expect1')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-royal-purple mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('expect2')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-royal-purple mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('expect3')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-royal-purple mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('expect4')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-royal-purple mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('expect5')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon size={20} className="text-royal-purple mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{t('expect6')}</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* CTA Text */}
+            <p className="text-lg font-semibold text-dark-purple">
+              {t('cta')}
+            </p>
+          </div>
+
+          {/* Right Column - Form */}
+          <div className="bg-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100">
+            <h3 className="text-2xl font-bold text-dark-purple mb-6">{t('formTitle')}</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Full Name */}
+              <div>
+                <label htmlFor="fullName" className="block text-sm font-semibold text-dark-purple mb-2">
+                  {t('fullName')}
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
+                  placeholder={t('fullNamePlaceholder')}
+                />
+              </div>
+
+              {/* WhatsApp Number */}
+              <div>
+                <label htmlFor="whatsapp" className="block text-sm font-semibold text-dark-purple mb-2">
+                  {t('whatsapp')}
+                </label>
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
+                  placeholder={t('whatsappPlaceholder')}
+                />
+              </div>
+
+              {/* Country */}
+              <div>
+                <label htmlFor="country" className="block text-sm font-semibold text-dark-purple mb-2">
+                  {t('country')}
+                </label>
+                <input
+                  type="text"
+                  id="country"
+                  name="country"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
+                  placeholder={t('countryPlaceholder')}
+                />
+              </div>
+
+              {/* What you need deliverance from */}
+              <div>
+                <label htmlFor="needDeliverance" className="block text-sm font-semibold text-dark-purple mb-2">
+                  {t('needDeliverance')}
+                </label>
+                <textarea
+                  id="needDeliverance"
+                  name="needDeliverance"
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all resize-none"
+                  placeholder={t('needDeliverancePlaceholder')}
+                ></textarea>
+              </div>
+
+              {/* Preferred Date & Time */}
+              <div>
+                <label htmlFor="datetime" className="block text-sm font-semibold text-dark-purple mb-2">
+                  {t('datetime')}
+                </label>
+                <input
+                  type="datetime-local"
+                  id="datetime"
+                  name="datetime"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all"
+                />
+              </div>
+
+              {/* Session Type */}
+              <div>
+                <label htmlFor="sessionType" className="block text-sm font-semibold text-dark-purple mb-2">
+                  {t('sessionType')}
+                </label>
+                <select
+                  id="sessionType"
+                  name="sessionType"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 outline-none transition-all bg-white"
+                >
+                  <option value="">{t('selectSessionType')}</option>
+                  <option value="one-on-one">{t('type1')}</option>
+                  <option value="healing">{t('type2')}</option>
+                  <option value="breakthrough">{t('type3')}</option>
+                  <option value="family">{t('type4')}</option>
+                </select>
+              </div>
+
+              {/* Online or Physical */}
+              <div>
+                <label className="block text-sm font-semibold text-dark-purple mb-3">
+                  {t('sessionMode')}
+                </label>
+                <div className="flex gap-6">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="mode"
+                      value="online"
+                      required
+                      className="w-4 h-4 text-royal-purple focus:ring-royal-purple"
+                    />
+                    <span className="text-gray-700">{t('online')}</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="mode"
+                      value="physical"
+                      required
+                      className="w-4 h-4 text-royal-purple focus:ring-royal-purple"
+                    />
+                    <span className="text-gray-700">{t('physical')}</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full bg-royal-purple text-white px-8 py-4 rounded-lg font-semibold hover:bg-dark-purple transition-all duration-300 shadow-lg hover:shadow-xl mt-6"
+              >
+                {t('submitButton')}
+              </button>
+            </form>
           </div>
         </div>
       </Container>
